@@ -23,10 +23,11 @@
 		}
 
 		public function MuestraActividades($codigo){
-			$sql = "SELECT actividad, unidadMedida FROM actividades WHERE id_personal = $codigo";
+			$sql = "SELECT idactividad, actividad, unidadMedida FROM actividades WHERE id_personal = $codigo";
 			$data = $this->mysqli->query($sql);
 			return $data;
 		}
 	}
+
 
  ?>

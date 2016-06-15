@@ -23,19 +23,16 @@ if(isset($_SESSION['personal']))
 		<div class="row">
 			<section class="col-xs-12 col-sm-6 col-md-8">
 
-				<div class="form-group">
-					<form class="form-control" action="">
+				<div class="">
+					<h2>Listado de Actividades</h2>
 
-						<h2>Listado de Actividades</h2>
-
+					<div class="alert alert-danger"><?php echo @$_REQUEST['mensaje']; ?></div>
 						<table class="table">
 							<thead>
 								<tr>
 									<th>Numero</th>
 									<th>Actividad</th>
 									<th>Unid. Medida</th>
-									<th>Reporte Hoy</th>
-									<th>Observaciones</th>
 								</tr>
 							</thead>
 
@@ -48,12 +45,15 @@ if(isset($_SESSION['personal']))
 								?>
 								<tr>
 									<td><?php echo $i; ?></td>
-									<td><?php echo $row['actividad']; ?></td>
+									<td><?php #echo $row['actividad'];
+											$act = $row['actividad'];
+											echo $act;
+											 ?></td>
 									<td><?php echo $row['unidadMedida']; ?></td>
-									<td>
-										<input type="text" name="reporte" class="form-control" />
+
+									<td><button class="btn btn-info" onClick="javascript:window.open('registro.php?idactividad='+<?php echo $row['idactividad']; ?>+'&idpersonal='+<?php echo $_SESSION['personal']; ?>+'&actividad=','','width=400, height=450, scrollbars=YES');">Reportar</button>
+
 									</td>
-									<td><textarea cols="20" name="obs" class="form-control"></textarea></td>
 
 								</tr>
 								<?php
@@ -63,7 +63,7 @@ if(isset($_SESSION['personal']))
 								 ?>
 							</tbody>
 						</table>
-						<button name="guardar" type="submit" class="btn btn-info">Guardar</button>
+
 					</form>
 				</div>
 
