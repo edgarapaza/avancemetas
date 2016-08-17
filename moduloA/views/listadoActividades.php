@@ -3,6 +3,8 @@ session_start();
 
 if(isset($_SESSION['total']))
 {
+
+	include_once "header.php";
 	function listadoTodo(){
 		require "../models/Actividades.class.php";
 		$act = new Actividades();
@@ -24,7 +26,6 @@ if(isset($_SESSION['total']))
 	<title>Administrator</title>
 </head>
 <body>
-	<a href="../../controllers/sessionClose.php">Salir</a>
 	<header>
 		<h2>Administrator</h2>
 	</header>

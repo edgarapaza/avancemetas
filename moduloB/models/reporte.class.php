@@ -3,6 +3,7 @@
 	class Reporte
 	{
 		private $mysqli;
+
 		function __construct()
 		{
 			require_once "../coreB/Conexion.php";
@@ -19,7 +20,15 @@
 
 		public function Insertar($idpersonal, $idactividad, $reporte, $estado, $obs){
 			$sql="INSERT INTO reportes (idpersonal, idactividad, reporte, estado, obs) VALUES ('$idpersonal', '$idactividad', '$reporte', '$estado', '$obs')";
-			$data = $this->mysqli->query($sql);
+			$data = $this->mysqli->query($sql) or die("Error");
+		}
+
+		public function Duplicado($idpersonal, $idactividad){
+			$fecha = date('Y-m-d');
+			$sql="SELECT count(idreportes) as numero FROM reportes WHERE idpersonal = $idpersonal AND idactividad = $idactividad AND fecha LIKE '$fecha %'";
+			$valor = $this->mysqli->query($sql);
+			$data = $valor->fetch_array();
+			return $data;
 		}
 
 		public function MuestraActividades($codigo){

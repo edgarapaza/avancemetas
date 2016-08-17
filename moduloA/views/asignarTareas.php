@@ -2,8 +2,8 @@
 session_start();
 if(isset($_SESSION['total']))
 {
-
-	include "../models/Listado.class.php";
+	include_once "header.php";
+	include_once "../models/Listado.class.php";
 
 	$listado = new Listado();
 	$inst = $listado->Institucion();
@@ -11,9 +11,7 @@ if(isset($_SESSION['total']))
 	$car = $listado->Cargo();
 	$per = $listado->Personal();
 
-	include "../views/header.php";
  ?>
-
 
 	<header>
 		<div class="container">

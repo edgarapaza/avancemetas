@@ -2,6 +2,7 @@
 session_start();
 if(isset($_SESSION['total']))
 {
+	include_once "views/header.php";
  ?>
 <!DOCTYPE html>
 <html>
@@ -18,16 +19,12 @@ if(isset($_SESSION['total']))
 		<div class="row">
 			<div class="col-md-12" style="background-color:#E5E5E5">
 				<div class="text-center"><h3>Menu</h3></div>
-				<div class="col-md-6 text-center"><a href="controllers/listasControllers.php" class="btn btn-danger btn-lg  btn-block">Listado Tareas</a></div>
-				<div  class="col-md-6 text-center"><a href="controllers/asignarTareas.php" class="btn btn-info btn-lg btn-block">Asignar Tareas</a></div><div></div>
-                
+				<div class="col-md-6 text-center"><a href="views/listadoActividades.php" class="btn btn-danger btn-lg  btn-block">Listado Tareas</a></div>
+				<div  class="col-md-6 text-center"><a href="views/asignarTareas.php" class="btn btn-info btn-lg btn-block">Asignar Tareas</a></div><div></div>
 			</div>
 		</div>
 	</section>
 </body>
-<footer>
-	<div class="text-center panel-footer navbar-fixed-bottom"><a href="../controllers/sessionClose.php" class="btn btn-danger"><h5><strong>SALIR</strong></h5></a></div>
-</footer>
 </html>
 
 <?php

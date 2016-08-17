@@ -12,7 +12,10 @@
 		echo "personal".$data['id_personal']."<br>";
 		echo "Rol:".$data['idrol']."<br>";
 		echo "Permisos".$data['idpermisos']."<br>";
-		if($data['idrol'] >0){
+
+
+
+		if($data['idrol'] > 0){
 			switch ($data['idrol']) {
 				case 10: #Control Total
 					$_SESSION['total'] = $data['id_personal'];
@@ -32,12 +35,12 @@
 					break;
 				default:
 
-					header("Location: ../index.php");
+					header("Location: ../index.html");
 					break;
 			}
 		}else
 		{
-			header("Location: ../index.php");
+			header("Location: ../index.html");
 		}
 
 	}

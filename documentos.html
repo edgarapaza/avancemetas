@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<title>Document</title>
+	<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>UI Hero - Free Responsive Bootstrap Theme</title>
+        <meta name="description" content="">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+		<!-- Style -->
+        <link rel="stylesheet" href="css/main.css">
+
+		<!-- Responsiv -->
+		 <link rel="stylesheet" href="css/responsive.css">
+
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+
+		<!-- Bootstrp -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+
+		<!-- Animations min -->
+		<link rel="stylesheet" href="css/animations.min.css">
+
+		<!-- Lightbox -->
+		<link rel="stylesheet" href="css/lightbox.css" />
+
+		<!-- Script -->
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+            <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+              <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+    </head>
+</head>
+<body>
+	<!-- Header -->
+			<header id="header">
+
+					<nav id="head-nav" class="navbar topnavbar navbar-fixed-top" role="navigation" data-spy="affix" data-offset-top="200">
+						<div class="container">
+							<div class="navbar-header">
+								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+									<i class="fa fa-bars"></i>
+								</button>
+								<a href="#header" class="navbar-brand header"><img src="img/logo.png" alt=""></a>
+							</div> <!-- /#navbar-header -->
+
+							<!-- Navigation -->
+							<div class="collapse navbar-collapse" id="navbar">
+								<ul class="nav pull-left navbar-nav" id="main_navigation_menu">
+									<li class="active"><a href="index.html">INICIO</a></li>
+									<li><a href="#about">NOTICIAS</a></li>
+									<li><a href="documentos.html">DOCUMENTOS</a></li>
+								</ul>
+
+								<ul class="nav pull-right navbar-nav">
+							      	<form action="controllers/ValidarController.php" method="post" class="navbar-form navbar-left" role="search">
+							        <div class="form-group">
+							          <input type="text" name="usuario" placeholder="Nombre de usuario" required ='required' />
+							          <input type="password" name="clave" placeholder="Contraseña" required ='required' />
+							        </div>
+							        <button type="submit" class="btn btn-info">Ingresar</button>
+							      </form>
+							    </ul>
+							</div>
+						</div>
+					</nav> <!-- /#navbar -->
+
+
+				<!-- Slider -->
+				<section id="slider">
+					<div class="container-full">
+						<div class="slider">
+						</div>
+					</div>
+				</section> <!-- /#slider -->
+			</header> <!-- /#header -->
+
+	<section id="about">
+		<div class="container-full">
+			<div class="container">
+				<div class="row">
+						<div class="col-md-8">
+							<h1>Listado de Documentos Archivisticos</h1>
+
+							<table class="table">
+								<tbody>
+									<tr>
+										<th>Documento</th>
+										<th>Tipo</th>
+									</tr>
+									<tr>
+										<td>Resolución Jefatural N° 001-2016-AGN/J</td>
+										<td><a href="doc/AC_RJ_001-2016-AGN-J.pdf">Ver PDF</a></td>
+									</tr>
+									<tr>
+										<td>Resolución Jefatural N° 240-2015-AGN-J </td>
+										<td><a href="doc/RJ_No_240-2015-AGN-J-Pag-1.pdf">Ver PDF</a></td>
+									</tr>
+									<tr>
+										<td>Resolución Jefatural N° 240-2015-AGN-J </td>
+										<td><a href="doc/RJ_No_240-2015-AGN-J-Pag-1.pdf">Ver PDF</a></td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+						<div class="col-md-4">
+							<h2>Documentos Institucionales</h2>
+							<table class="table">
+								<tbody>
+									<tr>
+										<th>Documento</th>
+										<th>Tipo</th>
+									</tr>
+									<tr>
+										<td>TUPA 2016</td>
+										<td><a href="doc/AC_RJ_001-2016-AGN-J.pdf">Ver PDF</a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<script type="text/javascript" charset="utf-8" src="js/bootstrap.min.js"></script>
+</body>
+</html>
