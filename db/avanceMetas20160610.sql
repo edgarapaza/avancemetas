@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `avacemetas` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `avacemetas`;
+CREATE DATABASE  IF NOT EXISTS `avancemetas` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `avancemetas`;
 -- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
 --
--- Host: 127.0.0.1    Database: avacemetas
+-- Host: 127.0.0.1    Database: avancemetas
 -- ------------------------------------------------------
 -- Server version	5.6.20
 
