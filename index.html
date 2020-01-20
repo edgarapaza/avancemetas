@@ -1,320 +1,65 @@
-<!DOCTYPE html>
-  <html lang="es">
-    <head>
-        <meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Avance de Metas - Archivo Regional</title>
-        <meta name="description" content="">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!doctype html>
+<html class="no-js" lang="es">
 
-		<!-- Style -->
-        <link rel="stylesheet" href="css/main.css">
+<head>
+  <meta charset="utf-8">
+  <title>Avance Metas</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" href="css/main.css">
 
-		<!-- Responsiv -->
-		 <link rel="stylesheet" href="css/responsive.css">
+  <meta name="theme-color" content="#fafafa">
+</head>
 
-        <!-- Font awesome -->
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
 
-		<!-- Bootstrp -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Add your site or application content here -->
 
-		<!-- Animations min -->
-		<link rel="stylesheet" href="css/animations.min.css">
+	<div class="row">
+    <div class="col s6">
+      <div class="row">
+        <form action="controllers/ValidarController.php" method="post">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">person</i>
+            <input type="text" name="usuario" id="autocomplete-input" class="autocomplete">
+            <label for="autocomplete-input">Nombre de usuario</label>
+          </div>
+          <div class="input-field col s12">
+            <i class="material-icons prefix">security</i>
+            <input type="password" name="clave" id="autocomplete-input" class="autocomplete">
+            <label for="autocomplete-input">Contraseña</label>
+          </div>
+          <div class="input-field col s12">
+            
+            <a class="waves-effect teal lighten-3 btn"><i class="material-icons left">cancel</i>Cancel</a>
+            
+            <button class="waves-effect waves-light btn" type="submit"><i class="material-icons right">check</i>Ingresar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
-		<!-- Lightbox -->
-		<link rel="stylesheet" href="css/lightbox.css" />
+  
 
-		<!-- Script -->
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+  <script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="js/materialize.js" async></script>
+</body>
 
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-            <!--[if lt IE 9]>
-              <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-              <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-            <![endif]-->
-    </head>
-    <body>
-        <!-- Header -->
-			<header id="header">
-
-					<nav id="head-nav" class="navbar topnavbar navbar-fixed-top" role="navigation" data-spy="affix" data-offset-top="200">
-						<div class="container">
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-									<i class="fa fa-bars"></i>
-								</button>
-								<a href="#header" class="navbar-brand header"><img src="img/logo.png" alt=""></a>
-							</div> <!-- /#navbar-header -->
-
-							<!-- Navigation -->
-							<div class="collapse navbar-collapse" id="navbar">
-								<ul class="nav pull-left navbar-nav" id="main_navigation_menu">
-									<li class="active"><a href="#header">INICIO</a></li>
-									<li><a href="#about">NOTICIAS</a></li>
-									<li><a href="documentos.html">DOCUMENTOS</a></li>
-								</ul>
-
-								<ul class="nav pull-right navbar-nav">
-							      	<form action="controllers/ValidarController.php" method="post" class="navbar-form navbar-left" role="search">
-							        <div class="form-group">
-							          <input type="text" name="usuario" placeholder="Nombre de usuario" required ='required' />
-							          <input type="password" name="clave" placeholder="Contraseña" required ='required' />
-							        </div>
-							        <button type="submit" class="btn btn-info">Ingresar</button>
-							      </form>
-							    </ul>
-							</div>
-						</div>
-					</nav> <!-- /#navbar -->
-
-
-				<!-- Slider -->
-				<section id="slider">
-					<div class="container-full">
-						<div class="slider">
-							<div id="main-slider" class="carousel slide">
-								<ol class="carousel-indicators">
-									<li data-target="#main-slider" data-slide-to="0" class="active"></li>
-									<li data-target="#main-slider" data-slide-to="1"></li>
-									<li data-target="#main-slider" data-slide-to="2"></li>
-									<li data-target="#main-slider" data-slide-to="3"></li>
-									<li data-target="#main-slider" data-slide-to="4"></li>
-								</ol> <!-- /#carousel-indicators -->
-
-								<!-- Carousel items -->
-								<div class="carousel-inner">
-									<div class="active item">
-										<div class="container slide-element">
-											<img src="img/phone.png" alt="">
-											<div class="content_slide">
-												<h2>Sistema Fondo Notarial</h2>
-												<p>Tenemos actualmente mas de <span class="alert alert-info">500,000</span> Escritura en Base de Datos</p>
-											</div>
-										</div>
-									</div>
-
-									<div class="item">
-										<div class="container slide-element">
-											<img src="img/phone_3.png" alt="">
-											<div class="content_slide">
-												<h2>Proyecto Registro Civil</h2>
-
-												<h1>Partidas Indexadas<span class="alert alert-info">876,362</span></h1>
-												<h1>Imagenes digitalizadas<span class="alert alert-info">1,456,873</span> imágenes</h1>
-											</div>
-										</div>
-									</div>
-
-									<div class="item">
-										<div class="container slide-element">
-											<img src="img/phone_4.png" alt="">
-											<div class="content_slide">
-												<h2>Sistema de Avance de metas</h2>
-												<p>Sistema desarrollado para reportar los avances diarios en un sistema para la toma de decisiones.</p>
-												<h1>En desarrollo</h1>
-												<em>El proyecto esta disponible en GitHub.com</em>
-
-											</div>
-										</div>
-									</div>
-
-									<div class="item">
-										<div class="container slide-element">
-											<img src="img/phone_5.png" alt="">
-											<div class="content_slide">
-												<h1>Proyecto Nemesis</h1>
-												<p>Es un proyecto desarrollado en PHP orientado hacia el Área de Recepción y Archivo Intermedio y Archivo Historico.</p>
-												<em>El proyecto esta disponible en github.com/nemesis</em>
-
-											</div>
-										</div>
-									</div>
-
-									<div class="item">
-										<div class="container slide-element">
-											<img src="img/phone_6.png" alt="">
-											<div class="content_slide">
-												<h1>Proyecto "Apolo"</h1>
-												<h2>Sistema de Control de Escrituras</h2>
-												<p>Es un sistema de Revisión de los ingresos de escrituras y verificar la calidad del ingreso por trabajador.</p>
-											</div>
-										</div>
-									</div>
-
-								</div> <!-- /#carousel-inner -->
-
-								<!-- Controls -->
-								<a class="carousel-control left" href="#main-slider" data-slide="prev"><i class="fa fa-angle-left"></i></a>
-								<a class="carousel-control right" href="#main-slider" data-slide="next"><i class="fa fa-angle-right"></i></a>
-
-							</div>
-						</div>
-					</div>
-				</section> <!-- /#slider -->
-			</header> <!-- /#header -->
-
-			<!-- about  -->
-			<section id="about">
-				<div class="container-full">
-					<div class="container">
-						<div class="row bm-remove animate" data-anim-type="zoomInUp">
-							<div class="about_content">
-								<div class="col-md-6">
-									<div class="imac">
-										<img src="img/imac.png" alt="">
-									</div>
-								</div>
-								<div class="col-md-6">
-									<div class="web_content">
-										<h1>Material de Consulta de Archivos</h1>
-										<h4>Lista de Documentos Archivisticos</h4>
-										<p>Se trata de una recoleccion de archivos puestos a disposicion de todos para informarse y contar con herramientas formativas, acordes a la realidad actual.</p>
-										<a class="btn btn-primary" href="documentos.html">Ver Lista de Documentos</a>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> <!-- /about  -->
-
-			<!-- Promotional video -->
-			<section id="promotion">
-				<div class="container-full">
-					<div class="container">
-						<div class="bm-remove animate" data-anim-type="zoomInUp">
-							<div class="col-md-6">
-								<div class="promotion_content " data-anim-type="fadeInLeft">
-									<h1>Los Archivos Nacionales</h1>
-									<h4>Conservación de Patrimonio Cultural</h4>
-									<p>Una rapida vision sobre la Conservación de Patrimonio Cultural, como parte de nuestro legado y patrimonio cultural.</p>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="ifarem embed-responsive embed-responsive-4by3">
-									<iframe class="embed-responsive-item" width="520" height="345"
-									src="https://www.youtube.com/embed/rVzs99n4lKQ"></iframe>">
-									</iframe>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</div>
-			</section> <!-- /#promotion -->
-
-			<!-- Start testimonial-clients section -->
-			<section id="testimonial-clients">
-				<!-- Start testimonial -->
-				<div id="testimonial">
-					<div class="container-full">
-						<div class="container">
-							<div class="row bm-remove animate" data-anim-type="fadeInLeft">
-								<div class="col-md-12">
-									<h1 class="text-center">“</h1>
-									<h2>“Los documentos y la información son como un testigo: habla sólo si sele interroga.”</h2>
-									<div class="designer text-center">
-										<div class="clint">
-											<img src="img/Marc_Bloch.jpg" alt="">
-										</div>
-										<div class="info">
-											<h3>Marc Bloch</h3>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- End testimonial -->
-
-
-			</section>
-			<!-- End testimonial-clients section -->
-
-			<!-- Twitter Feed -->
-			<section id="contact">
-				<div class="container-full">
-					<div class="bm-remove animate" data-anim-type="fadeInLeft">
-
-						<div class="carousel slide" id="tweet-carousel">
-							<div class="carousel-inner">
-								<div class="item active" id="slide1">
-									<div class="container">
-										<div class="content text-center">
-											<a href="#"><i class="fa fa-twitter"></i></a>
-											<h1>La conservación preventiva</h1>
-											<p>“La conservación preventiva: una acción eficiente para combatir los agresores del patrimonio documental en los centros de información.”</p>
-											<p>Lic. Yasminda Rodríguez Hernández</p>
-										</div>
-									</div>
-								</div><!-- end item -->
-
-						</div><!-- /#TwitterCarousel -->
-
-					</div>
-				</div>
-			</section> <!-- /#Twitter Feed -->
-
-			<!-- footer top -->
-			<footer id="footer-top">
-				<div class="container-full">
-					<div class="container">
-						<div class="row bm-remove animate" data-anim-type="bounceIn">
-							<div class="footer-text">
-								<h1>Conservación Documental</h1>
-								<p>“Conservación de documentos. Comprende las estrategias y técnicas específicas, relativas a la protección de los materiales tanto impresos como digitales, custodiados en archivos, bibliotecas, mediatecas, frente al deterioro, los daños y el abandono de los documentos.<br />
-								El término conservación, en el ámbito de los archivos y bibliotecas, hace referencia a todas aquellas medidas destinadas a proteger adecuadamente los documentos, con el fin de prolongar su utilización en condiciones óptimas durante el mayor tiempo posible.”</p>
-								<a href="#contact" class="btn btn-red">Leer mas</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</footer> <!-- footer-top -->
-
-			<!-- footer -->
-			<footer id="footer">
-				<div class="container-full">
-					<div class="container">
-						<div class="bm-remove animate" data-anim-type="fadeInDownLarge">
-							<div class="col-xs-12 col-sm-6 col-md-6">
-								<div class="socile">
-									<ul>
-										<li><a href="graygrids"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="graygrids"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="musharrof"><i class="fa fa-dribbble"></i></a></li>
-										<li><a href="#"><i class="fa fa-rss"></i></a></li>
-									</ul>
-									<a href="#">/AREA INFORMATICA - 2016</a>
-								</div>
-
-							</div>
-							<div class="col-xs-12 col-sm-6 col-md-6">
-							<div class="float_right">
-								<p>© Developed by Edgar Apaza Choque </p>
-							</div>
-
-							</div>
-						</div>
-						<div class="span1">
-							<a id="gototop" class="gototop pull-right" href="#"><i class="icon-angle-up"></i></a>
-						</div>
-					</div>
-				</div>
-			</footer> <!-- /#footer -->
-
-		<script src="js/vendor/jquery-1.10.2.min.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/animations.min.js"></script>
-        <script src="js/jquery.scrollUp.min.js"></script>
-        <script src="js/lightbox.min.js"></script>
-        <script src="js/smoothscroll.js"></script>
-        <script src="js/visible.min.js"></script>
-        <script src="js/jquery.nav.js"></script>
-
-    </body>
 </html>

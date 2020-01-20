@@ -23,7 +23,7 @@
 					break;
 				case 11: #Administrador de Grupos
 					$_SESSION['admin'] = $data['id_personal'];
-					header("Location: ../moduloB/index.php");
+					header("Location: ../moduloC/index.html");
 					break;
 				case 12: #Estadisticas
 					$_SESSION['estadisticas'] = $data['id_personal'];

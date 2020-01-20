@@ -1,33 +1,33 @@
 <?php
+include_once "Conexion.php";
 
-/**
-*
-*/
-	class Persona
+class Persona
 	{
-		private $mysqli;
+		private $conn;
 
 		function __construct()
 		{
-			require_once "../coreB/Conexion.php";
-			$conn = new Conexion();
-			$this->mysqli = $conn->Conectar();
-			return $this->mysqli;
+			$link = new Conexion();
+			$this->conn = $link->Conectar();
+			return $this->conn;
 		}
 
 		function Add($cargo,$oficina,$institucion,$nombre,$paterno,$materno,$dni,$celular,$telcasa,$email,$direccion,$barrio,$gs,$foto){
 			$sql= "INSERT INTO personal VALUES(null,$cargo,$oficina,$institucion,'$nombre','$paterno','$materno','$dni','$celular','$telcasa','$email','$direccion','$barrio','$gs',null)";
-			$this->mysqli->query($sql);
+			$this->conn->query($sql);
+			$this->conn->close();
 		}
 
 		function Remove($idpersonal){
 			$sql= "DELETE FROM personal WHERE id_personal = $idpersonal LIMIT 1";
-			$this->mysqli->query($sql);
+			$this->conn->query($sql);
+			$this->conn->close();
 		}
 
 		function Edit($cargo,$oficina,$institucion,$celular,$telcasa,$email,$direccion,$barrio){
 			$sql= "UPDATE personal SET id_cargo = $cargo, id_oficina = $oficina, id_institucion = $institucion, celular = '{$celular}', telcasa = '{$telcasa}',email = '{$email}', direccion = '{$direccion}', barrio = '{$barrio}'";
-			$this->mysqli->query($sql);
+			$this->conn->query($sql);
+			$this->conn->close();
 		}
 
 		function EditFoto($foto){
@@ -36,16 +36,18 @@
 
 		function MostrarTodo(){
 			$sql= "SELECT * FROM personal ORDER BY paterno;";
-			$datos = $this->mysqli->query($sql);
+			$datos = $this->conn->query($sql);
 
 			return $datos;
+			$this->conn->close();
 		}
 
 		function MostrarPersona($idpersonal){
 			$sql = "SELECT CONCAT(nombre,' ', paterno,' ',materno) AS personal FROM personal WHERE id_personal = $idpersonal;";
-			$data1 = $this->mysqli->query($sql);
-			$data = $data1->fetch_assoc();
+			$data1 = $this->conn->query($sql);
+			$data = $data1->fetch_array(MYSQLI_ASSOC);
 			return $data;
+			$this->conn->close();
 		}
 	}
 
