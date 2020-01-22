@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['total']))
+if(!isset($_SESSION['total']))
 {
 	include_once "views/header.php";
  ?>
