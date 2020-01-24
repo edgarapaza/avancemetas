@@ -1,7 +1,6 @@
 <?php 
 require("../models/institucion.model.php");
 
-
 $nombre_inst = $_POST['nom_institucion'];
 $direccion = $_POST['direccion'];
 $telefono = $_POST['telefono'];
