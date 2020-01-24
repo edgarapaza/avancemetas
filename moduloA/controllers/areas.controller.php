@@ -1,14 +1,16 @@
 <?php
-include "../Models/areas.model.php";
+require("../models/areas.model.php");
+
+$nombre = trim(strtoupper($_POST['nombre']));
+$id_metas = trim($_POST['id_metas']);
+
+$descripcion = trim(strtoupper($_POST['descripcion']));
 
 $areas = new Areas();
-$data = $areas->Consultar();
+$areas->Guardar($nombre,$id_metas,$descripcion);
 
-while ($fila = $data->fetch_array()) {
-	echo $fila[0];
-	echo $fila[1];
-	echo $fila[2];
-}
+header("Location: ../index.php");
+
 
 /*
 class Barbie
