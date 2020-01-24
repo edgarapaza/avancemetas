@@ -5,9 +5,8 @@ require("../moduloA/models/institucion.model.php");
 
 $metas = new Metas();
 $data = $metas->Consultar();
-
 $institucion = new Institucion();
-$data = $institucion->Consultar();
+$datos = $institucion->Consultar();
 
 
 ?>
@@ -48,9 +47,9 @@ $data = $institucion->Consultar();
 				<select name="id_institucion" id="" class="form-control">
 			     	<option value="0" selected="selected">Select</option>
 					<?php 
-					while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					 ?>
+					while ($fila = $datos->fetch_array(MYSQLI_ASSOC)) {					 ?>
 
-					 <option value="<?php echo $fila['id_institucion']; ?>"><?php echo $fila['nombre_inst']. "-" . $fila['programado'];?></option>
+					 <option value="<?php echo $fila['id']; ?>"><?php echo $fila['nombre_inst'];?></option>
 					<?php } ?>
 				</select>
 			</div>
@@ -58,4 +57,5 @@ $data = $institucion->Consultar();
 			<button type="submit" class="btn btn-primary">enviar</button>
 		</form>
 </body>
+
 </html>

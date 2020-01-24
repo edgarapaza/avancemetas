@@ -32,7 +32,11 @@ class Institucion
 
 	public function Consultar()
 	{
-		
+		$sql = "SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,fecha_creacion_archivo,n_resolucion,id_metas,fecha_create,fecha_update FROM institucion; ";
+
+		$response = $this->conn->query($sql);
+
+		return $response;
 	}
 
 	public function CrearOficinas()

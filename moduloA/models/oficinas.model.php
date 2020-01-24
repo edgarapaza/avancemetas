@@ -31,9 +31,8 @@ class Oficinas
 
 	public function Consultar()
 	{
-		$sql= "SELECT id,nombre_of, f_creacion, id_metas, id_institucion from oficinas";
-
-		//$sql = "SELECT * FROM oficinas";
+		$sql = "SELECT id, nombre_of, id_metas,id_institucion, f_creacion,f_update FROM oficinas;";
+		
 		$response = $this->conn->query($sql);
 
 		return $response;

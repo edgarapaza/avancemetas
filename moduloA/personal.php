@@ -59,7 +59,7 @@ $data1 = $oficinas->Consultar()
 			</div>
 			<div class="form-group">
 				<label for="">foto:</label>
-				<input type="blob" class="form-control" id="" name="foto" placeholder="foto">
+				<input type="file" class="form-control" id="" name="foto" placeholder="foto">
 			</div>
 
 			<div class="form-oto for=">

@@ -12,12 +12,11 @@ class Personal
 		return $this->conn;
 	}
 
-	public function Guardar($nombre,$apellidos,$sexo,$telefono,$fecha_nac,$email,$foto,$id_area,$f_creacion,$id_oficinas)
+	public function Guardar($nombre,$apellidos,$sexo,$telefono,$fecha_nac,$email,$foto,$id_area, $id_oficinas)
 	{
-		//$fechaActual = date('Y-m-d H:i:s');
+		$fechaActual = date('Y-m-d H:i:s');
 
-		$sql = "INSERT INTO personal VALUES (null,'$nombre','$apellidos','$sexo,'$telefono','$fecha_nac','$email','$foto','$id_area','$f_creacion','$id_oficinas');
-";
+		$sql = "INSERT INTO personal VALUES (null,'$nombre','$apellidos','$sexo','$telefono','$fecha_nac','$email','null','$id_area','$fechaActual','$fechaActual','$id_oficinas');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
@@ -46,3 +45,5 @@ class Personal
 		
 	}
 }
+
+
