@@ -1,3 +1,11 @@
+<?php
+require("../moduloA/models/metas.model.php");
+
+$metas = new Metas();
+$data = $metas->Consultar();
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +54,11 @@
 				<label for="">Metas:</label>
 				<select name="idmetas" id="" class="form-control">
 					<option value="0" selected="selected">Select</option>
+					<?php 
+					while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					 ?>
+
+					 <option value="<?php echo $fila['id_metas']; ?>"><?php echo $fila['nombre_meta']. "-" . $fila['programado'];?></option>
+					<?php } ?>
 				</select>
 			</div>
 			<div class="form-group">
