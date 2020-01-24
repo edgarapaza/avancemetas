@@ -1,7 +1,7 @@
 <?php
 require_once("Conexion.php");
 
-class AdPersonal
+class JefeArea
 {
 	private $conn;
 
@@ -12,17 +12,16 @@ class AdPersonal
 		return $this->conn;
 	}
 
-	public function Guardar($profesion,$tiempo_servicio,$condicion,$seguro_social,$grupo_sanguineo,$f_ingreso,$f_deceso)
+	public function Guardar($id_personal','$id_areas)
 	{
 
-		$sql = "INSERT INTO datospersonal VALUES (null, '$profesion','$tiempo_servicio' ,'$condicion' ,'$seguro_social' ,'$grupo_sanguineo' ,'$f_ingreso' ,'$f_deceso ')";
-
+		$sql = "INSERT INTO jefe_area VALUES(null,'$id_personal','$id_areas) ;";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
-		return true
+		return true;
 	}
 
 	public function Modificar()
@@ -32,7 +31,7 @@ class AdPersonal
 
 	public function Consultar()
 	{
-		sql
+		
 	}
 
 	public function CrearOficinas()

@@ -12,10 +12,10 @@ class Cargo
 		return $this->conn;
 	}
 
-	public function Guardar($id_jefearea,$nombre_cargo,$id_persona,$f_inicio_cargo,$f_fin_cargo,$documento)
+	public function Guardar($nombre_cargo,$id_persona,$f_inicio_cargo,$f_fin_cargo,$documento)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO cargos VALUES(null,'$id_jefearea','$nombre_cargo','$id_personal','$f_inicio_cargo','$f_fin_cargo','$documento')";
+		$sql = "INSERT INTO cargos VALUES(null,'$nombre_cargo','$id_personal','$f_inicio_cargo','$f_fin_cargo','$documento')";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error();

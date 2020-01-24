@@ -12,4 +12,5 @@ $f_deceso = $_POST['f_deceso'];
 $adper = new AdPersonal();
 $adper->Guardar($profesion,$tiempo_servicio,$condicion,$seguro_social,$grupo_sanguineo,$f_ingreso,$f_deceso);
 
+echo "hola";
 header("Location: ../index.php");
