@@ -17,7 +17,6 @@ class AdPersonal
 
 		$sql = "INSERT INTO datospersonal VALUES (null, '$profesion','$tiempo_servicio' ,'$condicion' ,'$seguro_social' ,'$grupo_sanguineo' ,'$f_ingreso' ,'$f_deceso ')";
 
-
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
 			exit();
@@ -32,7 +31,11 @@ class AdPersonal
 
 	public function Consultar()
 	{
-		sql
+		$sql = "SELECT id_adpersonal, profesion,tiempo_servicio,condicion,seguro_social,grupo_sanguineo,f_ingreso,f_deceso FROM datospersonal;";
+
+		$response = $this->conn->query($sql);
+
+        return $response;
 	}
 
 	public function CrearOficinas()
@@ -40,3 +43,4 @@ class AdPersonal
 		
 	}
 }
+/*fbdfghfg*/
