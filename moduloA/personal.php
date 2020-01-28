@@ -92,7 +92,7 @@ $data1 = $oficinas->Consultar()
 			</div>
 				
 			<button type="submit" class="btn btn-primary">enviar</button>
-          	<button type="submit" class="btn btn-success"> <a href="ad_personal.html">Otros Datos</a></button>
+    
 
 		</form>
 		</div>

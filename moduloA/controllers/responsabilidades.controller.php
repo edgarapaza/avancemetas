@@ -8,8 +8,8 @@ $unidad_medida = $_POST['unidad_medida'];
 $id_personal = $_POST['id_personal'];
 $id_jefearea = $_POST['id_jefearea'];
 
-$responsabilidades= new Resposabilidades();
-$responsabilidades->Guardar($id_oficinas,$id_areas);
+$responsabilidades= new Responsabilidades();
+$responsabilidades->Guardar($nomb_resp,$f_inicio_respo,$documento,$unidad_medida,$id_personal,$id_jefearea);
 header("Location: ../index.php");
 
 

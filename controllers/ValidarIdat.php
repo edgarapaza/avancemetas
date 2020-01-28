@@ -5,6 +5,6 @@ $passwd = $_POST['clave'];
 
 printf("Usuario: %s con Contraseña: %s", $username, $passwd);
 
-header("Location: ../moduloA/index.php");
+//header("Location: ../moduloA/index.php");
 
 ?>

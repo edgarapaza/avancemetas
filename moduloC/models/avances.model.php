@@ -1,5 +1,5 @@
 <?php
-require("Conexion.php");
+require_once("Conexion.php");
 
 class Reportes
 {
@@ -12,16 +12,18 @@ class Reportes
 		return $this->conn;
 	}
 
-	public function Guardar($d_personal,$id_responsabilidades,$f_reportes ,$cantidad_avance)
+	public function Guardar($id_personal,$id_responsabilidades,$f_reportes,$cantidad_avance)
 	{
-		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO reportes VALUES (null,'$id_personal,$id_responsabilidades,$f_reportes,$cantidad_avance)";
+		
+		$sql = "INSERT INTO reportes VALUES (null,'$id_personal','$id_responsabilidades','$f_reportes','$cantidad_avance');";
 	
 		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error();
+			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
-		return true;
+
+		echo "Guardado Satisfactoriamente";
+		
 	}
 
 	public function Modificar()
@@ -31,7 +33,15 @@ class Reportes
 
 	public function Consultar()
 	{
+		$sql = "SELECT id_reportes, id_personal, id_responsabilidades, f_reportes, cantidad_avance FROM reportes;";
 		
+		if(!$response = $this->conn->query($sql))
+		{
+			echo "Error Mostrar Resultados: " . mysqli_error($this->conn);
+			exit();
+		}
+
+		return $response;
 	}
 
 	public function CrearOficinas()
@@ -39,4 +49,3 @@ class Reportes
 		
 	}
 }
-

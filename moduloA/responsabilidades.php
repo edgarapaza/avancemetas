@@ -1,12 +1,13 @@
 <?php
 require("../moduloA/models/personal.model.php");
-//require("../moduloA/models/jefe_area.model.php");
+require("../moduloA/models/jefe_area.model.php");
 
 $personal = new Personal();
 $data = $personal->Consultar();
-/*
+
 $jefearea = new JefeArea();
-$data1 = $jefearea->Consultar()*/
+$data1 = $jefearea->Consultar();
+$jefeAreas = $jefearea->ConsultaJefeArea();
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@ $data1 = $jefearea->Consultar()*/
 
 			<div class="form-group">
 				<label for="">Nombre Responsabliades:</label>
-				<input type="text" class="form-control" id="" name="nombre_resp" placeholder="Nombre Responsabliades">
+				<input type="text" class="form-control" id="" name="nomb_resp" placeholder="Nombre Responsabliades">
 			</div>
 			<div class="form-group">
 				<label for="">Fecha Inicio de Responsabilidades:</label>
@@ -40,7 +41,15 @@ $data1 = $jefearea->Consultar()*/
 			</div>
 			<div class="form-group">
 				<label for="">Unidad de Medidad:</label>
-				<input type="text" class="form-control" id="" name="unidad_medidad" placeholder="Unidad de Medidad">
+				
+				<select name="unidad_medida" class="form-control">
+					<option value="0" selected="selected">[Seleccionar]</option>
+					<option value="Unidad">Unidad</option>
+					<option value="Metros Lineales">Metros Lineales</option>
+					<option value="Moneda">Moneda</option>
+					<option value="Porcentaje">Porcentaje</option>
+										
+				</select>
 			</div>
 			<div class="form-oto for=">
 				<label for="">Personal:</label>
@@ -49,21 +58,25 @@ $data1 = $jefearea->Consultar()*/
 						<?php 
 							while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					
 					    ?>
-					<option value="<?php echo $fila['id_personal']; ?>"><?php echo $fila['nombre'];?></option>
+					<option value="<?php echo $fila['id_personal']; ?>">
+						<?php echo $fila['nombre'] ." ".$fila['apellidos']; ?>		
+					</option>
 								<?php } ?>
 				</select>
 			</div>
-			<!--<div>
-				<label for="">jefeare4as:</label>
+			<div>
+				<label for="">Jefe de Area:</label>
 				<select name="id_jefearea" id="" class="form-control">
 					<option value="0" selected="selected">Select</option>
 						<?php 
-							while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					
+							while ($fila = $jefeAreas->fetch_array(MYSQLI_ASSOC)) {					
 					    ?>
-					<option value="<?php echo $fila['id_jefearea']; ?>"><?php echo $fila['id_personal'];?></option>
+					<option value="<?php echo $fila['id_jefearea']; ?>">
+						<?php 
+						echo $fila['nombre']. " ". $fila['apellidos']. "(". $fila['id_jefearea'].")";?></option>
 								<?php } ?>
 				</select>
-			</div>-->
+			</div>
 			
 			<button type="submit" class="btn btn-primary">enviar</button>
 		</form>

@@ -35,7 +35,10 @@ class Personal
 		$sql = "SELECT id_personal,nombre,apellidos,sexo,telefono,fecha_nac,email,foto,id_area,f_creacion,id_oficinas FROM personal";
 		//$sql ="SELECT * FROM personal";
 
-		$response = $this->conn->query($sql);
+		if(!$response = $this->conn->query($sql)){
+			echo "Error: ". mysqli_error($this->conn);
+			exit();
+		}
 
 		return $response;
 	}

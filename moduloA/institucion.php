@@ -64,11 +64,7 @@ $data = $metas->Consultar();
 				<label for="">Numero de resolucion:</label>
 				<input type="text" class="form-control" id="" name="N_resolucion" placeholder="Numero de resolucion">
 			</div>
-			<div class="form-group">
-				<label for="">Fecha de creacion de datos:</label>
-				<input type="date" class="form-control" id="" name="Fecha_creacion_datos" placeholder="Fecha de creacion de datos">
-				
-			</div>
+			
 			
 			<button type="submit" class="btn btn-primary">enviar</button>
           

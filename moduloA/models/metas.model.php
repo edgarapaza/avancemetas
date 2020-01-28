@@ -14,9 +14,14 @@ class Metas
 
 	public function Guardar($nombre_meta,$programado,$unidad_medida)
 	{
-		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida')";
+		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida');";
 
 		
+		if(!$this->conn->query($sql)){
+			echo "Error: " . mysqli_error($this->conn);
+			exit();
+		}
+		return true;
 	}
 
 	public function Modificar()

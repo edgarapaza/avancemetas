@@ -18,7 +18,7 @@ class Oficinas
 		$sql = "INSERT INTO oficinas VALUES (null,'$nombre_of','$fechaActual','$fechaActual','$id_metas','$id_institucion')";
 
 		if(!$this->conn->query($sql)){
-			
+			echo "Error: " . mysqli_error();
 			exit();
 		}
 		return true;

@@ -1,7 +1,7 @@
 <?php
 require_once("Conexion.php");
 
-class Responabilidades
+class Responsabilidades
 {
 	private $conn;
 
@@ -14,10 +14,10 @@ class Responabilidades
 
 	public function Guardar($nomb_resp,$f_inicio_respo,$documento,$unidad_medida,$id_personal,$id_jefearea)
 	{
-		$sql = "INSERT INTO resposabilidaddes VALUES (null,$nomb_resp,$f_inicio_respo,$documento,$unidad_medida,$id_personal,$id_jefearea ')";
+		$sql = "INSERT INTO responsabilidades VALUES (null,'$nomb_resp','$f_inicio_respo','$documento','$unidad_medida','$id_personal','$id_jefearea ');";
 
 		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error();
+			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
 		return true;
@@ -30,7 +30,11 @@ class Responabilidades
 
 	public function Consultar()
 	{
-		
+		$sql = "SELECT id_responsabilidades,nomb_resp,f_inicio_respo,documento,unidad_medida,id_personal,id_jefearea FROM responsabilidades;";
+
+		$response = $this->conn->query($sql);
+
+		return $response;
 	}
 
 	public function CrearOficinas()

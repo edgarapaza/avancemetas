@@ -34,12 +34,17 @@ class Areas
     {
 
         $sql = "SELECT id_areas, nombre, id_metas, descripcion,f_creacion,f_update from areas;";
-        $response = $this->conn->query($sql);
+        
+        if(!$response = $this->conn->query($sql)){
+            echo "Error: " . mysqli_error($this->conn);
+            exit();
+        }
 
         return $response;
 
     }
 
+    
     public function CrearOficinas()
     {
         
