@@ -1,10 +1,9 @@
 <?php
-require("../moduloA/models/metas.model.php");
+require("../moduloA/models/jefe_area.model.php");
 
-$metas = new Metas();
-$data = $metas->Consultar();
+$cargo = new JefeArea();
+$data = $cargo->Consultar();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,16 +16,27 @@ $data = $metas->Consultar();
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
-	<CENTER><h1>CARGO</h1></CENTER>
+	<div class="container">
+		
+		<div class="row">
+			
+		<CENTER><h1>CARGO</h1></CENTER>
 		<form action="controllers/cargos.controller.php" method="POST" role="form">
 			<legend>Registro de Cargos</legend>
             <div class="form-group">
 				<label for="">Jefe de Area:</label>
+
 				<select name="id_jefearea" id="" class="form-control">
-					<option value="0" selected="selected">Select</option>}
-					option
+					<option value="0" selected="selected">Select</option>
+					<?php 
+					while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					 ?>
+
+					 <option value="<?php echo $fila['id_jefearea']; ?>"><?php echo $fila['id_jefearea'];?></option>
+					<?php } ?>
 				</select>
+
 			</div>
+		-
 			<div class="form-group">
 				<label for="">Nombre Cargo:</label>
 				<input type="text" class="form-control" id="" name="nombre_cargo" placeholder="Nombre Cargo">
@@ -34,10 +44,15 @@ $data = $metas->Consultar();
 			<div class="form-group">
 				<label for="">Personal:</label>
 				<select name="id_personal" id="" class="form-control">
-					<option value="0" selected="selected">Select</option>}
-					option
+					<option value="0" selected="selected">Select</option>
+					<?php 
+					while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					 ?>
+
+					 <option value="<?php echo $fila['id_jefearea']; ?>"><?php echo $fila['id_personal'];?></option>
+					<?php } ?>
 				</select>
 			</div>
+		
 			<div class="form-group">
 				<label for="">Fecha Inicio de Cargo:</label>
 				<input type="date" class="form-control" id="" name="f_inicio_cargo" placeholder="Fecha Inicio de Cargos">
@@ -52,6 +67,10 @@ $data = $metas->Consultar();
 			</div>
 			
 			<button type="submit" class="btn btn-primary">enviar</button>
-		</form>
+		</form>		
+		</div>
+	</div>
+
+	
 </body>
 </html>

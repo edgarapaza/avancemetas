@@ -1,7 +1,7 @@
 <?php
 require_once("Conexion.php");
 
-class Cargo
+class Oficinas
 {
 	private $conn;
 
@@ -12,13 +12,13 @@ class Cargo
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_cargo,$id_persona,$f_inicio_cargo,$f_fin_cargo,$documento)
+	public function Guardar($nombre_of,$id_metas,$id_institucion)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO cargos VALUES(null,'$nombre_cargo','$id_personal','$f_inicio_cargo','$f_fin_cargo','$documento')";
+		$sql = "INSERT INTO oficinas VALUES (null,'$nombre_of','$fechaActual','$fechaActual','$id_metas','$id_institucion')";
 
 		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error();
+			
 			exit();
 		}
 		return true;
@@ -31,7 +31,11 @@ class Cargo
 
 	public function Consultar()
 	{
+		$sql = "SELECT id, nombre_of, id_metas,id_institucion, f_creacion,f_update FROM oficinas;";
 		
+		$response = $this->conn->query($sql);
+
+		return $response;
 	}
 
 	public function CrearOficinas()

@@ -1,7 +1,7 @@
 <?php
 require_once("Conexion.php");
 
-class Institucion
+class Personal
 {
 	private $conn;
 
@@ -12,11 +12,11 @@ class Institucion
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_inst,$direccion,$telefono,$RUC,$email,$p_web,$fecha_creacion_archivo,$id_metas,$n_resolucion)
+	public function Guardar($nombre,$apellidos,$sexo,$telefono,$fecha_nac,$email,$foto,$id_area, $id_oficinas)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 
-		$sql = "INSERT INTO institucion VALUES (null,'$nombre_inst','$direccion','$telefono','$RUC','$email','$p_web','$fecha_creacion_archivo','$n_resolucion','$id_metas','$fechaActual','$fechaActual');";
+		$sql = "INSERT INTO personal VALUES (null,'$nombre','$apellidos','$sexo','$telefono','$fecha_nac','$email','null','$id_area','$fechaActual','$fechaActual','$id_oficinas');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
@@ -32,7 +32,8 @@ class Institucion
 
 	public function Consultar()
 	{
-		$sql = "SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,fecha_creacion_archivo,n_resolucion,id_metas,fecha_create,fecha_update FROM institucion; ";
+		$sql = "SELECT id_personal,nombre,apellidos,sexo,telefono,fecha_nac,email,foto,id_area,f_creacion,id_oficinas FROM personal";
+		//$sql ="SELECT * FROM personal";
 
 		$response = $this->conn->query($sql);
 
@@ -44,3 +45,5 @@ class Institucion
 		
 	}
 }
+
+

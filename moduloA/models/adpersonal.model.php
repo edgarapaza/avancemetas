@@ -14,16 +14,14 @@ class AdPersonal
 
 	public function Guardar($profesion,$tiempo_servicio,$condicion,$seguro_social,$grupo_sanguineo,$f_ingreso,$f_deceso)
 	{
-		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO datospersonal (id_adpersonal,profesion,tiempo_servicio,condicion,seguro_social,grupo_sanguineo,f_ingreso,f_deceso)
-		VALUES (null, '$id_adpersonal' ,'$profesion','$tiempo_servicio' ,'$condicion' ,'$seguro_social' ,'$grupo_sanguineo' ,'$f_ingreso' ,'$f_deceso ')";
 
+		$sql = "INSERT INTO datospersonal VALUES (null, '$profesion','$tiempo_servicio' ,'$condicion' ,'$seguro_social' ,'$grupo_sanguineo' ,'$f_ingreso' ,'$f_deceso ')";
 
 		if(!$this->conn->query($sql)){
-			echo "Error: " . error_reporting(E_ALL);
+			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
-		return true;
+		return true
 	}
 
 	public function Modificar()
@@ -33,7 +31,11 @@ class AdPersonal
 
 	public function Consultar()
 	{
-		
+		$sql = "SELECT id_adpersonal, profesion,tiempo_servicio,condicion,seguro_social,grupo_sanguineo,f_ingreso,f_deceso FROM datospersonal;";
+
+		$response = $this->conn->query($sql);
+
+        return $response;
 	}
 
 	public function CrearOficinas()
@@ -41,3 +43,4 @@ class AdPersonal
 		
 	}
 }
+/*fbdfghfg*/

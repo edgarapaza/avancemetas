@@ -9,28 +9,28 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
-	<CENTER><h1>JEFE DE AREA</h1></CENTER
->		<form action="" method="POST" role="form">
-			<legend>Completa el formulario</legend>
-		
+	<div class="container">
+		<div class="row">
+			<CENTER><h1>METAS</h1></CENTER>
+		<form action="../moduloA/controllers/metas_controller.php" method="POST" role="form">
+			<legend>Registro de Metas</legend>
+
 			<div class="form-group">
-				<label for="">Persona</label>
-				<select name="id_personal" id="" class="form-control">
-					<option value="0" selected="selected">Select</option>}
-					option
-				</select>
+				<label for="">Nombre Metas:</label>
+				<input type="text" class="form-control" id="" name="nombre_meta" placeholder="Nombre Metas">
 			</div>
 			<div class="form-group">
-				<label for="">Area:</label>
-				<select name="id_areas" id="" class="form-control">
-					<option value="0" selected="selected">Select</option>}
-					option
-				</select>
-					
+				<label for="">Programado:</label>
+				<input type="text" class="form-control" id="" name="programado" placeholder="Programado">
 			</div>
 			
+			<div class="form-group">
+				<label for="">Unidad de Medida:</label>
+				<input type="text" class="form-control" id="" name="unidad_medida" placeholder="Unidad de Medida">
+			</div>
 			<button type="submit" class="btn btn-primary">enviar</button>
-          
 		</form>
+		</div>
+	</div>
 </body>
 </html>

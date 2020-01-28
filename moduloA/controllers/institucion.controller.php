@@ -1,4 +1,4 @@
-<?php 
+	<?php 
 require("../models/institucion.model.php");
 
 $nombre_inst = trim(strtoupper($_POST['nom_institucion']));

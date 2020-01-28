@@ -1,7 +1,7 @@
 <?php
 require_once("Conexion.php");
 
-class Cargo
+class JefeArea
 {
 	private $conn;
 
@@ -12,13 +12,13 @@ class Cargo
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_cargo,$id_persona,$f_inicio_cargo,$f_fin_cargo,$documento)
+	public function Guardar($id_personal','$id_areas)
 	{
-		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO cargos VALUES(null,'$nombre_cargo','$id_personal','$f_inicio_cargo','$f_fin_cargo','$documento')";
+
+		$sql = "INSERT INTO jefe_area VALUES(null,'$id_personal','$id_areas) ;";
 
 		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error();
+			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
 		return true;
