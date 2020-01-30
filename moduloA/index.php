@@ -1,26 +1,9 @@
+<?php include_once("header.php"); ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta mane="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../css/style.css">
-	<title>Administrator</title>
-</head>
-<body>
-	<header class="container text-center espacio"><h2>correcto</h2></header>
-	
+  <div class="content">
+    <div class="container-fluid">
+         <div id="cuerpo"></div>
+    </div>
+  </div>
 
-
-
-
-
-
-				</div>
-			</div>
-		</div>
-	</section>
-</body>
-</html>
-
+<?php include_once("footer.php"); ?>
