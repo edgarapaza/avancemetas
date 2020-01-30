@@ -27,13 +27,14 @@ class Personal
 
 	public function Modificar()
 	{
-		$sql = "UPDATE personal SET id_personal, nombre, apellidos, sexo ,telefono ,fecha_nac ,email ,foto ,id_area,f_creacion ,f_update,id_oficinas  WHERE id_personal;";
-
+		$sql = "UPDATE personal SET nombre = nombre, apellidos = apellidos, sexo = sexo, telefono = telefono, fecha_nac = fecha_nac, email = mail, foto = foto, id_area = id_area, f_creacion = f_creacion, f_update = f_update, id_oficinas = id_oficinas WHERE id_personal =id_personal;";
+		
 		if(!$this->conn->query($sql)){
-			echo "Error: " . mysql_error($this->coon);
+			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
 		return true;
+		
 	}
 
 	public function Consultar()

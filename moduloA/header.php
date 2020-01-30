@@ -67,8 +67,6 @@ session_start();
           </li>
           <li class="nav-item ">
             
-<<<<<<< HEAD
-=======
             <a class="nav-link" href="#" id="crear_cargos">
               <i class="material-icons">home</i>
               <p>Crear Cargo</p>
@@ -101,7 +99,6 @@ session_start();
               <i class="material-icons">report</i>
               <p>Estadisticas por Areas</p>
             </a>
->>>>>>> 93beeda8b3432632b9301cacecf85f827f47c467
 
           </li>
           <!-- your sidebar here -->
