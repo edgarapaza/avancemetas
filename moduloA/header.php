@@ -39,18 +39,67 @@ session_start();
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
+
           <li class="nav-item active  ">
             
-            <a class="nav-link" href="#0">
+            <a class="nav-link" href="#" id="">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
 
-            <a href="#" class="nav-link" id="institucion" >
-              <i class="material-icons">Metas</i>
-              <p>Metas</p>
-            </a>
+          </li>
+          <li class="nav-item ">
             
+            <a href="#" class="nav-link" id="institucion" >
+              <i class="material-icons">room</i>
+              <p>Institucion</p>
+            </a>
+
+          </li>
+          
+          <li class="nav-item ">
+            
+            <a class="nav-link" href="#" id="crear_oficinas">
+              <i class="material-icons">home</i>
+              <p>Crear ofinas</p>
+            </a>
+  
+          </li>
+          <li class="nav-item ">
+            
+            <a class="nav-link" href="#" id="crear_cargos">
+              <i class="material-icons">home</i>
+              <p>Crear Cargo</p>
+            </a>
+  
+          </li>
+          <li class="nav-item  ">
+            <a href="#" class="nav-link" id="agregar_personal" >
+              <i class="material-icons">person</i>
+              <p>Agregar Personal</p>
+            </a>
+
+          </li>
+          <li class="nav-item  ">
+            <a href="#" class="nav-link" id="agregar_metas" >
+              <i class="material-icons">book</i>
+              <p>Agregar Metas</p>
+            </a>
+
+          </li>
+          <li class="nav-item  ">
+            <a href="#" class="nav-link" id="estadisticas_oficinas" >
+              <i class="material-icons">table</i>
+              <p>Estadisticas por oficinas</p>
+            </a>
+
+          </li>
+          <li class="nav-item  ">
+            <a href="#" class="nav-link" id="estadisticas_areas" >
+              <i class="material-icons">report</i>
+              <p>Estadisticas por Areas</p>
+            </a>
+
           </li>
           <!-- your sidebar here -->
         </ul>

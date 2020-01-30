@@ -1,5 +1,5 @@
 <?php
-require_once("../../core/Conexion.php");
+require_once("Conexion.php");
 
 class Institucion
 {
