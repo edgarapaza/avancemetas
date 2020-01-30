@@ -1,15 +1,11 @@
 <?php
-
-/**
-*
-*/
+require_once("Conexion.php");
 	class Persona
 	{
 		private $mysqli;
 
 		function __construct()
 		{
-			require_once "../coreB/Conexion.php";
 			$conn = new Conexion();
 			$this->mysqli = $conn->Conectar();
 			return $this->mysqli;
