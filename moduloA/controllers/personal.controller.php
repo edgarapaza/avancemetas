@@ -16,4 +16,6 @@ $foto = trim(strtoupper($_POST['foto']));
 $persona = new Personal();
 $persona->Guardar($nombre,$apellidos,$sexo,$telefono,$fecha_nac,$email,$foto,$id_area, $id_oficinas);
 
+$persona->Modificar($nombre,$apellidos,$sexo,$telefono,$fecha_nac,$email,$foto,$id_area, $id_oficinas);
+
 header("Location: ../index.php");

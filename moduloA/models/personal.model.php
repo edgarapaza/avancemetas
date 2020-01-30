@@ -27,7 +27,13 @@ class Personal
 
 	public function Modificar()
 	{
-		
+		$sql = "UPDATE personal SET id_personal, nombre, apellidos, sexo ,telefono ,fecha_nac ,email ,foto ,id_area,f_creacion ,f_update,id_oficinas  WHERE id_personal;";
+
+		if(!$this->conn->query($sql)){
+			echo "Error: " . mysql_error($this->coon);
+			exit();
+		}
+		return true;
 	}
 
 	public function Consultar()
@@ -43,9 +49,6 @@ class Personal
 		return $response;
 	}
 
-	public function CrearOficinas()
-	{
-		
 	}
 }
 
