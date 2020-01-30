@@ -27,7 +27,14 @@ class Areas
 
     public function Modificar()
     {
-        
+
+       $sql= "UPDATE areas SET nombre, id_metas, descripcion, f_creacion, f_update WHERE id_areas;";
+       if(!$response = $this->conn->query($sql)){
+            echo "Error: " . mysqli_error($this->conn);
+            exit();
+        }
+
+        return $response;        
     }
 
     public function Consultar()
