@@ -15,6 +15,10 @@ session_start();
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <script src="js/cargarUrl.js"></script>
+
 </head>
 
 <body>
@@ -36,10 +40,17 @@ session_start();
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
+            
             <a class="nav-link" href="#0">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
+
+            <a href="#" class="nav-link" id="institucion" >
+              <i class="material-icons">Metas</i>
+              <p>Metas</p>
+            </a>
+            
           </li>
           <!-- your sidebar here -->
         </ul>
@@ -71,4 +82,4 @@ session_start();
         </div>
       </nav>
       <!-- End Navbar -->
-  <script type="text/javascript" src="js/datosUrl.js"></script>
+  
