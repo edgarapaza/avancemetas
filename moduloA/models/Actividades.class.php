@@ -1,4 +1,6 @@
 <?php
+require_once "../../core/Conexion.php";
+
 	class Actividades
 	{
 
@@ -6,7 +8,7 @@
 
 		function __construct()
 		{
-			require_once "../coreA/Conexion.php";
+			
 			$conn = new Conexion();
 			$this->mysqli = $conn->Conectar();
 			return $this->mysqli;

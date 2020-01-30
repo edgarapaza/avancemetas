@@ -11,8 +11,9 @@ $jefeAreas = $jefearea->ConsultaJefeArea();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es"
 <head>
+
 	<meta charset="UTF-8">
 	<title>Document</title>	
 	<!-- Latest compiled and minified CSS & JS -->
