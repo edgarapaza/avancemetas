@@ -85,13 +85,17 @@ session_start();
             </a>
   
           </li>
-          <li class="nav-item  ">
-            <a href="#" class="nav-link" id="agregar_personal" >
-              <i class="material-icons">person</i>
-              <p>Agregar Personal</p>
-            </a>
 
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Personal
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="listadopersonal">Listado de Personal</a>
+                  <a class="dropdown-item" href="#" id="nuevopersonal">Nuevo Personal</a>
+                </div>
           </li>
+          
           <li class="nav-item  ">
             <a href="#" class="nav-link" id="agregar_metas" >
               <i class="material-icons">book</i>
