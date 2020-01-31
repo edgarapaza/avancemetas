@@ -24,9 +24,17 @@ class Oficinas
 		return true;
 	}
 
-	public function Modificar()
+	public function Modificar($idoficina, $nombre_oficina)
 	{
-		
+		$fechaActual = date('Y-m-d H:i:s');
+		$sql = "UPDATE oficinas SET nombre_of = '$nombre_oficina', f_update = '$fechaActual' WHERE id = $idoficina;";
+
+		if(!$this->conn->query($sql)){
+			echo "Error: " . mysqli_error($this->conn);
+			exit();
+		}
+
+		$this->conn->close();
 	}
 
 	public function Consultar()
@@ -36,6 +44,18 @@ class Oficinas
 		$response = $this->conn->query($sql);
 
 		return $response;
+	}
+
+	public function MostrarOficina($idoficina)
+	{
+		$sql = "SELECT id, nombre_of, id_metas,id_institucion FROM oficinas WHERE id = $idoficina;";
+		
+		if(!$response = $this->conn->query($sql))
+		{
+			echo "Error: ". mysqli_error($this->conn);
+		}
+		$fila = $response->fetch_array(MYSQLI_ASSOC);
+		return $fila;
 	}
 
 	public function CrearOficinas()

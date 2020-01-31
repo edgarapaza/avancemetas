@@ -4,10 +4,6 @@ $(document).ready(function(){
 		$("#cuerpo").load("./institucion.php");
 	});
 
-	$("#crear_oficinas").click(function(){
-		$("#cuerpo").load("./oficinas.php");
-	});
-
 	$("#crear_cargos").click(function(){
 		$("#cuerpo").load("./cargos.php");
 	});
@@ -28,4 +24,14 @@ $(document).ready(function(){
 		$("#cuerpo").load("./estadisticas_areas.php");
 	});
 
+	
+	/*******************************
+		   OFICINAS
+	********************************/
+	$("#milistado").click(function(){
+		$("#cuerpo").load("./listaOficinas.php");
+	});
+	
+
 });
+
