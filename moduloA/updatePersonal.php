@@ -56,10 +56,7 @@ $data1 = $oficinas->Consultar();
 				<label for="">telefono:</label>
 				<input type="text" class="form-control" id="" name="telefono"  value="<?php echo $datos['telefono'];?>" placeholder="telefono">
 			</div>
-			<div class="form-group">
-				<label for="">fecha de nacimiento:</label>
-				<input type="date" class="form-control" id="" name="fecha_nacimiento" value="<?php echo $datos['fecha_nac'];?>"  placeholder="fecha_nac">
-			</div>
+			r
 			<div class="form-group">
 				<label for="">email:</label>
 				<input type="text" class="form-control" id="" name="email" value="<?php echo $datos['email'];?>"  placeholder="email">
@@ -85,13 +82,22 @@ $data1 = $oficinas->Consultar();
 				<select name="id" id="" class="form-control">
 					<option value="0" selected="selected">Select</option>
 						<?php 
-							 while ($fila = $data1->fetch_array(MYSQLI_ASSOC)) {					 ?>
-
-								 <option value="<?php echo $fila['id']; ?>"><?php echo $fila['nombre_of'];?></option>
-								<?php } ?>
-							</select>
+						 while ($fila = $data1->fetch_array(MYSQLI_ASSOC)) {
+						?>
+							 <option value="<?php echo $fila['id']; ?>"><?php echo $fila['nombre_of'];?></option>
+							<?php 
+								}
+							?>
+				</select>
 			</div>
-				
+			
+			<div class="form-oto for="> <label>Estado:</label>
+				<select name="estado" id="" class="form-control">
+					<option value="0" selected="selected">Select</option>
+						
+				</select>
+			</div>
+
 			<button type="submit" class="btn btn-primary">enviar</button>
     
 
