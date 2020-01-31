@@ -1,12 +1,19 @@
 <?php
 
 require("../moduloA/models/personal.model.php");
+require("../moduloA/models/oficinas.model.php");
+require("../moduloA/models/areas.model.php");
 
 $idpersonal = $_REQUEST['idpersonal'];
 
 $personal = new Personal();
 $datos = $personal->MostrarPersonalUno($idpersonal);
 
+$areas = new Areas();
+$data  = $areas->Consultar();
+
+$oficinas = new Oficinas();
+$data1 = $oficinas->Consultar();
 ?>
 
 <!DOCTYPE html>
@@ -32,59 +39,53 @@ $datos = $personal->MostrarPersonalUno($idpersonal);
 			</div>
 			<div class="form-group">
 				<label for="">Apellidos:</label>
-				<input type="text" class="form-control" id="" name="apellidos" placeholder="apellidos">
+				<input type="text" class="form-control" id="" name="apellidos" value="<?php echo $datos['apellidos'];?>"  placeholder="apellidos">
 			</div>
 			<div><label>sexo</label>
 			<div id="gender" class="btn-group" data-toggle="buttons">
-            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-			<input type="radio" name="sexo" value="masculino"> &nbsp; Masculino &nbsp;
+            <label class="btn btn-default" data-toggle-class="	btn-primary" value="<?php echo $datos['sexo'];?>"  data-toggle-passive-class="btn-default">
+				<input type="radio" name="sexo" value="masculino"> &nbsp; Masculino &nbsp;
 			</label>
 			<label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-			<input type="radio" name="sexo" value="femenino"> Femenino
+				<input type="radio" name="sexo" value="femenino"> Femenino
 			</label>
 			</div>
 			</div>
 		
 			<div class="form-group">
 				<label for="">telefono:</label>
-				<input type="text" class="form-control" id="" name="telefono" placeholder="telefono">
+				<input type="text" class="form-control" id="" name="telefono"  value="<?php echo $datos['telefono'];?>" placeholder="telefono">
 			</div>
 			<div class="form-group">
 				<label for="">fecha de nacimiento:</label>
-				<input type="date" class="form-control" id="" name="fecha_nacimiento" placeholder="fecha_nac">
+				<input type="date" class="form-control" id="" name="fecha_nacimiento" value="<?php echo $datos['fecha_nac'];?>"  placeholder="fecha_nac">
 			</div>
 			<div class="form-group">
 				<label for="">email:</label>
-				<input type="text" class="form-control" id="" name="email" placeholder="email">
+				<input type="text" class="form-control" id="" name="email" value="<?php echo $datos['email'];?>"  placeholder="email">
 			</div>
 			<div class="form-group">
 				<label for="">foto:</label>
-				<input type="file" class="form-control" id="" name="foto" placeholder="foto">
+				<input type="file" class="form-control" id="" name="foto"   value="<?php echo $datos['foto'];?>"  placeholder="foto">
 			</div>
 
 			<div class="form-oto for=">
 				<label for="">Areas:</label>
 				<select name="id_areas" id="" class="form-control">
-					<option value="0" selected="selected">Select</option>
+					<option value="<?php echo $datos['id_areas'];?>" selected="selected">Select</option>
 						<?php 
-							while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					
+							while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {			
 					    ?>
-
 					<option value="<?php echo $fila['id_areas']; ?>"><?php echo $fila['nombre'];?></option>
 								<?php } ?>
 				</select>
-			</div>
-
-			<div class="form-group">
-				<label for="">fecha de creacion:</label>
-				<input type="date" class="form-control" id="" name="n_resolucion" placeholder="fecha de creacion">
 			</div>
 
 			<div class="form-oto for="> <label>Oficinas:</label>
 				<select name="id" id="" class="form-control">
 					<option value="0" selected="selected">Select</option>
 						<?php 
-							while ($fila = $data1->fetch_array(MYSQLI_ASSOC)) {					 ?>
+							 while ($fila = $data1->fetch_array(MYSQLI_ASSOC)) {					 ?>
 
 								 <option value="<?php echo $fila['id']; ?>"><?php echo $fila['nombre_of'];?></option>
 								<?php } ?>
