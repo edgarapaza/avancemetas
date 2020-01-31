@@ -16,7 +16,9 @@ $data = $metas->Consultar();
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
-	<CENTER><h1>AREAS</h1></CENTER>
+	<div class="container">
+		<div class="row">
+			<CENTER><h1>AREAS</h1></CENTER>
 		<form action="controllers/areas.controller.php" method="POST" role="form">
 			<legend>Registro de Areas</legend>
             <div class="form-group">
@@ -47,6 +49,8 @@ $data = $metas->Consultar();
 		
 			<button type="submit" class="btn btn-primary">enviar</button>
 		</form>
+		</div>
+	</div>
 </body>
 </html>
 

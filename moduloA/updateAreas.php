@@ -37,7 +37,6 @@ $data = $metas->Consultar();
 				value="<?php echo $datos['nombre'];?>">
 			</div>
 			
-
 			<div class="form-group">
 			    <label for="">Metas:</label>
 				<select name="id_metas" id="" class="form-control">

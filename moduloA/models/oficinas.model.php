@@ -12,10 +12,10 @@ class Oficinas
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_of,$id_metas,$id_institucion)
+	public function Guardar($nombre_of,$id_institucion)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO oficinas VALUES (null,'$nombre_of','$fechaActual','$fechaActual','$id_metas','$id_institucion')";
+		$sql = "INSERT INTO oficinas VALUES (null,'$nombre_of','$fechaActual','$fechaActual','1','$id_institucion')";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error();
@@ -52,7 +52,7 @@ class Oficinas
 		
 		if(!$response = $this->conn->query($sql))
 		{
-			echo "Error: ". mysqli_error($this->conn);
+			echo " No se han asignado ninguna meta";
 		}
 		$fila = $response->fetch_array(MYSQLI_ASSOC);
 		return $fila;

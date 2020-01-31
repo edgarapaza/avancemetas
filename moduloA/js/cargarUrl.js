@@ -31,6 +31,9 @@ $(document).ready(function(){
 	$("#milistado").click(function(){
 		$("#cuerpo").load("./listaOficinas.php");
 	});
+	$("#nuevaOficina").click(function(){
+		$("#cuerpo").load("./oficinas.php");
+	});
 	
 
 });
