@@ -37,9 +37,9 @@ class Areas
         return $response;        
     }
 
-    public function Consultar()
+    public function Consultar()   
     {
-
+                        
         $sql = "SELECT id_areas, nombre, id_metas, descripcion,f_creacion,f_update from areas;";
         
         if(!$response = $this->conn->query($sql)){
