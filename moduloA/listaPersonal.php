@@ -31,7 +31,7 @@ $data = $personal->Consultar();
 				<td><?php echo $fila['email']; ?></td>
 				<td>Foto</td>
 				<td>
-					<button>Modificar</button>
+					<a href="updateAreas.php?id_areas=<?php echo $fila['id_areas']; ?>"> Modificar</a>
 				</td>
 			</tr>
 		<?php 
