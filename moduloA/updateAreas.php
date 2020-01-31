@@ -1,12 +1,16 @@
 <?php
+require("../moduloA/models/areas.model.php");
 require("../moduloA/models/metas.model.php");
 
-$id_areas = $_GET['id_areas'];
- 
-$sql = "SELECT * FROM areas WHERE id = '$id_areas'";
+$idareas = $_REQUEST['idareas'];
+
+$area = new Areas();
+$row = $area->MostrarAreas($idareas);
+/* 
+$sql = "SELECT * FROM areas WHERE idareas = '$id_areas'";
 $resultado = $mysqli->query($sql);
 $row = $resultado->fetch_array(MYSQLI_ASSOC);
-
+*/
 $metas = new Metas();
 $data = $metas->Consultar();
 
@@ -29,23 +33,22 @@ $data = $metas->Consultar();
 			<legend>Registro de Areas</legend>
             <div class="form-group">
 				<label for="">Nombre de Area:</label>
-				<input type="text" class="form-control" id="" name="nombre" value="<?php echo $row['nombre'];?>" >
+				<input type="text" class="form-control" id="" name="nombre" value="<?php echo $row['nombre'];?>" 
+				value="<?php echo $datos['nombre'];?>">
 			</div>
 			
 
 			<div class="form-group">
-							<label for="">Metas:</label>
-							<select name="id_metas" id="" class="form-control">
-								<option value="0" selected="selected"></option>
-								<?php 
-								while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					 ?>
+			    <label for="">Metas:</label>
+				<select name="id_metas" id="" class="form-control">
+					<option value="<?php echo $row['id_metas']. "-" . $row['nombre_meta'];?>" selected="selected"></option>
+						<?php 
+						while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					 ?>
 
-								 <option value="<?php echo $fila['id_metas']; ?>"><?php echo $fila['nombre_meta']. "-" . $fila['programado'];?></option>
-								<?php } ?>
-							</select>
-						</div>
-
-
+					<option value="<?php echo $fila['id_metas']; ?>"><?php echo $fila['nombre_meta'];?>   </option>
+						<?php } ?>
+				</select>
+			</div>
 
 			<div class="form-group">
 				<label for="">Descripcion:</label>

@@ -32,7 +32,7 @@ $i = 1;
 				<td><?php echo $fila['id_metas']; ?></td>
 				<td><?php echo $fila['descripcion']; ?></td>
 				<td>
-					<button>Modificar</button>
+					<a href="updateAreas.php?idareas=<?php echo $fila['id_areas']; ?>"> Modificar</a>
 				</td>
 			</tr>
 		<?php 

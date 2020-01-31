@@ -1,7 +1,8 @@
 <?php include("../moduloA/models/personal.model.php");
-
+$i = 1;
 $personal = new Personal();
 $data = $personal->Consultar();
+
 ?>
 <link rel="stylesheet" type="text/css" href="assets/css/material-dashboard.css">
 
@@ -22,8 +23,9 @@ $data = $personal->Consultar();
 		</thead>
 		<tbody>
 			<?php while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {
-				$i = 1;
+				
 			?>
+
 			<tr>
 				<td><?php echo $i; ?></td>
 				<td><?php echo $fila['nombre']." ". $fila['apellidos']; ?></td>
@@ -31,11 +33,11 @@ $data = $personal->Consultar();
 				<td><?php echo $fila['email']; ?></td>
 				<td>Foto</td>
 				<td>
-					<a href="updateAreas.php?id_areas=<?php echo $fila['id_areas']; ?>"> Modificar</a>
+					<a href="updatePersonal.php?idpersonal=<?php echo $fila['id_personal']; ?>">Modificar</a>
 				</td>
 			</tr>
 		<?php 
-		$i++;
+		$i=$i+1;
 		} ?>
 		</tbody>
 	</table>

@@ -45,11 +45,22 @@ class Areas
         return $response;
 
     }
-
     
-    public function CrearOficinas()
+    public function MostrarAreas($idareas)
     {
-        
+                
+        $sql = "SELECT nombre, id_metas, descripcion,f_creacion,f_update FROM areas WHERE id_areas = " . $idareas;
+
+
+        if(!$response = $this->conn->query($sql)){
+            echo "Error: ". mysqli_error($this->conn);
+            exit();
+        }
+
+        $dato = $response->fetch_array(MYSQLI_ASSOC);
+
+        return $dato;
+
     }
 }
 
