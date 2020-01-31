@@ -5,7 +5,7 @@ session_start();
 <html lang="es-ES">
 
 <head>
-  <title>Hello, world!</title>
+  <title>Avance de Metas</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -59,9 +59,9 @@ session_start();
           
           <li class="nav-item ">
             
-            <a class="nav-link" href="#" id="crear_oficinas">
+            <a class="nav-link" href="#" id="milistado">
               <i class="material-icons">home</i>
-              <p>Crear ofinas</p>
+              <p>Crear oficinas</p>
             </a>
   
           </li>
