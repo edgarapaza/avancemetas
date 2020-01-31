@@ -9,7 +9,7 @@ $(document).ready(function(){
 	});
 
 	$("#agregar_personal").click(function(){
-		$("#cuerpo").load("./personal.php");
+		$("#cuerpo").load("./listaPersonal.php");
 	});
 
 	$("#agregar_metas").click(function(){
@@ -33,6 +33,16 @@ $(document).ready(function(){
 	});
 	$("#nuevaOficina").click(function(){
 		$("#cuerpo").load("./oficinas.php");
+	});
+
+	/*******************************
+		   PERSONAL
+	********************************/
+	$("#listadopersonal").click(function(){
+		$("#cuerpo").load("./listaPersonal.php");
+	});
+	$("#nuevopersonal").click(function(){
+		$("#cuerpo").load("./personal.php");
 	});
 	
 
