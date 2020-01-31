@@ -39,14 +39,11 @@ $i = 1;
 					?>
 				</td>
 				<td><?php echo $fila['descripcion']; ?></td>
+				
 				<td>
-					<a href="updateAreas.php?idareas=<?php echo $fila['id_areas']; ?>"> Modificar</a>
-					
-				</td>
-				<td>
-					<a href="#" id="#cambiarAreas" class="btn btn-info btn-sm" onclick="CambiarDatosAreas(<?php echo $fila['id'];?>)"><i class="material-icons">Modificar</i></a>
+					<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosAreas(<?php echo $fila['id_areas'];?>)"><i class="material-icons">how_to_reg</i></a>
 
-					<a href="areas.php" id="nuevaArea" class="btn btn-success btn-sm"><i class="material-icons">add</i></a>
+					<a href="#" id="nuevaArea" class="btn btn-success btn-sm"><i class="material-icons">add</i></a>
 
 					</td>
 			</tr>
@@ -61,6 +58,7 @@ $i = 1;
 
 <script>
 	function CambiarDatosAreas(dato) {
-		var ventana1 = window.open('updateAreas.php?idoficina='+dato,"MsgWindow", "width=600,height=500");
+
+		window.open('updateAreas.php?id_areas='+dato,"MsgWindow", "width=600,height=500");
 	}
 </script>

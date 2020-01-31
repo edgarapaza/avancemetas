@@ -25,11 +25,19 @@ class Areas
         return true;
     }
 
-    public function Modificar()
+    public function Modificar($id_areas, $nombre,$id_metas,$descripcion)
     {
+        $fechaActual = date('Y-m-d H:i:s');
 
+       $sql= "UPDATE areas SET nombre='$nombre', id_metas ='$id_metas', descripcion ='$descripcion',  f_update='$fechaActual' WHERE id_areas='$id_areas';";
 
-       $sql= "UPDATE areas SET nombre='$nombre', id_metas ='$id_metas', descripcion ='$descripcion', f_creacion ='$f_creacion', f_update='$f_update' WHERE id_areas='$id_areas';";      
+       if(!$this->conn->query($sql)){
+            echo "Error: " . mysqli_error($this->conn);
+            exit();
+        }
+
+        $this->conn->close();
+
     }
 
     public function Consultar()   
