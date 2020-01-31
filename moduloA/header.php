@@ -38,6 +38,7 @@ session_start();
         </a>
       </div>
       <div class="sidebar-wrapper">
+        
         <ul class="nav">
 
           <li class="nav-item active  ">
@@ -56,15 +57,26 @@ session_start();
             </a>
 
           </li>
-          
-          <li class="nav-item ">
-            
-            <a class="nav-link" href="#" id="milistado">
-              <i class="material-icons">home</i>
-              <p>Crear oficinas</p>
-            </a>
-  
+
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Crear Oficinas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="milistado">Listado de oficinas</a>
+                  <a class="dropdown-item" href="#" id="nuevaOficina">Nueva Oficina</a>
+                </div>
           </li>
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Crear Areas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="milistado">Listado de Areas</a>
+                  <a class="dropdown-item" href="#" id="nuevaOficina">Agregar Nueva Area</a>
+                </div>
+          </li>
+          
           <li class="nav-item ">
             
             <a class="nav-link" href="#" id="crear_cargos">
