@@ -13,7 +13,7 @@ $office = $oficinas->MostrarOficina($idoficina);
 			<legend>Cambiar Datos de Oficina: </legend>
 
 			<div class="form-group">
-				<input type="text" value="<?php echo $idoficina;?>" name="idoficina">
+				<input type="hidden" value="<?php echo $idoficina;?>" name="idoficina">
 				<label for="">Nombre Oficina:</label>
 				<input type="text" class="form-control" id="" value="<?php echo $office['nombre_of'];?>" name="nombre_of" placeholder="Nombre Oficina">
 			</div>
