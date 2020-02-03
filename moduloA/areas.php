@@ -45,7 +45,7 @@ $data = $metas->Consultar();
 				<label for="">Descripcion:</label>
 				<input type="text" class="form-control" id="" name="descripcion" placeholder="Descripcion">
 			</div>
-			
+			<!--hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->
 		
 			<button type="submit" class="btn btn-primary">enviar</button>
 		</form>

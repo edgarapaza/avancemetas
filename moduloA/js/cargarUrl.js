@@ -41,6 +41,7 @@ $(document).ready(function(){
 	$("#listadoareas").click(function(){
 		$("#cuerpo").load("./listaAreas.php");
 	});
+	
 	$("#nuevaArea").click(function(){
 		$("#cuerpo").load("./areas.php");
 	});
