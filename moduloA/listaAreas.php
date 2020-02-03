@@ -51,6 +51,8 @@ $i = 1;
 					<a href="#" id="nuevaArea" class="btn btn-success btn-sm"><i class="material-icons">add</i></a>
 
 					</td>
+<!--hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh -->
+
 			</tr>
 		<?php 
 		$i++;
