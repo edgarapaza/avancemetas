@@ -1,5 +1,5 @@
-CREATE DATABASE bd_institucion;
-USE bd_institucion;
+/*CREATE DATABASE bd_institucion;
+USE bd_institucion;*/
 
 -- MySQL dump 10.13  Distrib 5.7.29, for Linux (x86_64)
 --

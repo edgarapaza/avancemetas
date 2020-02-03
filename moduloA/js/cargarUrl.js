@@ -36,6 +36,16 @@ $(document).ready(function(){
 	});
 
 	/*******************************
+		   AREAS
+	********************************/
+	$("#listadoareas").click(function(){
+		$("#cuerpo").load("./listaAreas.php");
+	});
+	$("#nuevaArea").click(function(){
+		$("#cuerpo").load("./areas.php");
+	});
+
+	/*******************************
 		   PERSONAL
 	********************************/
 	$("#listadopersonal").click(function(){
@@ -44,6 +54,7 @@ $(document).ready(function(){
 	$("#nuevopersonal").click(function(){
 		$("#cuerpo").load("./personal.php");
 	});
+
 	
 
 });
