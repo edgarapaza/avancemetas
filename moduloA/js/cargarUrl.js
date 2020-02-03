@@ -46,8 +46,11 @@ $(document).ready(function(){
 		$("#cuerpo").load("./areas.php");
 	});
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 952d5e607e071ad936eb1d8d2ee338f3eb5bd551
 	/*******************************
 		   PERSONAL
 	********************************/
