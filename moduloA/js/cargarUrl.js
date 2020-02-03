@@ -34,7 +34,7 @@ $(document).ready(function(){
 	$("#nuevaOficina").click(function(){
 		$("#cuerpo").load("./oficinas.php");
 	});
-<<<<<<< HEAD
+
 	/*******************************
 		   AREAS
 	********************************/
@@ -45,7 +45,7 @@ $(document).ready(function(){
 		$("#cuerpo").load("./areas.php");
 	});
 
-=======
+
 
 	/*******************************
 		   PERSONAL
@@ -56,7 +56,7 @@ $(document).ready(function(){
 	$("#nuevopersonal").click(function(){
 		$("#cuerpo").load("./personal.php");
 	});
->>>>>>> 7fa55523b28dbcc98560315e18fa183e40208b8e
+
 	
 
 });
