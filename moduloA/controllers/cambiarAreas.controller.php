@@ -3,9 +3,9 @@ include("../models/areas.model.php");
 
 $id_areas = $_REQUEST['id_areas'];
 $nombre = trim(strtoupper($_REQUEST['nombre']));
-$id_metas = trim(strtoupper($_REQUEST['id_metas']));
+$idoficina = trim(strtoupper($_REQUEST['idoficina']));
 $descripcion = trim(strtoupper($_REQUEST['descripcion']));
 
 $area = new Areas();
-$area->Modificar($id_areas, $nombre, $id_metas, $descripcion);
+$area->Modificar($id_areas, $nombre, $idoficina, $descripcion);
 
