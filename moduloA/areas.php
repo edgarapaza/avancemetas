@@ -37,10 +37,7 @@ $data = $metas->Consultar();
 								 <option value="<?php echo $fila['id_metas']; ?>"><?php echo $fila['nombre_meta']. "-" . $fila['programado'];?></option>
 								<?php } ?>
 							</select>
-						</div>
-
-
-
+			</div>
 			<div class="form-group">
 				<label for="">Descripcion:</label>
 				<input type="text" class="form-control" id="" name="descripcion" placeholder="Descripcion">

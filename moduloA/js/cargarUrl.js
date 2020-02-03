@@ -57,7 +57,6 @@ $(document).ready(function(){
 		$("#cuerpo").load("./personal.php");
 	});
 
-	
 
 });
 

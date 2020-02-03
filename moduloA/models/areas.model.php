@@ -25,11 +25,11 @@ class Areas
         return true;
     }
 
-    public function Modificar($id_areas, $nombre,$id_metas,$descripcion)
+    public function Modificar($id_areas, $nombre, $descripcion)
     {
         $fechaActual = date('Y-m-d H:i:s');
 
-       $sql= "UPDATE areas SET nombre='$nombre', id_metas ='$id_metas', descripcion ='$descripcion',  f_update='$fechaActual' WHERE id_areas='$id_areas';";
+       $sql= "UPDATE areas SET nombre='$nombre', descripcion='$descripcion', f_update='$fechaActual' WHERE id_areas='$id_areas';";
 
        if(!$this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
@@ -57,7 +57,7 @@ class Areas
     public function MostrarAreas($idareas)
     {
                 
-        $sql = "SELECT nombre, id_metas, descripcion,f_creacion,f_update FROM areas WHERE id_areas = " . $idareas;
+        $sql = "SELECT nombre, id_metas, descripcion FROM areas WHERE id_areas = " . $idareas;
 
 
         if(!$response = $this->conn->query($sql)){
