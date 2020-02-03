@@ -40,10 +40,6 @@ $i = 1;
 					?>
 				</td>
 				<td><?php echo $fila['descripcion']; ?></td>
-				<td><?php 
-				$office = $areas->DatosDireccionOficina($fila['idoficina']);
-				echo $office['sigla'];
-				?></td>
 				
 				<td>
 					<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosAreas(<?php echo $fila['id_areas'];?>)"><i class="material-icons">how_to_reg</i></a>
