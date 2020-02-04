@@ -7,6 +7,7 @@ class Conexion {
 
 		$mysqli = new mysqli("localhost","coraima", "A@dmin0215.,$", "bd_institucion");
 		$mysqli->set_charset("utf8");
+		
 		if ($mysqli->connect_errno) {
 			echo "Error al contenctar a MySQL: (".$mysqli->connect_errno.") ".$mysqli->connect_error;
 			exit();

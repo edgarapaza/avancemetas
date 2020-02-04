@@ -25,11 +25,18 @@ class Metas
 		$this->conn->close();
 	}
 
-	public function Modificar()
+	public function Modificar($idmeta, $nombre_meta,$programado,$unidad_medida)
 	{
 		
-	}
+		$sql = "UPDATE metas SET nombre_meta = '$nombre_meta', programado = '$programado', unidad_medida='$unidad_medida' WHERE id_metas = $idmeta;";
 
+		if(!$this->conn->query($sql)){
+			echo "Error: " . mysqli_error($this->conn);
+			exit();
+		}
+
+		$this->conn->close();
+	}
 	public function Consultar()
 	{
 		$sql = "SELECT id_metas, nombre_meta, programado, unidad_medida FROM metas;";
@@ -55,6 +62,8 @@ class Metas
 		return $data;
 		$this->conn->close();
 	}
+
+
 
 	public function CrearOficinas()
 	{

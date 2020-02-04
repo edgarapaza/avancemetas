@@ -4,18 +4,6 @@ $(document).ready(function(){
 		$("#cuerpo").load("./institucion.php");
 	});
 
-	$("#crear_cargos").click(function(){
-		$("#cuerpo").load("./cargos.php");
-	});
-
-	$("#agregar_personal").click(function(){
-		$("#cuerpo").load("./listaPersonal.php");
-	});
-
-	$("#agregar_metas").click(function(){
-		$("#cuerpo").load("./metas.php");
-	});
-
 	$("#estadisticas_oficinas").click(function(){
 		$("#cuerpo").load("./estadisticas_oficinas.php");
 	});
@@ -36,16 +24,6 @@ $(document).ready(function(){
 	});
 
 	/*******************************
-		   AREAS
-	********************************/
-	$("#listadoareas").click(function(){
-		$("#cuerpo").load("./listaAreas.php");
-	});
-	$("#nuevaArea").click(function(){
-		$("#cuerpo").load("./areas.php");
-	});
-
-	/*******************************
 		   PERSONAL
 	********************************/
 	$("#listadopersonal").click(function(){
@@ -54,8 +32,26 @@ $(document).ready(function(){
 	$("#nuevopersonal").click(function(){
 		$("#cuerpo").load("./personal.php");
 	});
-
 	
+	/*******************************
+		   METAS
+	********************************/
+	$("#milistadoMetas").click(function(){
+		$("#cuerpo").load("./listaMetas.php");
+	});
+	$("#nuevaMeta").click(function(){
+		$("#cuerpo").load("./metas.php");
+	});
+
+		/*******************************
+		   CARGOS
+	********************************/
+	$("#milistadoCargos").click(function(){
+		$("#cuerpo").load("./listaCargos.php");
+	});
+	$("#nuevoCargos").click(function(){
+		$("#cuerpo").load("./cargos.php");
+	});
+
 
 });
-
