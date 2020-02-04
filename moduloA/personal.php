@@ -10,11 +10,10 @@ $data1 = $oficinas->Consultar()
 ?>
 
 
-	<div class="container">
-
+<div class="container">
 		
-			<CENTER><h1>personal</h1></CENTER>
-			<form action="controllers/personal.controller.php" method="POST" role="form">
+	<h1>personal</h1>
+		<form action="controllers/personal.controller.php" method="POST" role="form">
 			<legend>Completa el formulario</legend>
 		
 			<div class="form-group">
