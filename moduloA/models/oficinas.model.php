@@ -39,7 +39,7 @@ class Oficinas
 
 	public function Consultar()
 	{
-		$sql = "SELECT id, nombre_of, id_metas,id_institucion, f_creacion,f_update FROM oficinas;";
+		$sql = "SELECT id, nombre_of, id_metas,id_institucion, f_creacion,f_update, sigla FROM oficinas;";
 		
 		$response = $this->conn->query($sql);
 

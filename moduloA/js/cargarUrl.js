@@ -41,10 +41,10 @@ $(document).ready(function(){
 	$("#listadoareas").click(function(){
 		$("#cuerpo").load("./listaAreas.php");
 	});
+	
 	$("#nuevaArea").click(function(){
 		$("#cuerpo").load("./areas.php");
 	});
-
 
 
 	/*******************************
@@ -55,6 +55,17 @@ $(document).ready(function(){
 	});
 	$("#nuevopersonal").click(function(){
 		$("#cuerpo").load("./personal.php");
+	});
+
+	/*******************************
+		   RESPONSABILIDADES
+	********************************/
+	$("#listadoresponsabilidades").click(function(){
+		$("#cuerpo").load("./listaResponsabilidades.php");
+	});
+	
+	$("#nuevaResponsabilidad").click(function(){
+		$("#cuerpo").load("./responsabilidades.php");
 	});
 
 

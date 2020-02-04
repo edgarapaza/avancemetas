@@ -15,7 +15,7 @@ class Personal
 	public function Guardar($nombre,$apellidos,$sexo,$telefono,$fecha_nac,$email,$foto, $DNI )
 	{
 		$fechaActual = date('Y-m-d H:i:s');
-		$foto="./imagenes/usuario.png";
+		$foto="../imagenes/usuario.png";
 
 		$sql = "INSERT INTO personal(id_personal,nombre,apellidos,sexo,telefono,fecha_nac,email,foto,estado,DNI,f_creacion)VALUES (null ,'$nombre','$apellidos','$sexo','$telefono','$fecha_nac','$email','$foto','1','$DNI','$fechaActual');";
 	

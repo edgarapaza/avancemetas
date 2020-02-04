@@ -4,10 +4,10 @@ require("../moduloA/models/institucion.model.php");
 
 
 $metas = new Metas();
-$data = $metas->Consultar();
 $institucion = new Institucion();
-$datos = $institucion->Consultar();
 
+$data = $metas->Consultar();
+$office = $institucion->Consultar();
 
 ?>
 

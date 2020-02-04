@@ -1,34 +1,12 @@
 <?php
 require("../models/areas.model.php");
 
-$nombre = trim(strtoupper($_POST['nombre']));
-$id_metas = trim($_POST['id_metas']);
+$idoficina = trim($_POST['iddireccion']);
+$nombre = trim(strtoupper($_POST['nombre_area']));
+$id_metas = 1;
 $descripcion = trim(strtoupper($_POST['descripcion']));
 
-
 $areas = new Areas();
-$areas->Guardar($nombre,$id_metas,$descripcion);
-$areas->Modificar($nombre,$id_metas,$descripcion);
+$areas->Guardar($nombre, $descripcion, $idoficina, $id_metas);
 
 header("Location: ../index.php");
-
-
-/*
-class Barbie
-{
-	private $nombre; //variable
-
-	function __construct()
-	{
-		$this->nombre = "Silvia";
-	}
-
-	function Casita()
-	{
-		echo "Agregando la Casita para Barbie para " . $this->nombre;
-	}
-}
-
-$barbie = new Barbie();
-$barbie->Casita();
-*/

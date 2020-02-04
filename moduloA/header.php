@@ -34,7 +34,7 @@ session_start();
           Area de Informatica
         </a>
         <a href="#" class="simple-text logo-normal">
-          Administrador
+          Administrador: <?php echo $_SESSION['admin'];?>
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -74,6 +74,16 @@ session_start();
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#" id="listadoareas">Listado de Areas</a>
                   <a class="dropdown-item" href="#" id="nuevaArea">Agregar Nueva Area</a>
+                </div>
+          </li>
+
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Crear Responsabilidades
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="listadoresponsabilidades">Listado de Responsabilidades</a>
+                  <a class="dropdown-item" href="#" id="nuevaResponsabilidad">Agregar Nueva Responsabilidad</a>
                 </div>
           </li>
           

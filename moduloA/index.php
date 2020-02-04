@@ -1,5 +1,6 @@
-<?php include_once("header.php"); ?>
-
+<?php
+include_once("header.php");
+?>
   <div class="content">
     <div class="container-fluid">
          <div id="cuerpo"></div>
