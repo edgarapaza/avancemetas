@@ -10,7 +10,7 @@ $data = $personal->Consultar();
 	
 	<h2>Lista del Personal del Archivo Regional</h2>
 	<table class="table">
-		<caption>table title and/or explanatory text</caption>
+		
 		<thead>
 			<tr>
 				<th>Num.</th>
@@ -24,8 +24,8 @@ $data = $personal->Consultar();
 		</thead>
 		<tbody>
 			<?php while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {
-				echo $fila['foto'];
-			?>
+			
+				?>
 
 			<tr>
 				<td><?php echo $i; ?></td>
@@ -33,16 +33,23 @@ $data = $personal->Consultar();
 				<td><?php echo $fila['telefono']; ?></td>
 				<td><?php echo $fila['email']; ?></td>
 				<td>
-					<img src="<?php echo $fila['foto']; ?>" alt="afasdfasdfasd" />
+					<img src="<?php echo $fila['foto']; ?>" alt="Foto" class="responsive" width="40" />
 				</td>
 				<td><?php echo $fila['DNI']; ?></td>
 				<td>
-					<a href="updatePersonal.php?idpersonal=<?php echo $fila['id_personal']; ?>">Modificar</a>
+					<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosAreas(<?php echo $fila['id_personal'];?>)"><i class="material-icons">how_to_reg</i></a>
 				</td>
 			</tr>
 		<?php 
 		$i=$i+1;
-		} ?>
+		} 
+		?>
 		</tbody>
 	</table>
 </div>
+
+<script>
+	function CambiarDatosAreas(dato) {
+		window.open('updatePersonal.php?idpersonal='+dato,"", "width=700,height=800");
+	}
+</script>

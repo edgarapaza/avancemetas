@@ -72,28 +72,9 @@ session_start();
                   Crear Areas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listadoareas">Listado de Areas</a>
-                  <a class="dropdown-item" href="#" id="nuevaArea">Agregar Nueva Area</a>
+                  <a class="dropdown-item" href="#" id="milistado">Listado de Areas</a>
+                  <a class="dropdown-item" href="#" id="nuevaOficina">Agregar Nueva Area</a>
                 </div>
-          </li>
-
-          <li class="nav-item">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Crear Responsabilidades
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listadoresponsabilidades">Listado de Responsabilidades</a>
-                  <a class="dropdown-item" href="#" id="nuevaResponsabilidad">Agregar Nueva Responsabilidad</a>
-                </div>
-          </li>
-          
-          <li class="nav-item ">
-            
-            <a class="nav-link" href="#" id="crear_cargos">
-              <i class="material-icons">home</i>
-              <p>Crear Cargo</p>
-            </a>
-  
           </li>
 
           <li class="nav-item">
@@ -106,13 +87,26 @@ session_start();
                 </div>
           </li>
           
-          <li class="nav-item  ">
-            <a href="#" class="nav-link" id="agregar_metas" >
-              <i class="material-icons">book</i>
-              <p>Agregar Metas</p>
-            </a>
-
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Metas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="milistadoMetas">Listado de Metas</a>
+                  <a class="dropdown-item" href="#" id="nuevaMeta">Agregar Nueva Metas</a>
+                </div>
           </li>
+
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Cargos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="milistadoCargos">Listado de Cargos</a>
+                  <a class="dropdown-item" href="#" id="nuevoCargos">Nuevo Cargo</a>
+                </div>
+          </li>
+
           <li class="nav-item  ">
             <a href="#" class="nav-link" id="estadisticas_oficinas" >
               <i class="material-icons">table</i>

@@ -47,9 +47,6 @@ $i = 1;
 				
 				<td>
 					<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosAreas(<?php echo $fila['id_areas'];?>)"><i class="material-icons">how_to_reg</i></a>
-
-					<a href="#" id="nuevaArea" class="btn btn-success btn-sm"><i class="material-icons">add</i></a>
-
 					</td>
 
 			</tr>
