@@ -38,6 +38,7 @@ $data = $personal->Consultar();
 				<td><?php echo $fila['DNI']; ?></td>
 				<td>
 					<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosAreas(<?php echo $fila['id_personal'];?>)"><i class="material-icons">how_to_reg</i></a>
+					<a href="#" id="#" class="btn btn-success btn-sm" onclick="AsignarPassword(<?php echo $fila['id_personal'];?>)"><i class="material-icons">security</i></a>
 				</td>
 			</tr>
 		<?php 
@@ -51,5 +52,8 @@ $data = $personal->Consultar();
 <script>
 	function CambiarDatosAreas(dato) {
 		window.open('updatePersonal.php?idpersonal='+dato,"", "width=700,height=800");
+	}
+	function AsignarPassword(dato) {
+		window.open('login.php?idpersonal='+dato,"", "width=700,height=800");
 	}
 </script>
