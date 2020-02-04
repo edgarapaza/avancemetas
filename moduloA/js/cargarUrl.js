@@ -24,6 +24,18 @@ $(document).ready(function(){
 	});
 
 	/*******************************
+
+		   AREAS
+	********************************/
+	$("#listadoareas").click(function(){
+		$("#cuerpo").load("./listaAreas.php");
+	});
+	
+	$("#nuevaArea").click(function(){
+		$("#cuerpo").load("./areas.php");
+	});
+
+	/*******************************
 		   PERSONAL
 	********************************/
 	$("#listadopersonal").click(function(){
@@ -43,7 +55,7 @@ $(document).ready(function(){
 		$("#cuerpo").load("./metas.php");
 	});
 
-		/*******************************
+	/*******************************
 		   CARGOS
 	********************************/
 	$("#milistadoCargos").click(function(){
@@ -52,6 +64,5 @@ $(document).ready(function(){
 	$("#nuevoCargos").click(function(){
 		$("#cuerpo").load("./cargos.php");
 	});
-
 
 });
