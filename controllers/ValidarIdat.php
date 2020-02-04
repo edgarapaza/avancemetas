@@ -16,22 +16,24 @@ $data=$response->fetch_array(MYSQLI_ASSOC);
 
 if ($data['niv_usu'] != null) {
 	
- echo $data['niv_usu'];
+	 echo $data['niv_usu'];
+	 switch ($data['niv_usu']) {
+		case '1':
+			$_SESSION["admin"]=$data["id_personal"];
+			header("location: ../moduloA/index.php");
+			break;
+		case '2':
+		    $_SESSION["id_personal"]=$data['id_personal'];
+	        header("location: ../moduloB/index.php");
+		    break;
+		
+		default:
+			# code...
+			break;
+	}
 }else{
 	echo "error";
+	header("Location: ../index.html");
 }
 
-switch ($data['niv_usu']) {
-	case '1':
-		$_SESSION["admin"]=$data["id_personal"];
-		header("location: ../moduloA/index.php");
-		break;
-	case '2':
-	    $_SESSION["id_personal"]=$data['id_personal'];
-        header("location: ../moduloB/index.php");
-	    break;
-	
-	default:
-		# code...
-		break;
-}
+
