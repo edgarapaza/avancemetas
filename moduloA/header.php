@@ -86,15 +86,6 @@ session_start();
                   <a class="dropdown-item" href="#" id="nuevopersonal">Nuevo Personal</a>
                 </div>
           </li>
-
-          <li class="nav-item ">
-            
-            <a class="nav-link" href="#" id="crear_cargos">
-              <i class="material-icons">home</i>
-              <p>Crear Cargo</p>
-            </a>
-  
-          </li>
           
           <li class="nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
