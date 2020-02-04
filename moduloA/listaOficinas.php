@@ -28,7 +28,9 @@ $i = 1;
 				<tr>
 					<td><?php echo $i; ?></td>
 					<td><?php //echo $fila['id'];
-					          echo $fila['nombre_of']; ?></td>
+					          echo $fila['nombre_of']; ?>
+					          	
+					</td>
 					<td>
 						<?php 
 						 

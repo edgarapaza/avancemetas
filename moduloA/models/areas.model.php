@@ -12,38 +12,28 @@ class Areas
         return $this->conn;
     }
 
-    public function Guardar($nombre, $descripcion, $idoficina, $id_metas)
+    public function Guardar($nombre,$id_metas,$descripcion)
     {
         $fechaActual = date('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO areas VALUES (null,'$nombre','$descripcion','$idoficina','$id_metas','$fechaActual',null);
-";
+        $sql = "INSERT INTO areas VALUES (null,'$nombre','$id_metas','$descripcion','$fechaActual','$fechaActual');";
 
         if(!$this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
             exit();
         }
+        return true;
+    }
+
+    public function Modificar()
+    {
         
     }
 
-    public function Modificar($id_areas, $nombre,$idoficina,$descripcion)
+    public function Consultar()
     {
-        $fechaActual = date('Y-m-d H:i:s');
 
-        $sql= "UPDATE areas SET nombre='$nombre', idoficina ='$idoficina', descripcion ='$descripcion' WHERE id_areas= $id_areas;";
-
-        if(!$this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
-
-        $this->conn->close();
-    }
-
-    public function Consultar()   
-    {
-                        
-        $sql = "SELECT id_areas, nombre, descripcion, idoficina, id_metas FROM areas;";
+        $sql = "SELECT id_areas, nombre, id_metas, descripcion,f_creacion,f_update from areas;";
         
         if(!$response = $this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
@@ -53,35 +43,21 @@ class Areas
         return $response;
 
     }
+
     
-    public function MostrarAreas($idareas)
+    public function CrearOficinas()
     {
-                
-        $sql = "SELECT id_areas, nombre, descripcion, idoficina, id_metas FROM areas WHERE id_areas = " . $idareas;
-
-
-        if(!$response = $this->conn->query($sql)){
-            echo "Error: ". mysqli_error($this->conn);
-            exit();
-        }
-
-        $dato = $response->fetch_array(MYSQLI_ASSOC);
-
-        return $dato;
-
-    }
-
-    public function DatosDireccionOficina($idoficina)
-    {
-        $sql = "SELECT id, nombre_of, sigla, id_metas, id_institucion FROM oficinas WHERE id = $idoficina;";
-
-        if(!$response = $this->conn->query($sql)){
-            echo "Error: ". mysqli_error($this->conn);
-            exit();
-        }
-
-        $dato = $response->fetch_array(MYSQLI_ASSOC);
-
-        return $dato;        
+        
     }
 }
+
+/*
+$areas = new Areas();
+
+$data = $areas->Consultar();
+
+while ($fila = $data->fetch_array()) {
+	echo $fila[0];
+	echo $fila[1];
+	echo $fila[2];
+}*/

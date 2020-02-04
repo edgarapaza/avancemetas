@@ -50,7 +50,8 @@ class Personal
 
 		return $response;
 	
-    }
+
+	}
 
 	public function MostrarPersonalUno($idpersonal)
 	{
@@ -69,4 +70,3 @@ class Personal
 
 	}
 }
-
