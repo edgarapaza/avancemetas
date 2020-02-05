@@ -3,12 +3,10 @@ include("./models/reportes.model.php");
 include("../moduloA/models/personal.model.php");
 include("./models/responsabilidades.model.php");
 
-
 $reportes = new Reportes();
-$data = $reportes->Consultar();
-
 $personal = new Personal();
 $responsabilidades = new Responsabilidades();
+$data = $reportes->Consultar();
 
 $i = 1;
 
