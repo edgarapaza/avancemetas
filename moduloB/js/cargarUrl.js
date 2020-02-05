@@ -58,5 +58,6 @@ $(document).ready(function(){
 	$("#listaEstadisticas").click(function(){
 		$("#cuerpo").load("./listaEstadisticas.php");
 	});
+	
 });
 
