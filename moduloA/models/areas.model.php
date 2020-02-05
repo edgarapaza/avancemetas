@@ -44,20 +44,23 @@ class Areas
 
     }
 
+    public function MostrarArea($idarea)
+    {
+
+        $sql = "SELECT id_areas, nombre, id_metas, descripcion,f_creacion,f_update from areas WHERE id_areas = $idarea;";
+        
+        if(!$response = $this->conn->query($sql)){
+            echo "Error: " . mysqli_error($this->conn);
+            exit();
+        }
+
+        $data = $response->fetch_array(MYSQLI_ASSOC);
+        return $data;
+    }
+
     
     public function CrearOficinas()
     {
         
     }
 }
-
-/*
-$areas = new Areas();
-
-$data = $areas->Consultar();
-
-while ($fila = $data->fetch_array()) {
-	echo $fila[0];
-	echo $fila[1];
-	echo $fila[2];
-}*/

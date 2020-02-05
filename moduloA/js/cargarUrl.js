@@ -80,5 +80,11 @@ $(document).ready(function(){
 	$("#nuevoCargos").click(function(){
 		$("#cuerpo").load("./cargos.php");
 	});
+	$("#AsignarCargos").click(function(){
+		$("#cuerpo").load("./asignacionPersonal.php");
+	});
+	$("#ListadoCargos").click(function(){
+		$("#cuerpo").load("./listadoAsignacionPersonal.php");
+	});
 
 });
