@@ -27,13 +27,15 @@ $(document).ready(function(){
 		$("#cuerpo").load("./responsabilidades.php");
 	});
 
+
 	/*******************************
-		   META
+		   METAS
+
 	********************************/
 	$("#milistadoMetas").click(function(){
 		$("#cuerpo").load("./listaMetas.php");
 	});
-	
+
 	$("#nuevaMeta").click(function(){
 		$("#cuerpo").load("./metas.php");
 	});
