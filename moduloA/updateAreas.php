@@ -4,8 +4,6 @@ require("../moduloA/models/metas.model.php");
 
 require("../moduloA/models/oficinas.model.php");
 
-$oficinas = new Oficinas();
-
 $area = new Areas();
 $idareas = $_REQUEST['id_areas'];
 $row = $area->MostrarAreas($idareas);
@@ -13,6 +11,7 @@ $row = $area->MostrarAreas($idareas);
 $metas = new Metas();
 $data = $metas->Consultar();
 
+$oficinas = new Oficinas();
 $office = $oficinas->Consultar();
 
 ?>

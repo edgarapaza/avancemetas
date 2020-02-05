@@ -79,8 +79,8 @@ if(isset($_SESSION['admin']))
                   Crear Areas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="milistado">Listado de Areas</a>
-                  <a class="dropdown-item" href="#" id="nuevaOficina">Agregar Nueva Area</a>
+                  <a class="dropdown-item" href="#" id="listadoareas">Listado de Areas</a>
+                  <a class="dropdown-item" href="#" id="nuevaArea">Agregar Nueva Area</a>
                 </div>
           </li>
 

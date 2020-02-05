@@ -24,14 +24,13 @@ $(document).ready(function(){
 		$("#cuerpo").load("./oficinas.php");
 	});
 
-	/*******************************
 
+	/*******************************
 		   AREAS
 	********************************/
 	$("#listadoareas").click(function(){
 		$("#cuerpo").load("./listaAreas.php");
 	});
-	
 	$("#nuevaArea").click(function(){
 		$("#cuerpo").load("./areas.php");
 	});
