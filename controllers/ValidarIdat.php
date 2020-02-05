@@ -1,6 +1,8 @@
 <?php 
 session_start();
-require "../Core/Conexion.php";
+
+include("../core/Conexion.php");
+
 $conn=new Conexion();
 $conexion=$conn->Conectar();
 
