@@ -17,11 +17,6 @@ $(document).ready(function(){
 	});
 
 
-
-
-
-
-
 	/*******************************
 		   RESPONSABILIDADES
 	********************************/
@@ -33,15 +28,15 @@ $(document).ready(function(){
 		$("#cuerpo").load("./responsabilidades.php");
 	});
 
+
 	/*******************************
-		   AREAS
+		   METAS
 	********************************/
-	$("#listadoareas").click(function(){
-		$("#cuerpo").load("./listaAreas.php");
+	$("#milistadoMetas").click(function(){
+		$("#cuerpo").load("./listaMetas.php");
 	});
-	
-	$("#nuevaArea").click(function(){
-		$("#cuerpo").load("./areas.php");
+	$("#nuevaMeta").click(function(){
+		$("#cuerpo").load("./metas.php");
 	});
 
 
