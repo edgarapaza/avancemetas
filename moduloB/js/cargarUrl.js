@@ -1,38 +1,36 @@
 $(document).ready(function(){
 
-	$("#institucion").click(function(){
-		$("#cuerpo").load("./institucion.php");
-	});
-
-	$("#crear_cargos").click(function(){
-		$("#cuerpo").load("./cargos.php");
-	});
-
-	$("#agregar_personal").click(function(){
-		$("#cuerpo").load("./listaPersonal.php");
+	
+	$("#agregar_responsabilidades").click(function(){
+		$("#cuerpo").load("./responsabilidades.php");
 	});
 
 	$("#agregar_metas").click(function(){
 		$("#cuerpo").load("./metas.php");
 	});
 
+	$("#agregar_reporte").click(function(){
+		$("#cuerpo").load("./reportes.php");
+	});
 	$("#estadisticas_oficinas").click(function(){
 		$("#cuerpo").load("./estadisticas_oficinas.php");
 	});
 
-	$("#estadisticas_areas").click(function(){
-		$("#cuerpo").load("./estadisticas_areas.php");
-	});
 
-	
+
+
+
+
+
 	/*******************************
-		   OFICINAS
+		   RESPONSABILIDADES
 	********************************/
-	$("#milistado").click(function(){
-		$("#cuerpo").load("./listaOficinas.php");
+	$("#listadoresponsabilidades").click(function(){
+		$("#cuerpo").load("./listaResponsabilidades.php");
 	});
-	$("#nuevaOficina").click(function(){
-		$("#cuerpo").load("./oficinas.php");
+	
+	$("#nuevaResponsabilidad").click(function(){
+		$("#cuerpo").load("./responsabilidades.php");
 	});
 
 	/*******************************
@@ -48,26 +46,21 @@ $(document).ready(function(){
 
 
 	/*******************************
-		   PERSONAL
+		   REPORTES
 	********************************/
-	$("#listadopersonal").click(function(){
-		$("#cuerpo").load("./listaPersonal.php");
+	$("#listareportes").click(function(){
+		$("#cuerpo").load("./listaReportes.php");
 	});
-	$("#nuevopersonal").click(function(){
-		$("#cuerpo").load("./personal.php");
-	});
-
-	/*******************************
-		   RESPONSABILIDADES
-	********************************/
-	$("#listadoresponsabilidades").click(function(){
-		$("#cuerpo").load("./listaResponsabilidades.php");
-	});
-	
-	$("#nuevaResponsabilidad").click(function(){
-		$("#cuerpo").load("./responsabilidades.php");
+	$("#nuevoreporte").click(function(){
+		$("#cuerpo").load("./reportes.php");
 	});
 
 
+	/**********************************
+		   ESTADISTICAS DE OFICINA
+	**********************************/
+	$("#listaEstadisticas").click(function(){
+		$("#cuerpo").load("./listaEstadisticas.php");
+	});
 });
 

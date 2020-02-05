@@ -49,70 +49,38 @@ session_start();
             </a>
 
           </li>
-          <li class="nav-item ">
-            
-            <a href="#" class="nav-link" id="institucion" >
-              <i class="material-icons">room</i>
-              <p>Institucion</p>
-            </a>
-
-          </li>
+          
 
           <li class="nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Crear Oficinas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="milistado">Listado de oficinas</a>
-                  <a class="dropdown-item" href="#" id="nuevaOficina">Nueva Oficina</a>
-                </div>
-          </li>
-          <li class="nav-item">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Crear Areas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listadoareas">Listado de Areas</a>
-                  <a class="dropdown-item" href="#" id="nuevaArea">Agregar Nueva Area</a>
-                </div>
-          </li>
-
-          <li class="nav-item">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Crear Responsabilidades
+                  Responsabilidades
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#" id="listadoresponsabilidades">Listado de Responsabilidades</a>
                   <a class="dropdown-item" href="#" id="nuevaResponsabilidad">Agregar Nueva Responsabilidad</a>
                 </div>
           </li>
-          
-          <li class="nav-item ">
-            
-            <a class="nav-link" href="#" id="crear_cargos">
-              <i class="material-icons">home</i>
-              <p>Crear Cargo</p>
-            </a>
-  
-          </li>
 
           <li class="nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Personal
+                 Metas
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listadopersonal">Listado de Personal</a>
-                  <a class="dropdown-item" href="#" id="nuevopersonal">Nuevo Personal</a>
+                  <a class="dropdown-item" href="#" id="milistadoMetas">Listado de Metas</a>
+                  <a class="dropdown-item" href="#" id="nuevaMeta">Agregar Nueva Metas</a>
                 </div>
           </li>
           
-          <li class="nav-item  ">
-            <a href="#" class="nav-link" id="agregar_metas" >
-              <i class="material-icons">book</i>
-              <p>Agregar Metas</p>
-            </a>
-
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Reportes
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="listareportes">Listado de Reportes</a>
+                  <a class="dropdown-item" href="#" id="nuevoreporte">Nuevo Reporte</a>
+                </div>
           </li>
+
           <li class="nav-item  ">
             <a href="#" class="nav-link" id="estadisticas_oficinas" >
               <i class="material-icons">table</i>
@@ -120,13 +88,7 @@ session_start();
             </a>
 
           </li>
-          <li class="nav-item  ">
-            <a href="#" class="nav-link" id="estadisticas_areas" >
-              <i class="material-icons">report</i>
-              <p>Estadisticas por Areas</p>
-            </a>
 
-          </li>
           <!-- your sidebar here -->
         </ul>
       </div>
@@ -148,7 +110,9 @@ session_start();
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
-                  <i class="material-icons">notifications</i> Notifications
+                  <img src="<?php echo $data['foto'];?>" alt="Foto" width="40">
+                  
+                   Bienvenid@, <?php   echo $data['personal']; ?>
                 </a>
               </li>
               <!-- your navbar here -->

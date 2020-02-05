@@ -28,7 +28,10 @@ if ($data['niv_usu'] != null) {
 		    $_SESSION["id_personal"]=$data['id_personal'];
 	        header("location: ../moduloB/index.php");
 		    break;
-		
+		case '3':
+		    $_SESSION["personal"]=$data['id_personal'];
+	        header("location: ../moduloC/index.php");
+		    break;
 		default:
 			# code...
 			break;
