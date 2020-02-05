@@ -11,23 +11,7 @@ $areas->Guardar($nombre,$id_metas,$descripcion);
 
 header("Location: ../index.php");
 
-
-/*
-class Barbie
-{
-	private $nombre; //variable
-
-	function __construct()
-	{
-		$this->nombre = "Silvia";
-	}
-
-	function Casita()
-	{
-		echo "Agregando la Casita para Barbie para " . $this->nombre;
-	}
-}
-
-$barbie = new Barbie();
-$barbie->Casita();
-*/
+?>
+<script type="text/javascript">
+  window.close();
+</script>

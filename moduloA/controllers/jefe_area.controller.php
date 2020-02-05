@@ -8,3 +8,9 @@ $jefearea = new JefeArea();
 $jefearea->Guardar($id_personal,$id_areas);
 
 header("Location: ../index.php");
+
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>

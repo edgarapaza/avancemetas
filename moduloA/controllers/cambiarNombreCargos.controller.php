@@ -9,3 +9,8 @@ $cargos = new Cargo();
 $cargos->Modificar($idcargos, $nombre_cargo, $documento);
 
 //header('Location: ../oficinasCambiar.php');
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>

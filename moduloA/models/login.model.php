@@ -39,17 +39,15 @@ class Login
         return $data;        
     }
 
-    public function NuevoUsuario($log_usu,$id_personal,$nom_usu,$psw_usu,$niv_usu,$chk_usu)
+    public function RegistraAcceso($codigoPersonal, $idpersonal, $username,$password,$nivel)
     {
         $fechaActual = date('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO login VALUES ('$log_usu','$id_personal','$nom_usu','$psw_usu','$niv_usu','$chk_usu');";
+        $sql = "INSERT INTO login VALUES ('$codigoPersonal','$idpersonal','$username','$password','$nivel','1');";
 
-        if(!$res = $this->conn->query($sql)){
+        if(!$this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
             exit();
         }
-        $data = $res->fetch_array(MYSQLI_ASSOC);
-        return $data;
     }
 }

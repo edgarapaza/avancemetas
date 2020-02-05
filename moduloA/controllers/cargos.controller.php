@@ -11,4 +11,8 @@ $documento = $_POST['documento'];
 $cargo = new Cargo();
 $cargo->Guardar($id_jefearea,$nombre_cargo,$id_personal,$f_inicio_cargo,$documento);
 
-header("Location: ../index.php");
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>

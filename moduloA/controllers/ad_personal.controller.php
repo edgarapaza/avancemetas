@@ -13,3 +13,7 @@ $adper = new AdPersonal();
 $adper->Guardar($profesion,$tiempo_servicio,$condicion,$seguro_social,$grupo_sanguineo,$f_ingreso,$f_deceso);
 
 header("Location: ../index.php");
+?>
+<script type="text/javascript">
+  window.close();
+</script>

@@ -2,12 +2,15 @@
 include("../models/login.model.php");
 
 $login = new Login();
-$data = $login->ultimoRegistro();
 
-$siguiente = $data[0]+1;
-echo $siguiente;
-
+$codigoPersonal = $_REQUEST['codigo'];
 $idpersonal = $_REQUEST['idpersonal'];
+$username = $_REQUEST['username'];
+$password = $_REQUEST['password'];
+$nivel = $_REQUEST['nivel'];
 
-echo "id personal: ".$idpersonal;
-
+$data = $login->RegistraAcceso($codigoPersonal, $idpersonal, $username,$password,$nivel);
+?>
+<script type="text/javascript">
+  window.close();
+</script>

@@ -8,3 +8,9 @@ $oficinas_areas = new Oficinas_Areas();
 $oficinas_areas->Guardar($id_oficinas,$id_areas);
 
 header("Location: ../index.php");
+
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>

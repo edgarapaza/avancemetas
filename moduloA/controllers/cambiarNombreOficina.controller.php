@@ -8,3 +8,8 @@ $oficina = new Oficinas();
 $oficina->Modificar($idoficina, $nombre_oficina);
 
 //header('Location: ../oficinasCambiar.php');
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>
