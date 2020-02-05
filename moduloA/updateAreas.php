@@ -38,7 +38,7 @@ $office = $oficinas->Consultar();
 
 			<div class="form-group">
 				<label for="">Descripcion:</label>
-				<input type="text" class="form-control" id="" value="<?php echo $row['descripcion'];?>" name="descripcion" >
+				<input type="text" class="form-control" id="" name="descripcion" value="<?php echo $row['descripcion'];?>" >
 			</div>
 			<button type="submit" class="btn btn-primary">GUARDAR</button>
 		</form>

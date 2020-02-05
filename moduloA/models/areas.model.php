@@ -30,7 +30,7 @@ class Areas
     {
         $fechaActual = date('Y-m-d H:i:s');
 
-        $sql= "UPDATE areas SET nombre='$nombre', idoficina ='$idoficina', descripcion ='$descripcion' WHERE id_areas= $id_areas;";
+        $sql= "UPDATE areas SET nombre='$nombre', idoficina ='$idoficina', descripcion ='$descripcion' f_update='$fechaActual' WHERE id_areas= $id_areas;";
 
         if(!$this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
@@ -57,7 +57,7 @@ class Areas
     public function MostrarAreas($idareas)
     {
                 
-        $sql = "SELECT id_areas, nombre, descripcion, idoficina, id_metas FROM areas WHERE id_areas = " . $idareas;
+        $sql = "SELECT nombre, descripcion, idoficina, id_metas FROM areas WHERE id_areas = " . $idareas;
 
 
         if(!$response = $this->conn->query($sql)){
@@ -73,7 +73,7 @@ class Areas
 
     public function DatosDireccionOficina($idoficina)
     {
-        $sql = "SELECT id, nombre_of, sigla, id_metas, id_institucion FROM oficinas WHERE id = $idoficina;";
+        $sql = "SELECT nombre_of, sigla, id_metas, id_institucion FROM oficinas WHERE id = $idoficina;";
 
         if(!$response = $this->conn->query($sql)){
             echo "Error: ". mysqli_error($this->conn);
