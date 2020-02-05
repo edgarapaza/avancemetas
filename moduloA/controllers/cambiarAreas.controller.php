@@ -10,7 +10,3 @@ $area = new Areas();
 $area->Modificar($id_areas, $nombre, $idoficina, $descripcion);
 
 ?>
-
-<script type="text/javascript">
-  window.close();
-</script>
