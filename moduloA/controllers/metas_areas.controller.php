@@ -11,3 +11,8 @@ $metaarea = new MetasAreas();
 $metaarea->Guardar($id_meta,$id_area,$fecha_reporte,$cantidad_avance);
 
 header("Location: ../index.php");
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>

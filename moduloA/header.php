@@ -1,5 +1,12 @@
 <?php 
 session_start();
+include("models/login.model.php");
+if(isset($_SESSION['admin']))
+{
+  //echo $_SESSION['admin'];
+  $login = new Login();
+  $data = $login->NombrePersonal($_SESSION['admin']);
+
 ?>
 <!doctype html>
 <html lang="es-ES">
@@ -34,7 +41,7 @@ session_start();
           Area de Informatica
         </a>
         <a href="#" class="simple-text logo-normal">
-          Administrador: <?php echo $_SESSION['admin'];?>
+          Administrador
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -142,7 +149,9 @@ session_start();
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
-                  <i class="material-icons">notifications</i> Notifications
+                  <img src="<?php echo $data['foto'];?>" alt="Foto" width="40">
+                  
+                   Bienvenid@, <?php   echo $data['personal']; ?>
                 </a>
               </li>
               <!-- your navbar here -->
@@ -151,4 +160,9 @@ session_start();
         </div>
       </nav>
       <!-- End Navbar -->
-  
+  <?php 
+  }
+  else{
+    
+    header("Location: ../index.html");
+  } ?>

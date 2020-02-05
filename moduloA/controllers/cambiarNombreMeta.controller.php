@@ -10,3 +10,8 @@ $meta = new Metas();
 $meta->Modificar($idmeta, $nombre_meta,$programado,$unidad_medida);
 
 //header('Location: ../oficinasCambiar.php');
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>

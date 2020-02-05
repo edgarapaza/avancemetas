@@ -11,3 +11,8 @@ $meta->Guardar($nombre_meta,$programado,$unidad_medida);
 
 header("Location: ../index.php");
 
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>

@@ -15,3 +15,8 @@ $inst = new Institucion();
 $inst->Guardar($nombre_inst,$direccion,$telefono,$RUC,$email,$p_web,$fecha_creacion_archivo,$id_metas,$n_resolucion);
 
 header("Location: ../index.php");
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>

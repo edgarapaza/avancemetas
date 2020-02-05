@@ -10,3 +10,9 @@ $oficina = new Oficinas();
 $oficina->Guardar($nombre_of,$id_institucion);
 
 header("Location: ../index.php");
+
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>
