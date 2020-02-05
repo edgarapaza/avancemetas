@@ -15,3 +15,9 @@ $persona = new Personal();
 $persona->Modificar($id_personal, $nombre,$apellidos,$telefono,$fecha_nac,$email,$dni);
 
 header("Location: ../index.php");
+
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>

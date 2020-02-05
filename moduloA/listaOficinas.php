@@ -42,7 +42,7 @@ $i = 1;
 					<td>
 						
 						 <a href="#" id="#cambiarOficina" class="btn btn-info btn-sm" onclick="CambiarDatosOficina(<?php echo $fila['id'];?>)"><i class="material-icons">how_to_reg</i></a>
-						 <a href="oficinas.php" id="nuevaOficina" class="btn btn-success btn-sm"><i class="material-icons">add</i></a>
+						 
 
 					</td>
 				</tr>
