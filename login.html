@@ -9,26 +9,65 @@
 	<script src="//code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<style type="text/css">
+		body{
+         background:  #496cad ;
+  /*filter: blur(6px);*/
+		}
+		.box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 15%; 
+
+
+  		}
+  		.loginBox{
+  			background:  #f0d3bc ;
+  			padding: 5em 3em; 
+  			border: 2px solid black;
+
+  		}
+  		#button{
+  			background: #9c27b0;
+  		  		}
+  		
+  		/*ajio22
+
+	</style>
 </head>
 <body>
- 	
 
-	<div class="loginBox">
-		<form action="controllers/ValidarIdat.php" method="POST" role="form">
-		<legend>LOGIN</legend>
-	
-		<div class="form-group">
-			<label for="">Usuario</label>
-			<input type="text" class="form-control" id="username" name="username" placeholder="Ponga su usuario">
+	<div class="box"> 	
+		<div class="loginBox">
+ 			<legend><center>LOGIN</center></legend>
+ 			<center><img src="img/arp_logo_mini.png"></center>
+			<form action="controllers/ValidarIdat.php" method="POST" role="form">
+			</br>		
+
+  			<i class="material-icons">account_box</i>
+
+
+			
+			<div class="form-group">
+				<label for="">Usuario</label>
+				<input type="text" class="form-control" id="username" name="username" placeholder="Ponga su usuario">
+			</div>
+			
+			<div class="form-group">
+				<label for="">Password</label>
+				<input type="password" class="form-control" id="clave" name="clave" placeholder="Ponga su password">
+			</div>
+			
+			
+			<center><button type="submit" id="button" class="btn btn-primary">Ingresar</button></center>
+			</form>
 		</div>
-		<div class="form-group">
-			<label for="">Password</label>
-			<input type="password" class="form-control" id="clave" name="clave" placeholder="Ponga su password">
-		</div>
-		
-		<button type="submit" class="btn btn-primary">Ingresar</button>
-		</form>
+
 	</div>
+
 	
 </body>
 </html>

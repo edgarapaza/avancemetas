@@ -4,8 +4,6 @@ require("../moduloA/models/metas.model.php");
 
 require("../moduloA/models/oficinas.model.php");
 
-$oficinas = new Oficinas();
-
 $area = new Areas();
 $idareas = $_REQUEST['id_areas'];
 $row = $area->MostrarAreas($idareas);
@@ -13,6 +11,7 @@ $row = $area->MostrarAreas($idareas);
 $metas = new Metas();
 $data = $metas->Consultar();
 
+$oficinas = new Oficinas();
 $office = $oficinas->Consultar();
 
 ?>
@@ -28,18 +27,8 @@ $office = $oficinas->Consultar();
 				<input type="text" class="form-control" id="" value="<?php echo $row['nombre'];?>" name="nombre" >
 			</div>
 			<div class="form-group">
-			    <label for="">Cambiar Direccion/Oficina:</label>
-				<select name="idoficina" id="idoficina" class="form-control">
-					<option value="0">[Seleccionar]</option>
-					<?php while ($row = $office->fetch_array(MYSQLI_ASSOC)) { ?>
-					<option value="<?php echo $row['id']; ?>"><?php echo $row['nombre_of']; ?></option>
-					<?php } ?>
-				</select>
-			</div>
-
-			<div class="form-group">
 				<label for="">Descripcion:</label>
-				<input type="text" class="form-control" id="" name="descripcion" value="<?php echo $row['descripcion'];?>" >
+				<input type="text" class="form-control" id=""  value="<?php echo $row['descripcion'];?>" name="descripcion" >
 			</div>
 			<button type="submit" class="btn btn-primary">GUARDAR</button>
 		</form>
