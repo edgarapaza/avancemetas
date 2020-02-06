@@ -64,7 +64,7 @@ $i=1;
 					?>
 				</td>
 				<td>
-					<a href="#" id="#cambiarOficina" class="btn btn-info btn-sm" onclick="CambiarDatosOficina(<?php echo $fila['id'];?>)">Cambiar</a>
+				
 					<a href="#" >Cambiar</a>
 				</td>
 			</tr>
@@ -73,9 +73,3 @@ $i=1;
 	</table>
 	
 </div>
-
-<script>
-	function CambiarDatosOficina(dato) {
-		var ventana1 = window.open('?idoficina='+dato,"MsgWindow", "width=600,height=500");
-	}
-</script>
