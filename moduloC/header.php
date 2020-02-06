@@ -1,5 +1,12 @@
-<?php 
+ <?php 
 session_start();
+include("models/login.model.php");
+if(isset($_SESSION['personal']))
+{
+  //echo $_SESSION['admin'];
+  $login = new Login();
+  $data = $login->NombrePersonal($_SESSION['personal']);
+
 ?>
 <!doctype html>
 <html lang="es-ES">
@@ -88,7 +95,25 @@ session_start();
               <!-- your navbar here -->
             </ul>
           </div>
+            <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#pablo">
+                  <img src="<?php echo $data['foto'];?>" alt="Foto" width="40">
+                  
+                   Bienvenid@, <?php   echo $data['personal']; ?>
+                    <a href="../controllers/logout.php"> <button class="btn btn-default" name="salir">Salir</button></a>
+                </a>
+              </li>
+              <!-- your navbar here -->
+            </ul>
+          </div>
         </div>
       </nav>
       <!-- End Navbar -->
-  
+    <?php 
+  }
+  else{
+    
+    header("Location: ../index.html");
+  } ?>
