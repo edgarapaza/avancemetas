@@ -123,6 +123,7 @@ if(isset($_SESSION['id_personal']))
                   <img src="<?php echo $data['foto'];?>" alt="Foto" width="40">
                   
                    Bienvenid@, <?php   echo $data['personal']; ?>
+                    <a href="../controllers/logout.php"> <button class="btn btn-default" name="salir">Salir</button></a>
                 </a>
               </li>
               <!-- your navbar here -->
