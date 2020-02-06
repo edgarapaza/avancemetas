@@ -14,7 +14,7 @@ class Reportes
 
 	public function Guardar($id_personal,$id_responsabilidades,$f_reportes,$cantidad_avance)
 	{
-		$sql = "INSERT INTO reportes VALUES (null,'$id_personal','$id_responsabilidades','$f_reportes','$cantidad_avance';";
+		$sql = "INSERT INTO reportes VALUES (null,'$id_personal','$id_responsabilidades','$f_reportes','$cantidad_avance');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
@@ -23,9 +23,9 @@ class Reportes
 		return true;
 	}
 
-	public function Modificar($id_reportes, $f_reportes,$cantidad_avance)
+	public function Modificar($id_reportes,$cantidad_avance)
 	{
-		$sql = "UPDATE reportes SET f_reportes = '$f_reportes', cantidad_avance = '$cantidad_avance' WHERE id_reportes = $id_reportes;";
+		$sql = "UPDATE reportes SET cantidad_avance = '$cantidad_avance' WHERE id_reportes = $id_reportes;";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
@@ -37,15 +37,18 @@ class Reportes
 
 	public function Consultar()
 	{
-		$sql = "SELECT id_reportes,$id_personal,id_responsabilidades,f_reportes,cantidad_avance FROM reportes;";
+		$sql = "SELECT id_reportes,id_personal,id_responsabilidades,f_reportes,cantidad_avance FROM reportes;";
 
-		$response = $this->conn->query($sql);
+		if(!$response = $this->conn->query($sql))
+		{
+			echo "Error: ". mysqli_error($this->conn);
+		}
 
 		return $response;
 	}
-	public function MostrarReportes($idreportes)
+	public function MostrarReportes($id_reportes)
 	{
-		$sql = "SELECT id_reportes,$id_personal,id_responsabilidades,f_reportes,cantidad_avance  FROM reportes WHERE id_reportes = " . $idreportes;
+		$sql = "SELECT id_reportes,id_personal,id_responsabilidades,f_reportes,cantidad_avance  FROM reportes WHERE id_reportes = " . $id_reportes;
 		
 		if(!$response = $this->conn->query($sql))
 		{

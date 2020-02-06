@@ -86,7 +86,7 @@ if(isset($_SESSION['id_personal']))
                  Reportes
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listaeportes">Listado de Reportes</a>
+                  <a class="dropdown-item" href="#" id="listaReportes">Listado de Reportes</a>
                   <a class="dropdown-item" href="#" id="nuevoReporte">Nuevo Reporte</a>
                 </div>
           </li>
@@ -138,3 +138,4 @@ if(isset($_SESSION['id_personal']))
     
     header("Location: ../index.html");
   } ?>
+
