@@ -1,10 +1,9 @@
 <?php
 require("../moduloA/models/personal.model.php");
 require("./models/responsabilidades.model.php");
-
-
 $personal = new Personal();
 $data = $personal->Consultar();
+
 $responsabilidades = new Responsabilidades();
 $datos = $responsabilidades->Consultar();
 

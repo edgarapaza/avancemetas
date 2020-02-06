@@ -1,12 +1,14 @@
 <?php
 include("./models/reportes.model.php");
-include("../moduloA/models/personal.model.php");
 include("./models/responsabilidades.model.php");
+include("../moduloA/models/personal.model.php");
 
 $reportes = new Reportes();
-$personal = new Personal();
-$responsabilidades = new Responsabilidades();
 $data = $reportes->Consultar();
+
+$responsabilidades = new Responsabilidades();
+$personal = new Personal();
+
 
 $i = 1;
 
@@ -42,8 +44,8 @@ $i = 1;
 					<td>
 						<?php 
 						 
-						$dataresponsabilidades = $responsabilidades->MostrarResponsabilidades($fila['id_responsabilidades']);
-						printf(" %s ",$dataresponsabilidades['nomb_resp']); 
+						$dataresp = $responsabilidades->MostrarResponsabilidades($fila['id_responsabilidades']);
+						printf(" %s ",$dataresp['nomb_resp']); 
 						?>
 						
 					</td>

@@ -8,3 +8,8 @@ $unidad_medida = trim(strtoupper($_REQUEST['unidad_medida']));
 
 $responsabilidades = new Responsabilidades();
 $responsabilidades->Modificar($id_resp, $nomb_resp, $documento, $unidad_medida);
+?>
+
+<script type="text/javascript">
+  window.close();
+</script>
