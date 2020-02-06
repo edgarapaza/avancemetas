@@ -25,9 +25,9 @@ class Cargo
 
 	}
 
-	public function Modificar($idcargos,$nombre_cargo,$documento)
+	public function Modificar($idcargos,$nombre_cargo)
 	{
-		$sql = "UPDATE cargos SET nombre_cargo = '$nombre_cargo', documento = '$documento' WHERE id_cargos = '$idcargos';";
+		$sql = "UPDATE cargos SET nombre_cargo = '$nombre_cargo' WHERE id_cargos = '$idcargos';";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);

@@ -18,8 +18,7 @@ $office = $cargos->MostrarCargos($idcargos);
 				<label for="">Nombre Cargos:</label>
 				<input type="text" class="form-control" id="" value="<?php echo $office['nombre_cargo'];?>" name="nombre_cargo" placeholder="Nombre Cargos">
 
-				<label for="">Documento:</label>
-				<input type="text" class="form-control" id="" value="<?php echo $office['documento'];?>" name="documento" placeholder="Documento">
+				
 				
 			</div>
 			
