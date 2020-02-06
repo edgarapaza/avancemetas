@@ -1,9 +1,11 @@
 
 <?php
 include("./models/cargos.model.php");
+include("./models/oficinas.model.php");
 
 $cargos = new Cargo();
 $data = $cargos->Consultar();
+$oficinas = new Oficinas();
 
 $i = 1;
 
@@ -15,10 +17,8 @@ $i = 1;
 			<thead>
 				<tr>
 					<th>Num.</th>
+					<th>Oficina / Direccion</th>
 					<th>Nombre Cargo</th>
-					<th>Fecha de Inicio</th>
-					<th>Fecha de Fin</th>
-					<th>Documentos</th>
 					<th>Opciones</th>
 				</tr>
 			</thead>
@@ -28,28 +28,18 @@ $i = 1;
 				?>
 				<tr>
 					<td><?php echo $i; ?></td>
+					<td>
+						<?php 
+						 $office = $oficinas->MostrarOficina($fila['id_oficina']);
+						 echo $office['nombre_of'];
+
+						?>
+					</td>
 					<td><?php //echo $fila['id'];
 					          echo $fila['nombre_cargo']; ?>
 					          	
 					</td>
-					<td>
-						<?php 
-						 
-						echo $fila['f_inicio_cargo'];
-						?>
-						
-					</td>
-					<td>
-						<?php
-						echo $fila['f_fin_cargo'];		
-						?>
-					</td>
 
-					<td>
-						<?php
-						echo $fila['documento'];		
-						?>
-					</td>
 					<td>
 						
 						 <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiaCargos(<?php echo $fila['id_cargos'];?>)"><i class="material-icons">how_to_reg</i></a>
