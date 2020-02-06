@@ -8,7 +8,6 @@ $data = $personal->Consultar();
 $responsabilidades = new Responsabilidades();
 $datos = $responsabilidades->Consultar();
 
-
 ?>
 
 	<CENTER><h1>REPORTES</h1></CENTER>

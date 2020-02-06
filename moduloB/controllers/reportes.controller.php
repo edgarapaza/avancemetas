@@ -9,7 +9,7 @@ $cantidad_avance = $_POST['cantidad_avance'];
 
 $reportes = new Reportes();
 
-$reportes->Guardar($id_personal,$id_responsabilidades,$f_reportes,$cantidad_avance);
+$reportes->s($id_personal,$id_responsabilidades,$f_reportes,$cantidad_avance);
 
 header("Location: ../index.php");
 

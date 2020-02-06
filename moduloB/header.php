@@ -1,5 +1,14 @@
 <?php 
 session_start();
+include("models/login.model.php");
+if(isset($_SESSION['id_personal']))
+{
+  //echo $_SESSION['admin'];
+  $login = new Login();
+  $data = $login->NombrePersonal($_SESSION['id_personal']);
+
+?>
+<!doctype html>
 ?>
 <!doctype html>
 <html lang="es-ES">
@@ -121,4 +130,9 @@ session_start();
         </div>
       </nav>
       <!-- End Navbar -->
-  
+  <?php 
+  }
+  else{
+    
+    header("Location: ../index.html");
+  } ?>
