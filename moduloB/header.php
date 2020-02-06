@@ -9,8 +9,6 @@ if(isset($_SESSION['id_personal']))
 
 ?>
 <!doctype html>
-?>
-<!doctype html>
 <html lang="es-ES">
 
 <head>
@@ -43,7 +41,7 @@ if(isset($_SESSION['id_personal']))
           Area de Informatica
         </a>
         <a href="#" class="simple-text logo-normal">
-          Personal: <?php echo $_SESSION['id_personal'];?>
+          Jefe de Área
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -58,18 +56,21 @@ if(isset($_SESSION['id_personal']))
             </a>
 
           </li>
-          
+        
 
+       
           <li class="nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Responsabilidades
+                  Crear Responsabilidades
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#" id="listadoresponsabilidades">Listado de Responsabilidades</a>
                   <a class="dropdown-item" href="#" id="nuevaResponsabilidad">Agregar Nueva Responsabilidad</a>
                 </div>
           </li>
+          
 
+        
           <li class="nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Metas
@@ -79,14 +80,14 @@ if(isset($_SESSION['id_personal']))
                   <a class="dropdown-item" href="#" id="nuevaMeta">Agregar Nueva Metas</a>
                 </div>
           </li>
-          
+
           <li class="nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Reportes
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listareportes">Listado de Reportes</a>
-                  <a class="dropdown-item" href="#" id="nuevoreporte">Nuevo Reporte</a>
+                  <a class="dropdown-item" href="#" id="listaeportes">Listado de Reportes</a>
+                  <a class="dropdown-item" href="#" id="nuevoReporte">Nuevo Reporte</a>
                 </div>
           </li>
 
@@ -97,7 +98,7 @@ if(isset($_SESSION['id_personal']))
             </a>
 
           </li>
-
+       
           <!-- your sidebar here -->
         </ul>
       </div>
@@ -136,3 +137,4 @@ if(isset($_SESSION['id_personal']))
     
     header("Location: ../index.html");
   } ?>
+

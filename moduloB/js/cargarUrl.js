@@ -16,7 +16,6 @@ $(document).ready(function(){
 		$("#cuerpo").load("./estadisticas_oficinas.php");
 	});
 
-
 	/*******************************
 		   RESPONSABILIDADES
 	********************************/
@@ -31,10 +30,12 @@ $(document).ready(function(){
 
 	/*******************************
 		   METAS
+
 	********************************/
 	$("#milistadoMetas").click(function(){
 		$("#cuerpo").load("./listaMetas.php");
 	});
+
 	$("#nuevaMeta").click(function(){
 		$("#cuerpo").load("./metas.php");
 	});
@@ -43,10 +44,10 @@ $(document).ready(function(){
 	/*******************************
 		   REPORTES
 	********************************/
-	$("#listareportes").click(function(){
+	$("#listaReportes").click(function(){
 		$("#cuerpo").load("./listaReportes.php");
 	});
-	$("#nuevoreporte").click(function(){
+	$("#nuevoReporte").click(function(){
 		$("#cuerpo").load("./reportes.php");
 	});
 
@@ -57,5 +58,6 @@ $(document).ready(function(){
 	$("#listaEstadisticas").click(function(){
 		$("#cuerpo").load("./listaEstadisticas.php");
 	});
+	
 });
 
