@@ -120,6 +120,8 @@ if(isset($_SESSION['admin']))
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#" id="milistadoCargos">Listado de Cargos</a>
                   <a class="dropdown-item" href="#" id="nuevoCargos">Nuevo Cargo</a>
+                  <a class="dropdown-item" href="#" id="AsignarCargos">Asignacion de Cargos</a>
+                  <a class="dropdown-item" href="#" id="ListadoCargos">Listado de Cargos</a>
                 </div>
           </li>
 

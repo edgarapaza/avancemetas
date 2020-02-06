@@ -53,22 +53,19 @@ class Areas
         return $response;
 
     }
-    
-    public function MostrarAreas($idareas)
+
+    public function MostrarArea($idarea)
     {
-                
-        $sql = "SELECT nombre, descripcion, idoficina, id_metas FROM areas WHERE id_areas = " . $idareas;
 
-
+        $sql = "SELECT id_areas, nombre, id_metas, descripcion,f_creacion,f_update from areas WHERE id_areas = $idarea;";
+        
         if(!$response = $this->conn->query($sql)){
-            echo "Error: ". mysqli_error($this->conn);
+            echo "Error: " . mysqli_error($this->conn);
             exit();
         }
 
-        $dato = $response->fetch_array(MYSQLI_ASSOC);
-
-        return $dato;
-
+        $data = $response->fetch_array(MYSQLI_ASSOC);
+        return $data;
     }
 
     public function DatosDireccionOficina($idoficina)
@@ -84,4 +81,5 @@ class Areas
 
         return $dato;        
     }
+
 }

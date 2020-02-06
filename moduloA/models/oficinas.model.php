@@ -41,9 +41,13 @@ class Oficinas
 	{
 		$sql = "SELECT id, nombre_of, id_metas,id_institucion, f_creacion,f_update FROM oficinas;";
 		
-		$response = $this->conn->query($sql);
+		if(!$response = $this->conn->query($sql))
+		{
+			echo "Error: ". mysqli_error($this->conn);
+		}
 
 		return $response;
+		
 	}
 
 	public function MostrarOficina($idoficina)

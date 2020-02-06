@@ -12,18 +12,17 @@ class Cargo
 		return $this->conn;
 	}
 
-	public function Guardar($id_jefearea,$nombre_cargo,$id_personal,$f_inicio_cargo,$documento)
+	public function Guardar($id_oficina,$nombre_cargo)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 		
-		$sql = "INSERT INTO cargos VALUES (null,'$id_jefearea','$nombre_cargo','$id_personal','$f_inicio_cargo',null,'$documento');";
+		$sql = "INSERT INTO cargos VALUES (null,'$id_oficina','$nombre_cargo','$fechaActual');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
 
-		$this->conn->close();
 	}
 
 	public function Modificar($idcargos,$nombre_cargo,$documento)
@@ -35,32 +34,48 @@ class Cargo
 			exit();
 		}
 
-		$this->conn->close();
 	}
 
 	public function Consultar()
 	{
-		$sql = "SELECT id_cargos, nombre_cargo, f_inicio_cargo, f_fin_cargo, documento FROM cargos;";
+		$sql = "SELECT id_cargos,id_oficina,nombre_cargo FROM cargos;";
 		
-		$response = $this->conn->query($sql);
+		if(!$response = $this->conn->query($sql))
+		{
+			echo "Error: " . mysqli_error($this->conn);
+			exit();	
+		}
 
 		return $response;
 
-		$this->conn->close();
 	}
 
 	public function MostrarCargos($idcargos)
 	{
-		$sql = "SELECT id_cargos, nombre_cargo, f_inicio_cargo,f_fin_cargo,documento FROM cargos WHERE id_cargos = $idcargos;";
+		$sql = "SELECT id_cargos,id_oficina,nombre_cargo,fec_creacion FROM cargos WHERE id_cargos = $idcargos;";
 		
 		if(!$response = $this->conn->query($sql))
 		{
 			echo " No se han asignado ningun cargo";
 		}
 		
-		$fila = $response->fetch_array(MYSQLI_ASSOC);
-		return $fila;
+		$data = $response->fetch_array(MYSQLI_ASSOC);
+		return $data;
 
-		$this->conn->close();
+
 	}
+
+	public function NombrePersonal($idpersonal)
+    {
+        $fechaActual = date('Y-m-d H:i:s');
+
+        $sql = "SELECT CONCAT(nombre,' ',apellidos) AS personal, foto FROM personal WHERE id_personal = $idpersonal;";
+
+        if(!$res = $this->conn->query($sql)){
+            echo "Error: " . mysqli_error($this->conn);
+            exit();
+        }
+        $data = $res->fetch_array(MYSQLI_ASSOC);
+        return $data;
+    }
 }

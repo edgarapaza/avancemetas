@@ -6,6 +6,10 @@ $oficinas = new Oficinas();
 $metas = new Metas();
 $data = $oficinas->Consultar();
 
+$oficinas = new Oficinas();
+$office = $oficinas->Consultar();
+
+
 $i = 1;
 
 ?>
@@ -22,6 +26,8 @@ $i = 1;
 				</tr>
 			</thead>
 			<tbody>
+
+				
 			<?php while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {  
 				
 				?>
