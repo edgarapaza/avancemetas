@@ -62,10 +62,18 @@ if(isset($_SESSION['personal']))
                  Reporte
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listadopersonal">Listado de reportes</a>
-                  <a class="dropdown-item" href="#" id="nuevopersonal">Nuevo reporte</a>
+                  <a class="dropdown-item" href="#" id="reportes">Reportes del Personal</a>
                 </div>
           </li>
+          <li class="nav-item  ">
+            
+            <a href="#" class="nav-link" id="reportes" >
+              <i class="material-icons">table</i>
+              <p>Reportes del Personal</p>
+            </a>
+
+          </li>
+
           
           
           <!-- your sidebar here -->
