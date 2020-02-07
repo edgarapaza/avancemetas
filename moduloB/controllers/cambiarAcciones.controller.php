@@ -8,7 +8,7 @@ $unidad_medida = trim(strtoupper($_REQUEST['unidad_medida']));
 $acciones = new Acciones();
 $acciones->Modificar($id_acciones, $nomb_actividad, $unidad_medida);
 
-header("location: ../index.php");
+//header("location: ../index.php");
 ?>
 
 <script type="text/javascript">

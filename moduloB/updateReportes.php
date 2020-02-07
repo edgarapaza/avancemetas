@@ -9,7 +9,7 @@ $row = $reportes->MostrarReportes($idreportes);
 <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
 	<div class="container">
 		
-		<form action="controllers/CambiarReportes.controller.php" method="POST" role="form">
+		<form action="controllers/cambiarReportes.controller.php" method="POST" role="form">
 			<legend>Cambiar Cantidad de Reportes: </legend>
 
 			<div class="form-group">
