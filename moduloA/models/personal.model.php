@@ -69,4 +69,20 @@ class Personal
 		return $dato;
 
 	}
+	public function MostrarPersonalAccion($idpersonal)
+	{
+
+		$sql = "SELECT nombre, apellidos FROM personal WHERE id_personal = $idpersonal;";
+		
+		if(!$response = $this->conn->query($sql))
+		{
+			echo "Error: ". mysqli_error($this->conn);
+			exit();
+		}
+		$data = $response->fetch_array(MYSQLI_ASSOC);
+
+		return $data;
+		$this->conn->close();
+	}
+
 }
