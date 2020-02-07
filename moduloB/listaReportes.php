@@ -1,12 +1,12 @@
 <?php
 include("./models/reportes.model.php");
-include("./models/responsabilidades.model.php");
+include("./models/acciones.model.php");
 include("../moduloA/models/personal.model.php");
 
 $reportes = new Reportes();
 $data = $reportes->Consultar();
 
-$responsabilidades = new Responsabilidades();
+$acciones = new Acciones();
 $personal = new Personal();
 
 
@@ -21,7 +21,7 @@ $i = 1;
 				<tr>
 					<th>Num.</th>
 					<th>Id Personal</th>
-					<th>Id Responsabilidades</th>
+					<th>Id Acciones</th>
 					<th>Fecha Reporte</th>
 					<th>Cantidad Avance</th>
 					<th>Opciones</th>
@@ -44,8 +44,8 @@ $i = 1;
 					<td>
 						<?php 
 						 
-						$dataresp = $responsabilidades->MostrarResponsabilidades($fila['id_responsabilidades']);
-						printf(" %s ",$dataresp['nomb_resp']); 
+						$dataacciones = $acciones->MostrarAcciones($fila['id_acciones']);
+						printf(" %s ",$dataacciones['nomb_actividad']); 
 						?>
 						
 					</td>

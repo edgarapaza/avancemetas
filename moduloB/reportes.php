@@ -1,11 +1,11 @@
 <?php
 require("../moduloA/models/personal.model.php");
-require("./models/responsabilidades.model.php");
+require("../moduloA/models/cargos.model.php");
 $personal = new Personal();
 $data = $personal->Consultar();
 
-$responsabilidades = new Responsabilidades();
-$datos = $responsabilidades->Consultar();
+$cargos = new Cargos();
+$datos = $cargos->Consultar();
 
 ?>
 
@@ -14,7 +14,7 @@ $datos = $responsabilidades->Consultar();
 			<legend>Registro de Reportes</legend>
 						
 			<div class="form-group">
-				<label for="">Id Personal:</label>
+				<label for="">ID Personal:</label>
 				<select name="id_personal" id="" class="form-control">
 			     	<option value="0" selected="selected">Select</option>
 					<?php 
@@ -26,25 +26,34 @@ $datos = $responsabilidades->Consultar();
 			</div>
 
 			<div class="form-group">
-				<label for="">Id Responsabilidades:</label>
-				<select name="id_responsabilidades" id="" class="form-control">
+				<label for="">ID Cargos:</label>
+				<select name="id_cargos" id="" class="form-control">
 			     	<option value="0" selected="selected">Select</option>
 					<?php 
 					while ($fila = $datos->fetch_array(MYSQLI_ASSOC)) {					 ?>
 
-					 <option value="<?php echo $fila['id_responsabilidades']; ?>"><?php echo $fila['nomb_resp'];?></option>
+					 <option value="<?php echo $fila['id_cargos']; ?>"><?php echo $fila['nombre_cargo'];?></option>
 					<?php } ?>
 				</select>
 			</div>
 
 			<div class="form-group">
-				<label for="">Fecha Reportes:</label>
-				<input type="date" class="form-control" id="" name="f_reportes" placeholder="ingresar fecha del reporte">
+				<label for="">Nombre Actividad:</label>
+				<input type="date" class="form-control" id="" name="nomb_actividad" placeholder="ingresar fecha del reporte">
+			</div>
+			<div class="form-group">
+				<label for="">Unidad Medida:</label>
+				<input type="date" class="form-control" id="" name="unidad_medida" placeholder="ingresar fecha del reporte">
 			</div>
 
 			<div class="form-group">
-				<label for="">Cantidad Avance:</label>
-				<input type="text" class="form-control" id="" name="cantidad_avance" placeholder="cantidad avance">
+				<label for="">Fecha Creacion:</label>
+				<input type="date" class="form-control" id="" name="fecha_creacion" placeholder="ingresar fecha del reporte">
+			</div>
+
+			<div class="form-group">
+				<label for="">Fecha Update:</label>
+				<input type="text" class="form-control" id="" name="fecha_update" placeholder="cantidad avance">
 			</div>
 			
 			<button type="submit" class="btn btn-primary">enviar</button>

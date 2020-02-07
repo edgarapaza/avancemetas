@@ -12,9 +12,9 @@ class Reportes
 		return $this->conn;
 	}
 
-	public function Guardar($id_personal,$id_responsabilidades,$f_reportes,$cantidad_avance)
+	public function Guardar($id_personal,$id_acciones,$f_reportes,$cantidad_avance)
 	{
-		$sql = "INSERT INTO reportes VALUES (null,'$id_personal','$id_responsabilidades','$f_reportes','$cantidad_avance');";
+		$sql = "INSERT INTO reportes VALUES (null,'$id_personal','$id_acciones','$f_reportes','$cantidad_avance');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
@@ -37,7 +37,7 @@ class Reportes
 
 	public function Consultar()
 	{
-		$sql = "SELECT id_reportes,id_personal,id_responsabilidades,f_reportes,cantidad_avance FROM reportes;";
+		$sql = "SELECT id_reportes,id_personal,id_acciones,f_reportes,cantidad_avance FROM reportes;";
 
 		if(!$response = $this->conn->query($sql))
 		{
@@ -48,7 +48,7 @@ class Reportes
 	}
 	public function MostrarReportes($id_reportes)
 	{
-		$sql = "SELECT id_reportes,id_personal,id_responsabilidades,f_reportes,cantidad_avance  FROM reportes WHERE id_reportes = " . $id_reportes;
+		$sql = "SELECT id_reportes,id_personal,id_acciones,f_reportes,cantidad_avance  FROM reportes WHERE id_reportes = " . $id_reportes;
 		
 		if(!$response = $this->conn->query($sql))
 		{

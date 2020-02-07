@@ -1,6 +1,5 @@
 
 <?php 
-echo "grt";
 include("./models/metas.model.php");
 
 
