@@ -1,11 +1,11 @@
 <?php
 include("../models/reportes.model.php");
 
-$id_reportes = $_REQUEST['id_reportes'];
-$cantidad_avance = $_REQUEST['cantidad_avance'];
+$idreportes = $_REQUEST['idreportes'];
+$cantidad = $_REQUEST['cantidad'];
 
 $reportes = new Reportes();
-$reportes->Modificar($id_reportes, $cantidad_avance);
+$reportes->Modificar($idreportes, $cantidad);
 
 ?>
 

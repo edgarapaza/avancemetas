@@ -23,7 +23,7 @@ $i = 1;
 					<th>Id Personal</th>
 					<th>Id Acciones</th>
 					<th>Fecha Reporte</th>
-					<th>Cantidad Avance</th>
+					<th>Cantidad</th>
 					<th>Opciones</th>
 				</tr>
 			</thead>
@@ -50,7 +50,7 @@ $i = 1;
 						
 					</td>
 					<td><?php echo $fila['f_reportes']; ?></td>
-					<td><?php echo $fila['cantidad_avance']; ?></td>
+					<td><?php echo $fila['cantidad']; ?></td>
 					
 					<td>
 						 <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>
@@ -69,6 +69,6 @@ $i = 1;
 
 <script>
 	function CambiarDatosReportes(dato) {
-		var ventana1 = window.open('updateReportes.php?id_resp='+dato,"MsgWindow", "width=600,height=500");
+		var ventana1 = window.open('updateReportes.php?idreportes='+dato,"MsgWindow", "width=600,height=500");
 	}
 </script>

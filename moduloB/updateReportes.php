@@ -2,23 +2,24 @@
 include("./models/reportes.model.php");
 
 $reportes = new Reportes();
-$id_reportes = $_REQUEST['id_reportes'];
-$row = $reportes->MostrarReportes($id_reportes);
+$idreportes = $_REQUEST['idreportes'];
+$row = $reportes->MostrarReportes($idreportes);
 
 ?>
 <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
 	<div class="container">
 		
-		<form action="controllers/cambiarReportes.controller.php" method="POST" role="form">
-			<legend>Cambiar Datos de Reportes: </legend>
+		<form action="controllers/CambiarReportes.controller.php" method="POST" role="form">
+			<legend>Cambiar Cantidad de Reportes: </legend>
 
 			<div class="form-group">
-				<input type="hidden" value="<?php echo $id_reportes;?>" name="id_reportes">
-				<label for="">Cantidad Avance</label>
-				<input type="text" class="form-control" id="" value="<?php echo $row['cantidad_avance'];?>" name="cantidad_avance">
+				<input type="hidden" value="<?php echo $idreportes;?>" name="idreportes">
+				<label for="">Cantidad de Reportes:</label>
+				<input type="text" class="form-control" id="" value="<?php echo $row['cantidad'];?>" name="cantidad" >
 			</div>
-
-			<button type="submit" class="btn btn-primary">GUARDAR</button>
+			
+			<button type="submit" class="btn btn-primary">enviar</button>
 		</form>
 
 	</div>
+

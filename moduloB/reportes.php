@@ -1,11 +1,11 @@
 <?php
 require("../moduloA/models/personal.model.php");
-require("../moduloA/models/cargos.model.php");
+require("./models/acciones.model.php");
 $personal = new Personal();
 $data = $personal->Consultar();
 
-$cargos = new Cargos();
-$datos = $cargos->Consultar();
+$acciones = new Acciones();
+$datos = $acciones->Consultar();
 
 ?>
 
@@ -26,34 +26,23 @@ $datos = $cargos->Consultar();
 			</div>
 
 			<div class="form-group">
-				<label for="">ID Cargos:</label>
-				<select name="id_cargos" id="" class="form-control">
+				<label for="">ID Acciones:</label>
+				<select name="id_acciones" id="" class="form-control">
 			     	<option value="0" selected="selected">Select</option>
 					<?php 
 					while ($fila = $datos->fetch_array(MYSQLI_ASSOC)) {					 ?>
 
-					 <option value="<?php echo $fila['id_cargos']; ?>"><?php echo $fila['nombre_cargo'];?></option>
+					 <option value="<?php echo $fila['id_acciones']; ?>"><?php echo $fila['nomb_actividad'];?></option>
 					<?php } ?>
 				</select>
 			</div>
-
 			<div class="form-group">
-				<label for="">Nombre Actividad:</label>
-				<input type="date" class="form-control" id="" name="nomb_actividad" placeholder="ingresar fecha del reporte">
+				<label for="">Fecha Reporte:</label>
+				<input type="date" class="form-control" id="" name="f_reportes" placeholder="ingresar fecha del reporte">
 			</div>
 			<div class="form-group">
-				<label for="">Unidad Medida:</label>
-				<input type="date" class="form-control" id="" name="unidad_medida" placeholder="ingresar fecha del reporte">
-			</div>
-
-			<div class="form-group">
-				<label for="">Fecha Creacion:</label>
-				<input type="date" class="form-control" id="" name="fecha_creacion" placeholder="ingresar fecha del reporte">
-			</div>
-
-			<div class="form-group">
-				<label for="">Fecha Update:</label>
-				<input type="text" class="form-control" id="" name="fecha_update" placeholder="cantidad avance">
+				<label for="">Cantidad:</label>
+				<input type="text" class="form-control" id="" name="cantidad" placeholder="ingresar cantidad">
 			</div>
 			
 			<button type="submit" class="btn btn-primary">enviar</button>
