@@ -78,4 +78,20 @@ class Cargo
         $data = $res->fetch_array(MYSQLI_ASSOC);
         return $data;
     }
+
+    	public function MostrarCargosAccion($idcargos)
+	{
+
+		$sql = "SELECT nombre_cargo FROM cargos WHERE id_cargos = $idcargos;";
+		
+		if(!$response = $this->conn->query($sql))
+		{
+			echo "Error: ". mysqli_error($this->conn);
+			exit();
+		}
+		$data = $response->fetch_array(MYSQLI_ASSOC);
+
+		return $data;
+		$this->conn->close();
+	}
 }

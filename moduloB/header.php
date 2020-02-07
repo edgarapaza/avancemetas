@@ -61,16 +61,14 @@ if(isset($_SESSION['id_personal']))
        
           <li class="nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Crear Responsabilidades
+                  Acciones
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listadoresponsabilidades">Listado de Responsabilidades</a>
-                  <a class="dropdown-item" href="#" id="nuevaResponsabilidad">Agregar Nueva Responsabilidad</a>
+                  <a class="dropdown-item" href="#" id="listadoAcciones">Listado de Acciones</a>
+                  <a class="dropdown-item" href="#" id="nuevaAccion">Agregar Nueva Acciones</a>
                 </div>
           </li>
-          
-
-        
+                  
           <li class="nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Metas

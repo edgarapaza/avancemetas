@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
 	
-	$("#agregar_responsabilidades").click(function(){
-		$("#cuerpo").load("./responsabilidades.php");
+	$("#agregar_acciones").click(function(){
+		$("#cuerpo").load("./acciones.php");
 	});
 
 	$("#agregar_metas").click(function(){
@@ -17,14 +17,14 @@ $(document).ready(function(){
 	});
 
 	/*******************************
-		   RESPONSABILIDADES
+		   ACCIONES
 	********************************/
-	$("#listadoresponsabilidades").click(function(){
-		$("#cuerpo").load("./listaResponsabilidades.php");
+	$("#listadoAcciones").click(function(){
+		$("#cuerpo").load("./listaAcciones.php");
 	});
 	
-	$("#nuevaResponsabilidad").click(function(){
-		$("#cuerpo").load("./responsabilidades.php");
+	$("#nuevaAccion").click(function(){
+		$("#cuerpo").load("./acciones.php");
 	});
 
 

@@ -9,7 +9,6 @@ $data = $oficinas->Consultar();
 $oficinas = new Oficinas();
 $office = $oficinas->Consultar();
 
-
 $i = 1;
 
 ?>
