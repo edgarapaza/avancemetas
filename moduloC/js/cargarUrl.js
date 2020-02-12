@@ -18,7 +18,7 @@ $(document).ready(function(){
 		   REPORTES
 	********************************/
 	$("#reportes").click(function(){
-		$("#cuerpo").load("./Reportes.php");
+		$("#cuerpo").load("./reportes.php");
 	});
 
 });

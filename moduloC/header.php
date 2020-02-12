@@ -41,7 +41,7 @@ if(isset($_SESSION['personal']))
           Area de Informatica
         </a>
         <a href="#" class="simple-text logo-normal">
-          Personal: <?php echo $_SESSION['Personal'];?>
+          Personal: <?php echo $_SESSION['personal'];?>
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -57,14 +57,7 @@ if(isset($_SESSION['personal']))
 
           </li>
                 
-          <li class="nav-item">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Reporte
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="reportes">Reportes del Personal</a>
-                </div>
-          </li>
+       
           <li class="nav-item  ">
             
             <a href="#" class="nav-link" id="reportes" >

@@ -53,13 +53,14 @@ if(!empty($_SESSION['personal']))
 					<td><?php echo $fila['unidad_medida'];?></td>
 
 					<td>
-                        <input type="text" name="cantidad1" id="cantidad" required="required" >
+                        <input type="text" name="cantidad" id="cantidad" required="required" >
 						
 					</td>
 					
 					<td>
 						
-						<a href="#" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>);" id="btnGuardar" >Guardar</a>
+						<a href="controllers/reportes.controller.php?idpersonal=<?php echo $idpersonal;?>&idaccion=<?php echo $fila['id_acciones'];?>&cantidad=" onclick="Recibe(3);" id="btnGuardar" class="btn" >Guardar</a>
+						
 						<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>
 
 					</td>
@@ -77,44 +78,41 @@ if(!empty($_SESSION['personal']))
 </form>
 <script>
 
-	var idaccion;
+	
 	function CambiarDatosReportes(dato) {
 		var ventana1 = window.open('updateReportes.php?idreportes='+dato,"MsgWindow", "width=600,height=500");
 	}
 
-	function GuardarDatos(accion){
-		idaccion = accion;
-	}
-	//
 	$(document).ready(function(){
 
-		$("#btnGuardar").click(function(){
-			var idpersonal = $("#idpersonal").val();
-			var idacciones = $("#idacciones").val();
-			var cantidad = $("#cantidad").val();
+			$("#btnGuardar").click(function Recibe(data){
+				alert("Guardar");
+				var idpersonal = $("#idpersonal").val();
+				var cantidad = $("#cantidad").val();
+				//var idaccion = dato;
 
-			$.ajax({
-				url: 'controllers/reportes.controller.php',
-				type: 'post',
-				dataType: 'html',
-				data: {
-					id_personal : idpersonal,
-					id_acciones : idacciones,
-					cantidad   :  cantidad
-				},
-				success: function(res){
-					$("#mensaje").html(res);
+				alert(data);
 
-				},
-				error: function(err){
-					$("#mensaje").html(err);
-				}
-			});
-			
+				$.ajax({
+					url: 'controllers/reportes.controller.php',
+					type: 'post',
+					dataType: 'html',
+					data: {
+						id_personal : idpersonal,
+						id_acciones : idaccion,
+						cantidad   :  cantidad
+					},
+					success: function(res){
+						$("#mensaje").html(res);
 
+					},
+					error: function(err){
+						$("#mensaje").html(err);
+					}
+				});
 		});
-
 	});
+	
 </script>
 
 <?php 

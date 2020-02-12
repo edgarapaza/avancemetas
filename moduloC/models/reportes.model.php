@@ -12,15 +12,18 @@ class Reportes
 		return $this->conn;
 	}
 
-	public function Guardar($id_personal,$id_acciones,$f_reportes,$cantidad)
+	public function Guardar($idpersonal, $idacciones, $cantidad1)
 	{
-		$sql = "INSERT INTO reportes VALUES (null,'$id_personal','$id_acciones','$f_reportes','$cantidad');";
+		$fecha = date('Y-m-d H:i:s');
+		$sql = "INSERT INTO reportes (id_reportes, id_personal, id_acciones, f_reportes, cantidad) VALUES (null, '$idpersonal', '$idacciones', '$fecha', '$cantidad1');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
-		return true;
+
+		echo "Guardado correctamente";
+	
 	}
 
 	public function Modificar($idreportes, $cantidad)
@@ -35,32 +38,30 @@ class Reportes
 		$this->conn->close();
 	}
 
-	public function Consultar()
+	public function Consultar($idpersonal)
 	{
-		$sql = "SELECT id_reportes,id_personal,id_acciones,f_reportes,cantidad FROM reportes;";
+		$sql = "";
 
 		if(!$response = $this->conn->query($sql))
 		{
 			echo "Error: ". mysqli_error($this->conn);
 		}
 
-		return $response;
+		$data = $response->fetch_array(MYSQLI_ASSOC);
+
+		return $data;
 	}
-	public function MostrarReportes($idreportes)
+	public function MostrarReportes($idpersonal)
 	{
-		$sql = "SELECT id_reportes,id_personal,id_acciones,f_reportes,cantidad  FROM reportes WHERE id_reportes = " . $idreportes;
+		$sql = "SELECT id_acciones, nomb_actividad, unidad_medida FROM acciones WHERE id_personal = $idpersonal;";
 		
 		if(!$response = $this->conn->query($sql))
 		{
 			"Error: ". mysqli_error($this->conn);
             exit();
 		}
-		$fila = $response->fetch_array(MYSQLI_ASSOC);
-		return $fila;
+
+		return $response;
 	}
 
-	public function CrearOficinas()
-	{
-		
-	}
 }
