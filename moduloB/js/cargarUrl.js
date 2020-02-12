@@ -10,7 +10,7 @@ $(document).ready(function(){
 	});
 
 	$("#agregar_reporte").click(function(){
-		$("#cuerpo").load("./reportes.php");
+		$("#cuerpo").load("./listaReportes.php");
 	});
 	$("#estadisticas_oficinas").click(function(){
 		$("#cuerpo").load("./estadisticas_oficinas.php");
@@ -44,13 +44,9 @@ $(document).ready(function(){
 	/*******************************
 		   REPORTES
 	********************************/
-	$("#listaReportes").click(function(){
+	$("#reportes_avances").click(function(){
 		$("#cuerpo").load("./listaReportes.php");
 	});
-	$("#nuevoReporte").click(function(){
-		$("#cuerpo").load("./reportes.php");
-	});
-
 
 	/**********************************
 		   ESTADISTICAS DE OFICINA

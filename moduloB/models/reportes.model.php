@@ -12,9 +12,9 @@ class Reportes
 		return $this->conn;
 	}
 
-	public function Guardar($id_personal,$id_acciones,$f_reportes,$cantidad)
+	public function Guardar($cantidad,$id_personal,$id_acciones,$f_reportes)
 	{
-		$sql = "INSERT INTO reportes VALUES (null,'$id_personal','$id_acciones','$f_reportes','$cantidad');";
+		$sql = "INSERT INTO reportes VALUES (null,'$cantidad',$id_personal','$id_acciones','$f_reportes');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
@@ -59,8 +59,4 @@ class Reportes
 		return $fila;
 	}
 
-	public function CrearOficinas()
-	{
-		
-	}
 }

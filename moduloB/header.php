@@ -79,14 +79,12 @@ if(isset($_SESSION['id_personal']))
                 </div>
           </li>
 
-          <li class="nav-item">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Reportes
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listaReportes">Listado de Reportes</a>
-                  <a class="dropdown-item" href="#" id="nuevoReporte">Nuevo Reporte</a>
-                </div>
+          <li class="nav-item  ">
+            <a href="#" class="nav-link" id="reportes_avances" >
+              <i class="material-icons">table</i>
+              <p>Reportes de AVances</p>
+            </a>
+
           </li>
 
           <li class="nav-item  ">

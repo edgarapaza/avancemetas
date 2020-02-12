@@ -59,5 +59,17 @@ class Acciones
 		$fila = $response->fetch_array(MYSQLI_ASSOC);
 		return $fila;
 	}
+	public function MostrarAccionesUno($id_acciones)
+	{
+		$sql = "SELECT id_acciones,id_personal,id_cargos,nomb_actividad,unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
+		
+		if(!$response = $this->conn->query($sql))
+		{
+			"Error: ". mysqli_error($this->conn);
+            exit();
+		}
+		$fila = $response->fetch_array(MYSQLI_ASSOC);
+		return $fila;
+	}
 
 }

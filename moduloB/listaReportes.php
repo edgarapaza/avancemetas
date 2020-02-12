@@ -20,7 +20,7 @@ $i = 1;
 			<thead>
 				<tr>
 					<th>Num.</th>
-					<th>Id Personal</th>
+		
 					<th>Id Acciones</th>
 					<th>Fecha Reporte</th>
 					<th>Cantidad</th>
@@ -33,27 +33,29 @@ $i = 1;
 				?>
 				<tr>
 					<td><?php echo $i; ?></td>
+					
 					<td>
 						<?php 
 						 
-						$datapersonal = $personal->MostrarPersonalUno($fila['id_personal']);
-						printf(" %s ",$datapersonal['nombre']); 
-						?>
-						
-					</td>
-					<td>
-						<?php 
-						 
-						$dataacciones = $acciones->MostrarAcciones($fila['id_acciones']);
+						$dataacciones = $acciones->MostrarAccionesUno($fila['id_acciones']);
 						printf(" %s ",$dataacciones['nomb_actividad']); 
 						?>
 						
 					</td>
+
 					<td><?php echo $fila['f_reportes']; ?></td>
-					<td><?php echo $fila['cantidad']; ?></td>
+
+					<td>
+						<div class="form-group">
+							<input type="text" class="form-control" id="" name="cantidad" placeholder="avance">
+						</div>
+					</td>
 					
 					<td>
+						 <a href="controllers/reportes.controller.php" id="#" class="btn btn-info btn-sm" ><i class="material-icons">GUARDAR</i></a>
+
 						 <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>
+
 					</td>
 				</tr>
 			<?php
