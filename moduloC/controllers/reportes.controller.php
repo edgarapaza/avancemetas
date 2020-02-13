@@ -6,6 +6,7 @@ $id_personal = $_POST['id_personal'];
 $id_acciones = $_POST['id_acciones'];
 $cantidad = $_POST['cantidad'];
 
+
 /*echo $id_personal."<br>";
 echo $id_acciones."<br>";
 echo $cantidad."<br>";*/
