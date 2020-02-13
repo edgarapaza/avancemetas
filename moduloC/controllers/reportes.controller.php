@@ -1,4 +1,4 @@
-<?php 
+<?php //Modulo C
 require("../models/reportes.model.php");
 
 
@@ -16,7 +16,3 @@ $reportes->Guardar($id_personal,$id_acciones,$cantidad);
 //header("Location: ../index.php");
 
 ?>
-
-<script type="text/javascript">
-  window.close();
-</script>

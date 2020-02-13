@@ -53,13 +53,16 @@ if(!empty($_SESSION['personal']))
 					<td><?php echo $fila['unidad_medida'];?></td>
 
 					<td>
-                        <input type="text" name="cantidad1" id="cantidad" required="required" >
+                        <input type="text" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" >
 						
 					</td>
 					
 					<td>
 						
-						<a href="#" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>);" id="btnGuardar" >Guardar</a>
+						<a href="#" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );" id="btnGuardar" >Guardar</a>
+
+
+
 						<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>
 
 					</td>
@@ -75,6 +78,9 @@ if(!empty($_SESSION['personal']))
 	</div>
 </div>
 </form>
+
+	<img src="images/check.jpg" alt="Reportado" width="40">
+
 <script>
 
 	var idaccion;
@@ -82,39 +88,34 @@ if(!empty($_SESSION['personal']))
 		var ventana1 = window.open('updateReportes.php?idreportes='+dato,"MsgWindow", "width=600,height=500");
 	}
 
-	function GuardarDatos(accion){
-		idaccion = accion;
-	}
-	//
-	$(document).ready(function(){
+	function GuardarDatos(accion, idpersonal){
+		var idaccion = accion;
+		var new_id = "cantidad"+accion;
+		var cantidad_real = document.getElementById(new_id).value;
 
-		$("#btnGuardar").click(function(){
-			var idpersonal = $("#idpersonal").val();
-			var idacciones = $("#idacciones").val();
-			var cantidad = $("#cantidad").val();
-
-			$.ajax({
+		var mensaje = idaccion+ " - " + cantidad_real +"  -  "+ idpersonal;
+		
+		$.ajax({
 				url: 'controllers/reportes.controller.php',
 				type: 'post',
 				dataType: 'html',
 				data: {
 					id_personal : idpersonal,
-					id_acciones : idacciones,
-					cantidad   :  cantidad
+					id_acciones : idaccion,
+					cantidad   :  cantidad_real
 				},
 				success: function(res){
 					$("#mensaje").html(res);
-
+					
 				},
 				error: function(err){
 					$("#mensaje").html(err);
 				}
 			});
-			
-
-		});
-
-	});
+		
+	}
+	//
+	
 </script>
 
 <?php 

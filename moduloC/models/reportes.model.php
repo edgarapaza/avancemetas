@@ -12,10 +12,10 @@ class Reportes
 		return $this->conn;
 	}
 
-	public function Guardar($idpersonal, $idacciones, $cantidad1)
+	public function Guardar($id_personal, $id_acciones, $cantidad)
 	{
 		$fecha = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO reportes (id_reportes, id_personal, id_acciones, f_reportes, cantidad) VALUES (null, '$idpersonal', '$idacciones', '$fecha', '$cantidad1');";
+		$sql = "INSERT INTO reportes (id_reportes, id_personal, id_acciones, f_reportes, cantidad) VALUES (null, '$id_personal', '$id_acciones', '$fecha', '$cantidad');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
