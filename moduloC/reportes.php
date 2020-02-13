@@ -16,9 +16,7 @@ if(!empty($_SESSION['personal']))
 
 ?>
 <link rel="stylesheet" href="assets/css/material-dashboard.css">
-<div class="img1" type="hidden">
-    <img src="images/check.jpg"  alt="" width="10">
-</div>
+
 <form action="" id="reportes-form" method="post">
 	<div id="caja"  > Caja
 
@@ -49,20 +47,17 @@ if(!empty($_SESSION['personal']))
 						<?php 
 						 echo $fila['nomb_actividad'];
 						?>
-						
 					</td>
 					
 					<td>
-                        <input type="number" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" >
+                        <input type="number" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" class="form-control">
 						<div id="cambiar" value="<?php echo $fila['id_acciones'];?>;"> </div>
 					</td>
 					
 					<td>
-				
 							<a href="#" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );" id="btnGuardar" class="btn btn-warning">Guardar</a>
 					
 						<!-- <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php// echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>-->
-
 					</td>
 				</tr>
 			<?php
@@ -71,13 +66,9 @@ if(!empty($_SESSION['personal']))
 			?>
 			</tbody>
 		</table>
-
-		
 	</div>
 </div>
 </form>
-
-	
 
 <script>
 
@@ -113,8 +104,10 @@ if(!empty($_SESSION['personal']))
 					padre.appendChild(i);
 
 					document.getElementById('btnGuardar').onclick = function() { 
-				    document.getElementById('btnGuardar').disabled = true; 
-}; 
+				    	document.getElementById('btnGuardar').disabled = true; 
+					}; 
+
+					/*document.getElementById('btnGuardar').onclick="this.href='javascript: void(0)';" */
 
 					/*var btn1 = document.getElementById("btnGuardar");
 					btn1.setAttribute("disabled","disabled");*/
