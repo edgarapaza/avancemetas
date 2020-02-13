@@ -81,10 +81,10 @@ if(!empty($_SESSION['personal']))
 
 <script>
 
-	var idaccion;
+	/*var idaccion;
 	function CambiarDatosReportes(dato) {
 		var ventana1 = window.open('updateReportes.php?idreportes='+dato,"MsgWindow", "width=600,height=500");
-	}
+	}*/
 
 	function GuardarDatos(accion, idpersonal){
 		var idaccion = accion;
@@ -112,8 +112,8 @@ if(!empty($_SESSION['personal']))
 					var padre = document.getElementById("cambiar");
 					padre.appendChild(i);
 
-					document.getElementById('id_acciones').onclick = function() { 
-				    document.getElementById('id_acciones').disabled = true; 
+					document.getElementById('btnGuardar').onclick = function() { 
+				    document.getElementById('btnGuardar').disabled = true; 
 }; 
 
 					/*var btn1 = document.getElementById("btnGuardar");

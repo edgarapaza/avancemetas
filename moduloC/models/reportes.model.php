@@ -12,6 +12,7 @@ class Reportes
 		return $this->conn;
 	}
 
+
 	public function Guardar($id_personal, $id_acciones, $cantidad)
 	{
 		$fecha = date('Y-m-d H:i:s');
