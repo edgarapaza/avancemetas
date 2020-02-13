@@ -16,7 +16,9 @@ if(!empty($_SESSION['personal']))
 
 ?>
 <link rel="stylesheet" href="assets/css/material-dashboard.css">
-
+<div class="img1" type="hidden">
+    <img src="images/check.jpg"  alt="" width="10">
+</div>
 <form action="" id="reportes-form" method="post">
 	<div id="caja"  > Caja
 
@@ -28,7 +30,6 @@ if(!empty($_SESSION['personal']))
 				<tr>
 					<th>Num.</th>
 					<th>Id Acciones</th>
-					<th>Fecha Reporte</th>
 					<th>Cantidad</th>
 					<th>Opciones</th>
 				</tr>
@@ -50,20 +51,17 @@ if(!empty($_SESSION['personal']))
 						?>
 						
 					</td>
-					<td><?php echo $fila['unidad_medida'];?></td>
-
+					
 					<td>
-                        <input type="text" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" >
-						
+                        <input type="number" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" >
+						<div id="cambiar" value="<?php echo $fila['id_acciones'];?>;"> </div>
 					</td>
 					
 					<td>
-						
-						<a href="#" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );" id="btnGuardar" >Guardar</a>
-
-
-
-						<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>
+				
+							<a href="#" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );" id="btnGuardar" class="btn btn-warning">Guardar</a>
+					
+						<!-- <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php// echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>-->
 
 					</td>
 				</tr>
@@ -79,7 +77,7 @@ if(!empty($_SESSION['personal']))
 </div>
 </form>
 
-	<img src="images/check.jpg" alt="Reportado" width="40">
+	
 
 <script>
 
@@ -93,25 +91,43 @@ if(!empty($_SESSION['personal']))
 		var new_id = "cantidad"+accion;
 		var cantidad_real = document.getElementById(new_id).value;
 
-		var mensaje = idaccion+ " - " + cantidad_real +"  -  "+ idpersonal;
+		//var mensaje = idaccion+ " - " + cantidad_real +"  -  "+ idpersonal;
 		
 		$.ajax({
 				url: 'controllers/reportes.controller.php',
 				type: 'post',
 				dataType: 'html',
 				data: {
+					//VARIABLE     VALOR (VARIABLE Y CLAVE)
 					id_personal : idpersonal,
 					id_acciones : idaccion,
 					cantidad   :  cantidad_real
 				},
 				success: function(res){
 					$("#mensaje").html(res);
+					var i = document.createElement("img");
+					i.setAttribute("src","images/check.jpg");
+					i.setAttribute("width","30");
+					
+					var padre = document.getElementById("cambiar");
+					padre.appendChild(i);
+
+					document.getElementById('id_acciones').onclick = function() { 
+				    document.getElementById('id_acciones').disabled = true; 
+}; 
+
+					/*var btn1 = document.getElementById("btnGuardar");
+					btn1.setAttribute("disabled","disabled");*/
 					
 				},
 				error: function(err){
 					$("#mensaje").html(err);
 				}
 			});
+
+
+//en la tercera etapa se esta dando mejor funcionalidad al sistema para ello se esta utilizando ajax que hace que cargue màs rapido y no se refresque a cada rato 
+
 		
 	}
 	//
