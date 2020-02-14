@@ -12,15 +12,18 @@ class Reportes
 		return $this->conn;
 	}
 
-	public function Guardar($cantidad,$id_personal,$id_acciones,$f_reportes)
+	public function Guardar($id_personal,$id_acciones,$cantidad)
 	{
-		$sql = "INSERT INTO reportes VALUES (null,'$cantidad',$id_personal','$id_acciones','$f_reportes');";
+		$fecha = date('Y-m-d H:i:s');
+
+		$sql = "INSERT INTO reportes (id_reportes, id_personal, id_acciones, f_reportes, cantidad) VALUES (null, '$id_personal', '$id_acciones', '$fecha', '$cantidad');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
-		return true;
+
+		echo "Guardado correctamente";
 	}
 
 	public function Modificar($idreportes, $cantidad)
@@ -46,17 +49,20 @@ class Reportes
 
 		return $response;
 	}
-	public function MostrarReportes($idreportes)
+	
+
+	public function MostrarReportes($idpersonal)
 	{
-		$sql = "SELECT id_reportes,id_personal,id_acciones,f_reportes,cantidad  FROM reportes WHERE id_reportes = " . $idreportes;
+		$sql = "SELECT id_acciones, nomb_actividad, unidad_medida FROM acciones WHERE id_personal = $idpersonal;";
 		
 		if(!$response = $this->conn->query($sql))
 		{
 			"Error: ". mysqli_error($this->conn);
             exit();
 		}
-		$fila = $response->fetch_array(MYSQLI_ASSOC);
-		return $fila;
+
+		return $response;
 	}
+
 
 }

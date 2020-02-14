@@ -1,3 +1,4 @@
+
 <?php include("../moduloA/models/personal.model.php");
 $i = 1;
 $personal = new Personal();
@@ -39,7 +40,7 @@ $data = $personal->Consultar();
 				<td>
 					<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosAreas(<?php echo $fila['id_personal'];?>)"><i class="material-icons">how_to_reg</i></a>
 					<a href="#" id="#" class="btn btn-success btn-sm" onclick="AsignarPassword(<?php echo $fila['id_personal'];?>)"><i class="material-icons">security</i></a>
-					<a href="#" id="#" class="btn btn-success btn-sm" onclick="AsignarPassword(<?php echo $fila['id_personal'];?>)"><i class="material-icons">security</i></a>
+					
 				</td>
 			</tr>
 		<?php 

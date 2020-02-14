@@ -28,7 +28,7 @@ class Login
 
     public function ultimoRegistro()
     {
-        $sql = "SELECT log_usu FROM login;";
+        $sql = "SELECT log_usu FROM login ORDER BY log_usu DESC LIMIT 1;";
 
         if(!$res = $this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);

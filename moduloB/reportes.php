@@ -18,10 +18,7 @@ if(!empty($_SESSION['id_personal']))
 ?>
 
 	<link rel="stylesheet" href="assets/css/material-dashboard.css">
-	<div class="img1" type="hidden">
-	    <img src="images/check.jpg"  alt="" width="10">
-	</div>
-
+	
 		<form action="" id="reportes-form" method="post">
 	<div id="caja"  > Caja
 
@@ -113,7 +110,7 @@ if(!empty($_SESSION['id_personal']))
 				success: function(res){
 					$("#mensaje").html(res);
 					var i = document.createElement("img");
-					i.setAttribute("src","images/check.jpg");
+					i.setAttribute("src","imagenes/check.png");
 					i.setAttribute("width","30");
 					
 					var padre = document.getElementById("cambiar");
