@@ -17,7 +17,6 @@ if(!empty($_SESSION['id_personal']))
 
 ?>
 
-
 	<link rel="stylesheet" href="assets/css/material-dashboard.css">
 	<div class="img1" type="hidden">
 	    <img src="images/check.jpg"  alt="" width="10">

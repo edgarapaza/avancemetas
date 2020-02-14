@@ -71,5 +71,4 @@ class Acciones
 		$fila = $response->fetch_array(MYSQLI_ASSOC);
 		return $fila;
 	}
-
 }

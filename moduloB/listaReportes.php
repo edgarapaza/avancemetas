@@ -9,7 +9,6 @@ $data = $reportes->Consultar();
 $acciones = new Acciones();
 $personal = new Personal();
 
-
 $i = 1;
 
 ?>
