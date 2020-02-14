@@ -45,7 +45,7 @@ $(document).ready(function(){
 		   REPORTES
 	********************************/
 	$("#reportes_avances").click(function(){
-		$("#cuerpo").load("./listaReportes.php");
+		$("#cuerpo").load("./reportes.php");
 	});
 
 	/**********************************
