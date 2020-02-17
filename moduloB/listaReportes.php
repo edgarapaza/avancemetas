@@ -51,7 +51,7 @@ $i = 1;
 					</td>
 					
 					<td>
-						 <a href="controllers/reportes.controller.php" id="#" class="btn btn-info btn-sm" ><i class="material-icons" >GUARDAR</i></a>
+						 <a href="controllers/reportes.controller.php" id="#" class="btn btn-info btn-sm" ><i class="material-icons">GUARDAR</i></a>
 
 						 <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>
 
