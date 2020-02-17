@@ -4,7 +4,7 @@ include("./models/login.model.php");
 $login = new Login();
 $data = $login->ultimoRegistro();
 
-$codigoPersonal = $data[0]+1;
+$codigoPersonal = $data['ultimo']+1;
 
 $idpersonal = $_REQUEST['idpersonal'];
 ?>
@@ -13,8 +13,8 @@ $idpersonal = $_REQUEST['idpersonal'];
 	<h3>Crear Acceso</h3>
 	<form action="controllers/login.controller.php" method="post">
 		<label for="username">Nombre de Usuario:</label>
-		<input type="text" name="codigo" value="<?php echo $codigoPersonal; ?>">
-		<input type="text" name="idpersonal" value="<?php echo $idpersonal; ?>">
+		<input type="hidden" name="codigo" value="<?php echo $codigoPersonal; ?>">
+		<input type="hidden" name="idpersonal" value="<?php echo $idpersonal; ?>">
 		<input type="text" name="username" placeholder="User Name" class="form-control">
 
 		<label for="password">Password:</label>

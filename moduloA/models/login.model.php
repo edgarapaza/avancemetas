@@ -28,7 +28,7 @@ class Login
 
     public function ultimoRegistro()
     {
-        $sql = "SELECT log_usu FROM login ORDER BY log_usu DESC LIMIT 1;";
+        $sql = "SELECT count(*) as ultimo FROM login;";
 
         if(!$res = $this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
@@ -36,7 +36,7 @@ class Login
         }
         $data = $res->fetch_array();
 
-        return $data;        
+        return $data;
     }
 
     public function RegistraAcceso($codigoPersonal, $idpersonal, $username,$password,$nivel)
