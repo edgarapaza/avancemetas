@@ -55,7 +55,8 @@ if(!empty($_SESSION['personal']))
 					</td>
 					
 					<td>
-							<a href="#" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );" id="btnGuardar" class="btn btn-warning">Guardar</a>
+							<a href="#" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );" id="
+								" class="btn btn-warning">Guardar</a>
 					
 						<!-- <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php// echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>-->
 					</td>
