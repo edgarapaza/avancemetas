@@ -253,7 +253,6 @@ CREATE TABLE `login` (
 
 LOCK TABLES `login` WRITE;
 /*!40000 ALTER TABLE `login` DISABLE KEYS */;
-INSERT INTO `login` VALUES (1,1,'edgar','edgar',1,1);
 /*!40000 ALTER TABLE `login` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -365,7 +364,7 @@ CREATE TABLE `personal` (
   `f_creacion` datetime DEFAULT NULL,
   `f_update` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_personal`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -374,7 +373,6 @@ CREATE TABLE `personal` (
 
 LOCK TABLES `personal` WRITE;
 /*!40000 ALTER TABLE `personal` DISABLE KEYS */;
-INSERT INTO `personal` VALUES (1,'EDGAR','APAZA CHOQUE','masculino','935017466','1978-04-15','EDGARAPAZAC@GMAIL.COM','40023528','./imagenes/usuario.png','2020-02-05 14:23:15','2020-02-19 17:55:36');
 /*!40000 ALTER TABLE `personal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -417,4 +415,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-02-19 13:03:00
+-- Dump completed on 2020-02-19 12:22:43
