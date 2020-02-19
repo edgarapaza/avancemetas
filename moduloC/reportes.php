@@ -17,7 +17,6 @@ if(!empty($_SESSION['personal']))
 
 ?>
 <link rel="stylesheet" href="assets/css/material-dashboard.css">
-
 <form action="" id="reportes-form" method="post">
 	<div id="caja"  > Caja
 
@@ -38,7 +37,7 @@ if(!empty($_SESSION['personal']))
 				
 				?>
 				<tr>
-					<div id="cambiar" value="<?php echo $fila['id_acciones'];?>;"> </div>
+					
 					<td>
 						<?php echo $i;
 						 ?>
@@ -54,13 +53,10 @@ if(!empty($_SESSION['personal']))
                         <input type="number" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" class="form-control">
 						
 					</td>
-
-					
 					<td>
 
-							<a href="#" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );" id="btn<?php echo $fila['id_acciones'];?>" class="btn btn-warning"  type="hidden" >Guardar</a>
+						<button id="btn<?php echo $fila['id_acciones'];?>" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );"  class="btn btn-primary"  type="button">Guardar</button>
 							
-
 						<!-- <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php// echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>-->
 					</td>
 				</tr>
@@ -74,6 +70,7 @@ if(!empty($_SESSION['personal']))
 </div>
 </form>
 
+<script type="text/javascript" src="assets/js/core/jquery.min.js"></script>
 <script>
 
 	/*var idaccion;
@@ -84,10 +81,13 @@ if(!empty($_SESSION['personal']))
 		var idaccion = 0;
 	
 	function GuardarDatos(accion, idpersonal){
+
+		console.log("Dentro");
 		idaccion = accion;
 		var new_id = "cantidad"+accion;
+		var boton = "btn"+accion;
 		var cantidad_real = document.getElementById(new_id).value;
-
+		var miboton = document.getElementById(boton);
 
 		//var mensaje = idaccion+ " - " + cantidad_real +"  -  "+ idpersonal;
 		
@@ -103,149 +103,23 @@ if(!empty($_SESSION['personal']))
 				},
 				success: function(res){
 					$("#mensaje").html(res);
-					var i = document.createElement("img");
-					i.setAttribute("src","images/check.jpg");
-					i.setAttribute("width","30");
-					
-					var padre = document.getElementById("cambiar");
-					padre.appendChild(i);
+					miboton.setAttribute("disabled","true");
+					miboton.innerHTML = "Guardado";
 
-					document.getElementById('btnGuardar').onclick = function() { 
-				    	document.getElementById('btnGuardar').disabled = true; 
-					}; 
-
-					/*document.getElementById('btnGuardar').onclick="this.href='javascript: void(0)';" */
-
-					/*var btn1 = document.getElementById("btnGuardar");
-					btn1.setAttribute("disabled","disabled");*/
+					miboton=document.getElementById(boton);
+                    miboton.style.backgroundColor="#D8BFD8";
+					miboton.style.color="#8B008B";
+					miboton.style.font="oblique bold";
+					miboton.style.border="#8B008B solid 1px";
 					
 				},
 				error: function(err){
 					$("#mensaje").html(err);
 				}
 			});
-
-
-//en la tercera etapa se esta dando mejor funcionalidad al sistema para ello se esta utilizando ajax que hace que cargue màs rapido y no se refresque a cada rato 
-
 		
 	}
-    
-	//while(cantidad_real=0){
-
-		/*let boton2 = document.getElementById('btn2');
-	  boton2.addEventListener('click', function(){
-			alert("Enviado:" + idaccion);
-
-	});*/
-//}
-     //if(id_acciones>=0){
-
-		let boton2 = document.getElementById('btn2');
-		let boton3 = document.getElementById('btn3');
-		let boton4 = document.getElementById('btn4');
-		let boton5 = document.getElementById('btn5');
-		let boton6 = document.getElementById('btn6');
-		let boton7 = document.getElementById('btn7');
-		let boton8 = document.getElementById('btn8');
-		let boton9 = document.getElementById('btn9');
-		let boton10 = document.getElementById('btn10');
-		let boton11 = document.getElementById('btn11');
-		let boton12 = document.getElementById('btn12');
-		let boton13 = document.getElementById('btn13');
-		let boton14 = document.getElementById('btn14');
-		let boton15 = document.getElementById('btn15');
-
-
-
-
-		boton2.addEventListener('click', function(){
-			alert("Enviado satisfactoriamente :" + idaccion);
-		
-		});
-			//onclick="CambiarDatosReportes";
-			//this.disabled='disabled';
-
-	    boton3.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-			//salert ("hola" + idaccion);
-	
-
-	    boton4.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton5.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton6.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton7.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton8.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton9.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton10.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boto11.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton12.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton13.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton14.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	    boton15.addEventListener('click', function(){	
-			alert("Enviado satisfactoriamente:" + idaccion);
-			//this.disabled='disabled';
-		});
-
-
-	
+      	
 	
 </script>
 
