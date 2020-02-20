@@ -20,7 +20,11 @@ $datos = $institucion->Consultar();
 				<label for="">Nombre Oficina:</label>
 				<input type="text" class="form-control" id="" name="nombre_of" placeholder="Nombre Oficina">
 			</div>
-						
+			<div class="form-group">
+				<label for="">Sigla:</label>
+				<input type="text" class="form-control" id="" name="sigla" placeholder="Sigla">
+			</div>
+					
 			<div class="form-group">
 				<label for="">Institucion:</label>
 				<select name="id_institucion" id="" class="form-control">

@@ -16,7 +16,7 @@ class Institucion
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 
-		$SQL2 = "CALL CalculoPorMes($mes, $anio);"
+		//$SQL2 = "CALL CalculoPorMes($mes, $anio);"
 
 		$sql = "INSERT INTO institucion VALUES (null,'$nombre_inst','$direccion','$telefono','$RUC','$email','$p_web','$fecha_creacion_archivo','$n_resolucion','$id_metas','$fechaActual','$fechaActual');";
 
