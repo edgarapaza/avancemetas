@@ -48,9 +48,9 @@ if(isset($_SESSION['id_personal']))
         
         <ul class="nav">
 
-          <li class="nav-item active  ">
+          <li class="nav-item active">
             
-            <a class="nav-link" href="#" id="">
+            <a class="nav-link" href="index.php" id="">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
