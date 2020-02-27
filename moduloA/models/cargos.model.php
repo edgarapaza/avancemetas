@@ -38,7 +38,7 @@ class Cargo
 
 	public function Consultar()
 	{
-		$sql = "SELECT id_cargos,id_oficina,nombre_cargo FROM cargos;";
+		$sql = "SELECT id_cargos,id_oficina,id_areas,id_personal,nombre_cargo FROM cargos;";
 		
 		if(!$response = $this->conn->query($sql))
 		{

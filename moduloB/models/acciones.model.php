@@ -49,7 +49,7 @@ class Acciones
 	}
 	public function MostrarAcciones($id_acciones)
 	{
-		$sql = "SELECT id_acciones,id_personal,id_cargos,nomb_actividad,unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
+		$sql = "SELECT id_acciones, id_oficinas, id_areas, id_cargos, id_personal, nomb_actividad, unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
 		
 		if(!$response = $this->conn->query($sql))
 		{
@@ -61,7 +61,7 @@ class Acciones
 	}
 	public function MostrarAccionesUno($id_acciones)
 	{
-		$sql = "SELECT id_acciones,id_personal,id_cargos,nomb_actividad,unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
+		$sql = "SELECT id_acciones, id_oficinas, id_areas, id_cargos, id_personal, nomb_actividad, unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
 		
 		if(!$response = $this->conn->query($sql))
 		{
