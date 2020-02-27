@@ -14,8 +14,3 @@ $persona = new Personal();
 $persona->Guardar($nombre,$apellidos,$sexo, $telefono,$fecha_nac,$email,$foto,$dni);
 
 header("Location: ../index.php");
-?>
-
-<script type="text/javascript">
-  window.close();
-</script>

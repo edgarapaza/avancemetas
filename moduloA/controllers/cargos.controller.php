@@ -7,9 +7,4 @@ $nombre_cargo = trim(strtoupper($_POST['nombre_cargo']));
 $cargo = new Cargo();
 $cargo->Guardar($idoficina,$nombre_cargo);
 
-header("Location: ../index.php");
-?>
-
-<script type="text/javascript">
-  window.close();
-</script>
+header("Location: ../../ModuloA/index.php");

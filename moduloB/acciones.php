@@ -56,7 +56,15 @@ $data1 = $cargo->Consultar();
 					<option value="Metros Lineales">Metros Lineales</option>
 					<option value="Moneda">Moneda</option>
 					<option value="Porcentaje">Porcentaje</option>
-										
+                                        <option value="Servicio">Servicio</option>
+                                        <option value="Documentos">Documentos</option>
+                                        <option value="Escritura">Escritura</option>
+                                        <option value="Usuario">Usuario</option>
+                                        <option value="Accion">Accion</option>
+                                        <option value="Inst. Superv">Inst. Superv</option>
+                                        
+
+					
 				</select>
 			</div>
 						
