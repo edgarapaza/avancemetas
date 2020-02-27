@@ -10,8 +10,6 @@
 			p.appendChild(texto)
 			document.body.appendChild(p);
 
-			var btn1 = document.getElementById("boton1");
-			btn1.setAttribute("disabled","true");
 
 		}
 
@@ -25,25 +23,22 @@
 		}
 
 		function Guardar(){
-			var p = document.createElement("p");
-			var texto = document.createTextNode("Mi nuevo texto de parrafo");
-			p.appendChild(texto)
-			document.body.appendChild(p);
-
-			var btn1 = document.getElementById("btnGuardar");
-			btn1.setAttribute("disabled","disabled");
-			this.disabled = true;
-
+			
+			var btn3 = document.getElementById("boton1");
+			btn3.setAttribute("disabled","true");
+			
+			console.log("Mensaje");
 		}
 
 	</script>
 </head>
 <body>
 
+
 	<div id="cambiar"></div>
-	<a href="#" onclick="Guardar();" id="btnGuardar" type="button" class="btn btn-warning"  >Guardar</a>
 	
-	<button onclick="Parrafo();" id="boton1">Crear Parrafo</button>
+	
+	<button onclick="Guardar();" id="boton1">Crear Parrafo Final</button>
 	<button onclick="Imagen();">Insertar Imagen</button>
 	<button onclick="Titulo();">Crear Titulo</button>
 	<button onclick="Capa();">Crear una capa Nueva</button>

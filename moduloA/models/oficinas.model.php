@@ -12,10 +12,10 @@ class Oficinas
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_of,$id_institucion)
+	public function Guardar($nombre_of,$sigla,$id_institucion)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO oficinas VALUES (null,'$nombre_of','$fechaActual','$fechaActual','1','$id_institucion')";
+		$sql = "INSERT INTO oficinas VALUES (null,'$nombre_of','$sigla','$fechaActual','$fechaActual','1','$id_institucion')";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error();
