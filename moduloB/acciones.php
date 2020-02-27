@@ -18,12 +18,12 @@ $data1 = $cargo->Consultar();
 				<select name="id_personal" id="" class="form-control">
 					<option value="0" selected="selected">Select</option>
 						<?php 
-							while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					
+							while ($fila = $data->fetch_array(MYSQLI_ASSOC)):
 					    ?>
 					<option value="<?php echo $fila['id_personal']; ?>">
 						<?php echo $fila['nombre'] ." ".$fila['apellidos']; ?>		
 					</option>
-								<?php } ?>
+						<?php endwhile; ?>
 				</select>
 			</div>
 
