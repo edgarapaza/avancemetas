@@ -12,11 +12,11 @@ class Cargo
 		return $this->conn;
 	}
 
-	public function Guardar($id_oficina,$nombre_cargo)
+	public function Guardar($id_oficina,$nombre_cargo,$id_area,$id_personal)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 		
-		$sql = "INSERT INTO cargos VALUES (null,'$id_oficina','$nombre_cargo','$fechaActual');";
+		$sql = "INSERT INTO cargos VALUES (null,'$id_oficina','$id_area','$id_personal','$nombre_cargo','$fechaActual');";
 
 		if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
