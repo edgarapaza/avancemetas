@@ -43,7 +43,7 @@ class Areas
     public function Consultar()   
     {
                         
-        $sql = "SELECT id_areas, nombre, descripcion, idoficina, id_metas FROM areas;";
+        $sql = "SELECT id_areas, nombre, descripcion, id_oficina, id_metas FROM areas;";
         
         if(!$response = $this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
