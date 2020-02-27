@@ -95,12 +95,24 @@ $data_p = $personal->Consultar();
 					<option value="Metros Lineales">Metros Lineales</option>
 					<option value="Moneda">Moneda</option>
 					<option value="Porcentaje">Porcentaje</option>
+<<<<<<< HEAD
                     <option value="Servicio">Servicio</option>
                     <option value="Documentos">Documentos</option>
                     <option value="Escritura">Escritura</option>
                     <option value="Usuario">Usuario</option>
                     <option value="Accion">Accion</option>
                     <option value="Inst. Superv">Inst. Superv</option>
+=======
+                                        <option value="Servicio">Servicio</option>
+                                        <option value="Documentos">Documentos</option>
+                                        <option value="Escritura">Escritura</option>
+                                        <option value="Usuario">Usuario</option>
+                                        <option value="Accion">Accion</option>
+                                        <option value="Inst. Superv">Inst. Superv</option>
+                                        
+
+					
+>>>>>>> f5d8eb7a92243d7b3f9eeab7c4fc0f1254b15e52
 				</select>
 			</div>
 						
