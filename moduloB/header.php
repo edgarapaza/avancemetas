@@ -1,5 +1,6 @@
 <?php 
 session_start();
+
 include("models/login.model.php");
 if(isset($_SESSION['id_personal']))
 {
@@ -41,7 +42,9 @@ if(isset($_SESSION['id_personal']))
           Area de Informatica
         </a>
         <a href="#" class="simple-text logo-normal">
-          Jefe de Área
+
+          Personal: <?php echo $_SESSION['id_personal'];?>
+
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -51,38 +54,74 @@ if(isset($_SESSION['id_personal']))
           <li class="nav-item active">
             
             <a class="nav-link" href="index.php" id="">
+
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
 
           </li>
-        
 
-       
-          <li class="nav-item">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Acciones
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listadoAcciones">Listado de Acciones</a>
-                  <a class="dropdown-item" href="#" id="nuevaAccion">Agregar Nueva Acciones</a>
-                </div>
-          </li>
-                  
-          <li class="nav-item">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Metas
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="milistadoMetas">Listado de Metas</a>
-                  <a class="dropdown-item" href="#" id="nuevaMeta">Agregar Nueva Metas</a>
-                </div>
+          <li class="nav-item ">
+            
+            <a href="#" class="nav-link" id="institucion" >
+              <i class="material-icons">room</i>
+              <p>Institucion</p>
+            </a>
+
           </li>
 
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Crear Oficinas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="milistado">Listado de oficinas</a>
+                  <a class="dropdown-item" href="#" id="nuevaOficina">Nueva Oficina</a>
+                </div>
+          </li>
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Crear Areas
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="listadoareas">Listado de Areas</a>
+                  <a class="dropdown-item" href="#" id="nuevaArea">Agregar Nueva Area</a>
+                </div>
+          </li>
+
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Crear Responsabilidades
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="listadoresponsabilidades">Listado de Responsabilidades</a>
+                  <a class="dropdown-item" href="#" id="nuevaResponsabilidad">Agregar Nueva Responsabilidad</a>
+                </div>
+          </li>
+          
+          <li class="nav-item ">
+            
+            <a class="nav-link" href="#" id="crear_cargos">
+              <i class="material-icons">home</i>
+              <p>Crear Cargo</p>
+            </a>
+  
+          </li>
+
+          <li class="nav-item">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Personal
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#" id="listadopersonal">Listado de Personal</a>
+                  <a class="dropdown-item" href="#" id="nuevopersonal">Nuevo Personal</a>
+                </div>
+          </li>
+          
           <li class="nav-item  ">
-            <a href="#" class="nav-link" id="reportes_avances" >
-              <i class="material-icons">table</i>
-              <p>Reportes de AVances</p>
+            <a href="#" class="nav-link" id="agregar_metas" >
+              <i class="material-icons">book</i>
+              <p>Agregar Metas</p>
             </a>
 
           </li>
@@ -94,7 +133,15 @@ if(isset($_SESSION['id_personal']))
             </a>
 
           </li>
-       
+
+          <li class="nav-item  ">
+            <a href="#" class="nav-link" id="estadisticas_areas" >
+              <i class="material-icons">report</i>
+              <p>Estadisticas por Areas</p>
+            </a>
+
+          </li>
+
           <!-- your sidebar here -->
         </ul>
       </div>
@@ -116,10 +163,12 @@ if(isset($_SESSION['id_personal']))
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
+
                   <img src="<?php echo $data['foto'];?>" alt="Foto" width="40">
                   
                    Bienvenid@, <?php   echo $data['personal']; ?>
                     <a href="../controllers/logout.php"> <button class="btn btn-default" name="salir">Salir</button></a>
+
                 </a>
               </li>
               <!-- your navbar here -->
@@ -128,10 +177,12 @@ if(isset($_SESSION['id_personal']))
         </div>
       </nav>
       <!-- End Navbar -->
+
   <?php 
   }
   else{
     
     header("Location: ../index.html");
   } ?>
+
 

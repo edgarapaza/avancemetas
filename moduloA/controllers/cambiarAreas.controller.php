@@ -7,5 +7,3 @@ $descripcion = trim(strtoupper($_REQUEST['descripcion']));
 
 $area = new Areas();
 $area->Modificar($id_areas, $nombre, $descripcion);
-
-?>

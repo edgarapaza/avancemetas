@@ -1,6 +1,5 @@
 <?php 
 session_start();
-
 include("../core/Conexion.php");
 
 $conn=new Conexion();
@@ -40,5 +39,4 @@ if ($data['niv_usu'] != null) {
 	echo "error";
 	header("Location: ../index.html");
 }
-
 

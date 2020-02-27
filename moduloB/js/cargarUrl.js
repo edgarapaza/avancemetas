@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	
 	$("#agregar_acciones").click(function(){
 		$("#cuerpo").load("./acciones.php");
@@ -12,9 +11,11 @@ $(document).ready(function(){
 	$("#agregar_reporte").click(function(){
 		$("#cuerpo").load("./listaReportes.php");
 	});
+
 	$("#estadisticas_oficinas").click(function(){
 		$("#cuerpo").load("./estadisticas_oficinas.php");
 	});
+
 
 	/*******************************
 		   ACCIONES
@@ -38,6 +39,7 @@ $(document).ready(function(){
 
 	$("#nuevaMeta").click(function(){
 		$("#cuerpo").load("./metas.php");
+
 	});
 
 
