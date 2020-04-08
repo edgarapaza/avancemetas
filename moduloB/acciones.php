@@ -82,7 +82,7 @@ $data_p = $personal->Consultar();
 			
 			<div class="form-group">
 				<label for="">Nombre de la accion:</label>
-				<input type="text" class="form-control" id="" name="nomb_actividad" placeholder="NOmbre de actividad">
+				<input type="text" class="form-control" id="" name="nomb_actividad" placeholder="NOmbre de la accion">
 			</div>
 
 

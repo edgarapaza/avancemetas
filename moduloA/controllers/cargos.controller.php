@@ -6,7 +6,8 @@ $nombre_cargo = trim(strtoupper($_POST['nombre_cargo']));
 $idarea = trim(strtoupper($_POST['idarea']));
 $idpersonal = trim(strtoupper($_POST['idpersonal']));
 
+
 $cargo = new Cargo();
 $cargo->Guardar($idoficina,$nombre_cargo,$idarea,$idpersonal);
 
-header("Location: ../index.php");
+header("Location: ../../ModuloA/index.php");

@@ -4,8 +4,9 @@ $(document).ready(function(){
 		$("#cuerpo").load("./acciones.php");
 	});
 
-	$("#agregar_metas").click(function(){
-		$("#cuerpo").load("./metas.php");
+	
+	$("#milistadoMetas").click(function(){
+		$("#cuerpo").load("./listaMetas.php");
 	});
 
 	$("#agregar_reporte").click(function(){
@@ -56,6 +57,9 @@ $(document).ready(function(){
 	$("#listaEstadisticas").click(function(){
 		$("#cuerpo").load("./listaEstadisticas.php");
 	});
+
+
+	
 	
 });
 

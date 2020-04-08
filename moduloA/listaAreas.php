@@ -41,7 +41,7 @@ $i = 1;
 				</td>
 				<td><?php echo $fila['descripcion']; ?></td>
 				<td><?php 
-				$office = $areas->DatosDireccionOficina($fila['idoficina']);
+				$office = $areas->DatosDireccionOficina($fila['id_oficina']);
 				echo $office['sigla'];
 				?></td>
 				

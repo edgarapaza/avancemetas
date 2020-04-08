@@ -12,11 +12,11 @@ class Acciones
 		return $this->conn;
 	}
 
-	public function Guardar($id_personal,$id_cargos,$nomb_actividad,$unidad_medida)
+	public function Guardar($id_oficinas,$id_areas,$id_cargos,$id_personal,$nomb_actividad,$unidad_medida)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 
-		$sql = "INSERT INTO acciones VALUES (null,'$id_personal','$id_cargos','$nomb_actividad','$unidad_medida','$fechaActual','$fechaActual');";
+		$sql = "INSERT INTO acciones VALUES (null,'$id_oficinas','$id_areas','$id_cargos','$id_personal','$nomb_actividad','$unidad_medida','$fechaActual','$fechaActual');";
 
 
 		if(!$this->conn->query($sql)){
