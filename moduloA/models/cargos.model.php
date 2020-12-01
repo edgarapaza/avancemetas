@@ -12,14 +12,14 @@ class Cargo
 		return $this->conn;
 	}
 
-	public function Guardar($id_oficina,$nombre_cargo,$id_area,$id_personal)
+	public function Guardar($idoficina,$nombre_cargo,$idarea,$idpersonal)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 		
-		$sql = "INSERT INTO cargos VALUES (null,'$id_oficina','$id_area','$id_personal','$nombre_cargo','$fechaActual');";
+		$sql = "INSERT INTO cargos VALUES (null,'$idoficina','$nombre_cargo','$fechaActual','$idarea','$idpersonal')";
 
 		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
+			echo "Error guardando: " . mysqli_error($this->conn);
 			exit();
 		}
 
@@ -30,7 +30,7 @@ class Cargo
 		$sql = "UPDATE cargos SET nombre_cargo = '$nombre_cargo' WHERE id_cargos = '$idcargos';";
 
 		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
+			echo "Error modificando: " . mysqli_error($this->conn);
 			exit();
 		}
 
@@ -42,7 +42,7 @@ class Cargo
 		
 		if(!$response = $this->conn->query($sql))
 		{
-			echo "Error: " . mysqli_error($this->conn);
+			echo "Error consulta: " . mysqli_error($this->conn);
 			exit();	
 		}
 

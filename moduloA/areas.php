@@ -8,8 +8,7 @@ $office = $oficinas->Consultar();
 
 
 	<div class="container">
-		<div class="row">
-		<h1>AREAS</h1>
+		
 		<form action="controllers/areas.controller.php" method="POST" role="form">
 			<legend>Registro de Areas</legend>
 
@@ -36,7 +35,7 @@ $office = $oficinas->Consultar();
 		
 			<button type="submit" class="btn btn-primary">Guardar</button>
 		</form>
-		</div>
+
 	</div>
 </body>
 </html>

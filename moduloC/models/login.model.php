@@ -7,7 +7,7 @@ class Login
 
     function __construct()
     {
-        $link = new Conexionnn();
+        $link = new Conexion();
         $this->conn = $link->Conectar();
         return $this->conn;
     }

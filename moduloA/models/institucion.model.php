@@ -34,7 +34,16 @@ class Institucion
 
 	public function Consultar()
 	{
-		$sql = "SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,fecha_creacion_archivo,n_resolucion,id_metas,fecha_create,fecha_update FROM institucion; ";
+		$sql = "SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,fecha_creacion,n_resolucion,id_metas,fecha_create,fecha_update FROM institucion ";
+
+		$response = $this->conn->query($sql);
+
+		return $response;
+	}
+
+	public function ConsultaGerencias()
+	{
+		$sql = "SELECT idgerencia,nomgerencia,sigla,idinstitucion FROM gerencias";
 
 		$response = $this->conn->query($sql);
 
@@ -46,3 +55,10 @@ class Institucion
 		
 	}
 }
+
+
+#$institucion = new Institucion();
+/*$fila = $datos = $institucion->Consultar();
+while ($fila = $datos->fetch_array(MYSQLI_ASSOC)){
+	echo $fila['nombre_inst'];
+}*/

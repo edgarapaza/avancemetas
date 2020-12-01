@@ -23,9 +23,13 @@ if(isset($_SESSION['id_personal']))
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
-  <script src="js/cargarUrl.js"></script>
+    
+  <style>
+    .container{
+      background-color: #fff;
+      padding: 50px;
+    }
+  </style>
 
 </head>
 
@@ -73,18 +77,18 @@ if(isset($_SESSION['id_personal']))
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Acciones
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#" id="listadoAcciones">Listado de Acciones</a>
                   <a class="dropdown-item" href="#" id="nuevaAccion">Agregar Nueva Acciones</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 </div>
           </li>
           <li class="nav-item">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Metas
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item" href="#" id="milistadoMetas">Listado de Metas</a>
                   <a class="dropdown-item" href="#" id="nuevaMeta">Agregar Nueva Metas</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 </div>
           </li>
 

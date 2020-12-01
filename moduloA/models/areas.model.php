@@ -43,7 +43,7 @@ class Areas
     public function Consultar()   
     {
                         
-        $sql = "SELECT id_areas, nombre, descripcion, id_oficina, id_metas FROM areas;";
+        $sql = "SELECT id_areas,nombre,descripcion,idoficina,id_metas FROM areas";
         
         if(!$response = $this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
@@ -57,7 +57,7 @@ class Areas
     public function MostrarArea($idarea)
     {
 
-        $sql = "SELECT id_areas, nombre, id_metas, descripcion,f_creacion,f_update from areas WHERE id_areas = $idarea;";
+        $sql = "SELECT id_areas, nombre, id_metas, descripcion from areas WHERE id_areas = $idarea;";
         
         if(!$response = $this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
@@ -70,7 +70,7 @@ class Areas
 
     public function DatosDireccionOficina($idoficina)
     {
-        $sql = "SELECT nombre_of, sigla, id_metas, id_institucion FROM oficinas WHERE id = $idoficina;";
+        $sql = "SELECT id,nombre_of,sigla,id_metas,id_institucion,idgerencia FROM oficinas WHERE id=".$idoficina;
 
         if(!$response = $this->conn->query($sql)){
             echo "Error: ". mysqli_error($this->conn);

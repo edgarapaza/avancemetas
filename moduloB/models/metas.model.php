@@ -12,17 +12,19 @@ class Metas
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_meta,$programado,$unidad_medida)
+	public function Guardar($nombre_meta,$programado,$unidad_medida,$frecuencia)
 	{
-		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida');";
+		$fecCreate = date('Y-m-d');
+		echo $fecCreate;
+		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida','$frecuencia','$fecCreate');";
 
 		
-		if(!$this->conn->query($sql)){
+		/*if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
 			exit();
 		}
 		return true;
-		$this->conn->close();
+		$this->conn->close();*/
 	}
 
 	public function Modificar($idmeta, $nombre_meta,$programado,$unidad_medida)
@@ -39,7 +41,7 @@ class Metas
 	}
 	public function Consultar()
 	{
-		$sql = "SELECT id_metas, nombre_meta, programado, unidad_medida FROM metas;";
+		$sql = "SELECT id_metas,nombre_meta,programado,unidad_medida,frecuencia FROM metas";
 		
 		$response = $this->conn->query($sql);
 

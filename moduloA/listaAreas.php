@@ -10,11 +10,11 @@ $data = $areas->Consultar();
 $i = 1;
 ?>
 <link rel="stylesheet" type="text/css" href="assets/css/material-dashboard.css">
-<div id="caja">
+
 <div class="container section">
 	
-	<h2>Lista de Areas del Archivo Regional</h2>
-	<table class="table">
+	<h2>Lista de Areas</h2>
+	<table class="table table-striped">
 		<caption>table title and/or explanatory text</caption>
 		<thead>
 			<tr>
@@ -41,8 +41,8 @@ $i = 1;
 				</td>
 				<td><?php echo $fila['descripcion']; ?></td>
 				<td><?php 
-				$office = $areas->DatosDireccionOficina($fila['id_oficina']);
-				echo $office['sigla'];
+					$office = $areas->DatosDireccionOficina($fila['idoficina']);
+					echo $office['sigla'];
 				?></td>
 				
 				<td>
@@ -57,7 +57,7 @@ $i = 1;
 		</tbody>
 	</table>
 </div>
-</div>
+
 
 <script>
 	function CambiarDatosAreas(dato) {

@@ -12,9 +12,9 @@ $cargos = new Cargo();
 $i = 1;
 
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.css">
-<div id="caja"> Caja
-	<div class="container section">
+
+
+	<div class="container">
 		<table class="table">
 			<thead>
 				<tr>
@@ -66,7 +66,6 @@ $i = 1;
 
 		
 	</div>
-</div>
 
 <script>
 	function CambiarDatosAcciones(dato) {

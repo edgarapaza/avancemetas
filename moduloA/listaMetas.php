@@ -1,6 +1,6 @@
 
 <?php 
-echo "grt";
+
 include("./models/metas.model.php");
 
 
@@ -12,7 +12,7 @@ $i = 1;
 ?>
 
 <link rel="stylesheet" href="assets/css/material-dashboard.css">
-<div id="caja"> Caja
+<div id="caja">
 	<div class="container section">
 		<table class="table">
 			<thead>
@@ -20,6 +20,7 @@ $i = 1;
 					<th>Num.</th>
 					<th>Nombre Meta</th>
 					<th>Programado</th>
+					<th>Frecuencia</th>
 					<th>Unidad de medida</th>
 				</tr>
 			</thead>
@@ -34,6 +35,11 @@ $i = 1;
 					<td>
 						<?php 
 							echo $fila['programado'];
+						 ?>
+					</td>
+					<td>
+						<?php 
+							echo $fila['frecuencia'];
 						 ?>
 					</td>
 					<td>

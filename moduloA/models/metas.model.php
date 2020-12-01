@@ -39,7 +39,7 @@ class Metas
 	}
 	public function Consultar()
 	{
-		$sql = "SELECT id_metas, nombre_meta, programado, unidad_medida FROM metas;";
+		$sql = "SELECT id_metas, nombre_meta, programado, unidad_medida, frecuencia FROM metas;";
 		
 		$response = $this->conn->query($sql);
 
@@ -50,7 +50,7 @@ class Metas
 	public function MostrarMetaOficina($idmeta)
 	{
 		
-		$sql = "SELECT nombre_meta, programado, unidad_medida FROM metas WHERE id_metas = $idmeta;";
+		$sql = "SELECT nombre_meta, programado, unidad_medida, frecuencia FROM metas WHERE id_metas = $idmeta;";
 		
 		if(!$response = $this->conn->query($sql))
 		{

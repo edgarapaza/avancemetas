@@ -17,13 +17,14 @@ $personal = new Personal();
 $data_p = $personal->Consultar();
 
 ?>
-
+<div class="container">
+	
 		<CENTER><h1>Acciones</h1></CENTER>
 
 		<form action="controllers/acciones.controller.php" method="POST" role="form">
 			<legend>Registro de Acciones</legend>
 
-			<div class="form-oto for=">
+			<div class="form-group">
 				<label for="">Oficina:</label>
 				<select name="id_oficina" id="" class="form-control">
 					<option value="0" selected="selected">[Seleccionar Oficina]</option>
@@ -37,7 +38,7 @@ $data_p = $personal->Consultar();
 				</select>
 			</div>
 
-			<div class="form-oto for=">
+			<div class="form-group">
 				<label for="">Areas:</label>
 				<select name="id_areas" id="" class="form-control">
 					<option value="0" selected="selected">[Seleccionar Area]</option>
@@ -51,7 +52,7 @@ $data_p = $personal->Consultar();
 				</select>
 			</div>
 
-			<div class="form-oto for=">
+			<div class="form-group">
 				<label for="">Cargo:</label>
 				<select name="id_cargos" id="" class="form-control">
 					<option value="0" selected="selected">[Seleccionar Cargo]</option>
@@ -65,7 +66,7 @@ $data_p = $personal->Consultar();
 				</select>
 			</div>
 
-			<div class="form-oto for=">
+			<div class="form-group">
 				<label for="">Personal:</label>
 				<select name="id_personal" id="" class="form-control">
 					<option value="0" selected="selected">[Seleccionar Personal]</option>
@@ -82,7 +83,7 @@ $data_p = $personal->Consultar();
 			
 			<div class="form-group">
 				<label for="">Nombre de la accion:</label>
-				<input type="text" class="form-control" id="" name="nomb_actividad" placeholder="NOmbre de la accion">
+				<input type="text" class="form-control" id="" name="nom_actividad" placeholder="">
 			</div>
 
 
@@ -105,5 +106,6 @@ $data_p = $personal->Consultar();
 				</select>
 			</div>
 						
-			<button type="submit" class="btn btn-primary">enviar</button>
+			<button type="submit" class="btn btn-primary">Guardar</button>
 		</form>
+</div>

@@ -1,15 +1,16 @@
- <?php 
+ <?php
 session_start();
-include("models/login.model.php");
+
 if(isset($_SESSION['personal']))
 {
+  include("models/login.model.php");
   //echo $_SESSION['admin'];
   $login = new Login();
   $data = $login->NombrePersonal($_SESSION['personal']);
 
 ?>
 <!doctype html>
-<html lang="es-ES">
+<html lang="es">
 
 <head>
   <title>Avance de Metas</title>
@@ -22,9 +23,13 @@ if(isset($_SESSION['personal']))
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   
-  <script src="js/cargarUrl.js"></script>
+  <style>
+    .container{
+      background-color: #fff;
+      padding: 50px;
+    }
+  </style>
 
 </head>
 
@@ -38,37 +43,31 @@ if(isset($_SESSION['personal']))
   -->
       <div class="logo">
         <a href="#" class="simple-text logo-mini">
-          Area de Informatica
+          <img src="imagenes/GPE.png" alt="GPE" width="100">
         </a>
         <a href="#" class="simple-text logo-normal">
           Personal: <?php echo $_SESSION['personal'];?>
         </a>
       </div>
       <div class="sidebar-wrapper">
-        
+
         <ul class="nav">
 
           <li class="nav-item active  ">
-            
+
             <a class="nav-link" href="#" id="">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
 
           </li>
-                
-       
-          <li class="nav-item  ">
-            
-            <a href="#" class="nav-link" id="reportes" >
-              <i class="material-icons">table</i>
-              <p>Reportes del Personal</p>
-            </a>
 
+          <li class="nav-item">
+            <i class="material-icons">table</i>
+            <a class="dropdown-item" href="#" id="nuevoreporte">Mi Reportes diarios</a>
+              
           </li>
 
-          
-          
           <!-- your sidebar here -->
         </ul>
       </div>
@@ -89,9 +88,9 @@ if(isset($_SESSION['personal']))
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="material-icons">notifications</i> Notifications
-                </a>
+                <!-- <a class="nav-link" href="#pablo">
+                  <i class="material-icons"></i> Notifications
+                </a> -->
               </li>
               <!-- your navbar here -->
             </ul>
@@ -101,8 +100,8 @@ if(isset($_SESSION['personal']))
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <img src="<?php echo $data['foto'];?>" alt="Foto" width="40">
-                  
-                   Bienvenid@, <?php   echo $data['personal']; ?>
+
+                   Bienvenid@, <?php echo $data['personal']; ?>
                     <a href="../controllers/logout.php"> <button class="btn btn-default" name="salir">Salir</button></a>
                 </a>
               </li>
@@ -112,9 +111,9 @@ if(isset($_SESSION['personal']))
         </div>
       </nav>
       <!-- End Navbar -->
-    <?php 
+    <?php
   }
   else{
-    
+
     header("Location: ../index.html");
   } ?>

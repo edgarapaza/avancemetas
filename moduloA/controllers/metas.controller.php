@@ -12,4 +12,4 @@ header("Location: ../index.php");
 
 <script type="text/javascript">
   window.close();
-</script>0
+</script>

@@ -18,11 +18,11 @@ $data1 = $oficinas->Consultar()
 		
 			<div class="form-group">
 				<label for="">Nombre</label>
-				<input type="text" class="form-control" id="" name="nombre" placeholder="nombre">
+				<input type="text" class="form-control" id="" name="nombre" placeholder="">
 			</div>
 			<div class="form-group">
 				<label for="">Apellidos:</label>
-				<input type="text" class="form-control" id="" name="apellidos" placeholder="apellidos">
+				<input type="text" class="form-control" id="" name="apellidos" placeholder="">
 			</div>
 			<div><label>sexo</label>
 			<div id="gender" class="btn-group" data-toggle="buttons">
@@ -37,25 +37,27 @@ $data1 = $oficinas->Consultar()
 		
 			<div class="form-group">
 				<label for="">telefono:</label>
-				<input type="text" class="form-control" id="" name="telefono" placeholder="telefono">
+				<input type="text" class="form-control" id="" name="telefono" placeholder="">
 			</div>
 			<div class="form-group">
 				<label for="">fecha de nacimiento:</label>
-				<input type="date" class="form-control" id="" name="fecha_nacimiento" placeholder="fecha_nac">
+				<input type="date" class="form-control" id="" name="fecha_nacimiento" placeholder="">
 			</div>
 			<div class="form-group">
 				<label for="">email:</label>
-				<input type="text" class="form-control" id="" name="email" placeholder="email">
-			</div>
-			<div class="form-group">
-				<label for="">foto:</label>
-				<input type="file" class="form-control" id="" name="foto" placeholder="foto">
+				<input type="text" class="form-control" id="" name="email" placeholder="">
 			</div>
 
 			<div class="form-group">
 				<label for="">DNI:</label>
-				<input type="text" class="form-control" id="" name="DNI" placeholder="DNI">
+				<input type="text" class="form-control" id="" name="dni" placeholder="">
 			</div>
+
+			<div class="form-group">
+				<label for="">foto:</label>
+			</div>
+				<input type="file" id="fileinput" accept="image/x-png,image/gif,image/jpeg" />
+				<div id="gallery"></div>
 
 			<button type="submit" class="btn btn-primary">enviar</button>
     
@@ -63,3 +65,16 @@ $data1 = $oficinas->Consultar()
 		</form>
 
 	</div>
+
+	<script type="text/javascript">
+		function MostrarImagen(){
+			document.getElementById('fileinput').addEventListener('change', function(){
+		    var file = this.files[0];
+		    // This code is only for demo ...
+		    console.log("name : " + file.name);
+		    console.log("size : " + file.size);
+		    console.log("type : " + file.type);
+		    console.log("date : " + file.lastModified);
+		}, false);
+		}
+	</script>

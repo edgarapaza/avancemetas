@@ -16,7 +16,7 @@ class Acciones
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 
-		$sql = "INSERT INTO acciones VALUES (null,'$id_oficinas','$id_areas','$id_cargos','$id_personal','$nomb_actividad','$unidad_medida','$fechaActual','$fechaActual');";
+		$sql = "INSERT INTO acciones VALUES (null,'$id_personal','$id_cargos','$nomb_actividad','$unidad_medida','$fechaActual','$fechaActual')";
 
 
 		if(!$this->conn->query($sql)){
@@ -47,6 +47,7 @@ class Acciones
 
 		return $response;
 	}
+
 	public function MostrarAcciones($id_acciones)
 	{
 		$sql = "SELECT id_acciones, id_oficinas, id_areas, id_cargos, id_personal, nomb_actividad, unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
@@ -59,6 +60,7 @@ class Acciones
 		$fila = $response->fetch_array(MYSQLI_ASSOC);
 		return $fila;
 	}
+	
 	public function MostrarAccionesUno($id_acciones)
 	{
 		$sql = "SELECT id_acciones, id_oficinas, id_areas, id_cargos, id_personal, nomb_actividad, unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;

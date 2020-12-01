@@ -12,16 +12,17 @@ class Oficinas
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_of,$sigla,$id_institucion)
+	public function Guardar($nomsubgerencia,$sigla,$idgerencia,$id_metas=0)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO oficinas VALUES (null,'$nombre_of','$sigla','$fechaActual','$fechaActual','1','$id_institucion')";
+		$sql = "INSERT INTO oficinas VALUES (null,'$nomsubgerencia','$sigla','$fechaActual','$fechaActual','$id_metas','2','$idgerencia')";
 
 		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error();
+			echo "Error guardando: " . mysqli_error($this->conn);
 			exit();
 		}
 		return true;
+		mysqli_close($this->conn);
 	}
 
 	public function Modificar($idoficina, $nombre_oficina)

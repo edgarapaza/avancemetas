@@ -3,76 +3,59 @@ session_start();
 
 if(!empty($_SESSION['personal']))
 {
-	include("./models/reportes.model.php");
-	include("../moduloB/models/acciones.model.php");
-
-	$reportes = new Reportes();
-	$idpersonal = $_SESSION['personal'];
-	$data = $reportes->MostrarReportes($idpersonal);
-	/*
-	$data1= $reportes->Consultarcant($cantidad);
-	$acciones = new Acciones();*/
-
 	$i = 1;
+	require 'models/acciones.model.php';
+	$acciones = new Acciones();
+	$data = $acciones->MostrarAcciones($_SESSION['personal']);
+	
 
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.css">
-<form action="" id="reportes-form" method="post">
-	<div id="caja"  > Caja
 
-	<div id="mensaje"></div>
+<div class="container">
 
-	<div class="container section" >
+	<form action="" id="reportes-form" method="post">
+	
+		<div id="mensaje"></div>
+
 		<table class="table">
 			<thead>
 				<tr>
 					<th>Num.</th>
-					<th>Id Acciones</th>
+					<th>Acciones/Actividades</th>
 					<th>Cantidad</th>
 					<th>Opciones</th>
 				</tr>
 			</thead>
 			<tbody>
-			<?php while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {  
-				
+				<?php
+					while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {
+						
 				?>
 				<tr>
-					
+					<td><?php echo $i;?></td>
+
+					<td><?php echo $fila['nomb_actividad']; ?> </td>
+					<td><?php echo $fila['unidad_medida']; ?> </td>
 					<td>
-						<?php echo $i;
-						 ?>
-						<input type="hidden" name="idpersonal" id="idpersonal" value="<?php echo $idpersonal;?>">
-						<input type="hidden" name="idacciones" id="idacciones" value="<?php echo $fila['id_acciones'];?>">
-					</td>
-					<td>
-						<?php 
-						 echo $fila['nomb_actividad'];
-						?>
-					</td>
-					<td>
-                        <input type="number" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" class="form-control">
+						<input type="text" name="cantidad" id="cantidad" class="">
+						<input type="text" value="<?php echo $fila['id_acciones']; ?>">
+						<input type="text" value="<?php echo $fila['id_cargos']; ?>">
 						
 					</td>
-					<td>
-
-						<button id="btn<?php echo $fila['id_acciones'];?>" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );"  class="btn btn-primary"  type="button">Guardar</button>
-							
-						<!-- <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php// echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>-->
-					</td>
+					
+					<td><button type="button" class="btn btn-primary">Enviar</button></td>
 				</tr>
-			<?php
-				$i++;
-			}
-			?>
+
+				<?php } ?>
+			
 			</tbody>
 		</table>
-	</div>
+	
+	</form>
 </div>
-</form>
 
-<script type="text/javascript" src="assets/js/core/jquery.min.js"></script>
+
 <script>
-
 	/*var idaccion;
 	function CambiarDatosReportes(dato) {
 		var ventana1 = window.open('updateReportes.php?idreportes='+dato,"MsgWindow", "width=600,height=500");
@@ -120,7 +103,6 @@ if(!empty($_SESSION['personal']))
 		
 	}
       	
-	
 </script>
 
 <?php 

@@ -13,10 +13,16 @@ $(document).ready(function(){
 		$("#cuerpo").load("./estadisticas_areas.php");
 	});
 
-	
+
 	/*******************************
-		   OFICINAS
+		   OFICINAS / GERENCIAS
 	********************************/
+	$("#listadoGerencia").click(function(){
+		$("#cuerpo").load("./listagerencias.php");
+	});
+	$("#nuevaGerencia").click(function(){
+		$("#cuerpo").load("./gerencia.php");
+	});
 	$("#milistado").click(function(){
 		$("#cuerpo").load("./listaOficinas.php");
 	});
@@ -52,13 +58,13 @@ $(document).ready(function(){
 	$("#listadoresponsabilidades").click(function(){
 		$("#cuerpo").load("./listaResponsabilidades.php");
 	});
-	
+
 	$("#nuevaResponsabilidad").click(function(){
 		$("#cuerpo").load("./responsabilidades.php");
 	});
 
 
-	
+
 	/*******************************
 		   METAS
 	********************************/

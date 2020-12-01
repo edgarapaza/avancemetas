@@ -1,4 +1,4 @@
- <?php 
+ <?php
 session_start();
 include("models/login.model.php");
 if(isset($_SESSION['admin']))
@@ -9,7 +9,7 @@ if(isset($_SESSION['admin']))
 
 ?>
 <!doctype html>
-<html lang="es-ES">
+<html lang="es">
 
 <head>
   <title>Avance de Metas</title>
@@ -22,9 +22,7 @@ if(isset($_SESSION['admin']))
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
   <link href="assets/css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  
-  <script src="js/cargarUrl.js"></script>
+  <link rel="stylesheet" href="css/menu.css">
 
 </head>
 
@@ -38,96 +36,112 @@ if(isset($_SESSION['admin']))
   -->
       <div class="logo">
         <a href="#" class="simple-text logo-mini">
-          Area de Informatica
+          <img src="imagenes/GPE.png" alt="Logo GPE" width="80">
         </a>
         <a href="#" class="simple-text logo-normal">
           Administrador
         </a>
       </div>
-      <div class="sidebar-wrapper">
-        
-        <ul class="nav">
+      <div class="contenedor-menu">
 
-          <li class="nav-item active  ">
-            
-            <a class="nav-link" href="index.php" id="">
+        <ul class="menu">
+
+          <li class="nav-item active">
+
+            <a class="" href="index.php" id="">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
 
           </li>
-          <li class="nav-item ">
-            
-            <a href="#" class="nav-link" id="institucion" >
-              <i class="material-icons">room</i>
-              <p>Institucion</p>
+        
+
+          <li class="">
+
+            <a href="#" class="menu" id="institucion" >
+              
+              <p></p>
             </a>
 
           </li>
 
-          <li class="nav-item">
+          <li class="">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Crear Oficinas
+                  Listado
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="milistado">Listado de oficinas</a>
-                  <a class="dropdown-item" href="#" id="nuevaOficina">Nueva Oficina</a>
-                </div>
+                  
+                <ul class="menu">
+                  <li><li><a class="dropdown-item" href="#" id="listadoGerencia">Listado Gerencias</a></li></li>
+                  <li><li><a class="dropdown-item" href="#" id="milistado">Listado Sub Gerencias</a></li></li>
+                  <li><li><a class="dropdown-item" href="#" id="listadoareas">Listado de Areas</a></li></li>
+                </ul>
           </li>
-          
-          <li class="nav-item">
+
+          <li class="">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Nuevo
+                </a>
+                <ul class="menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#" id="nuevaGerencia">Nueva Gerencia</a></li>
+                  <li><a class="dropdown-item" href="#" id="nuevaArea">Agregar Nueva Area</a></li>
+                  <li><a class="dropdown-item" href="#" id="nuevaOficina">Nueva Sub Gerencia</a></li>
+                  <li><a href="#"><i class="material-icons">room</i>Institucion</a></li>
+                </ul>
+          </li>
+
+          <li class="">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Crear Areas
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listadoareas">Listado de Areas</a>
-                  <a class="dropdown-item" href="#" id="nuevaArea">Agregar Nueva Area</a>
-                </div>
+                <ul class="menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#" id="listadoareas">Listado de Areas</a></li>
+                  <li><a class="dropdown-item" href="#" id="nuevaArea">Agregar Nueva Area</a></li>
+                </ul>
           </li>
 
-          <li class="nav-item">
+          <li class="">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Personal
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="listadopersonal">Listado de Personal</a>
-                  <a class="dropdown-item" href="#" id="nuevopersonal">Nuevo Personal</a>
-                </div>
+                <ul class="menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#" id="listadopersonal">Listado de Personal</a></li>
+                  <li><a class="dropdown-item" href="#" id="nuevopersonal">Nuevo Personal</a></li>
+                </ul>
           </li>
-          
-          <li class="nav-item">
+
+          <li class="">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Metas
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="milistadoMetas">Listado de Metas</a>
-                  <a class="dropdown-item" href="#" id="nuevaMeta">Agregar Nueva Metas</a>
-                </div>
+                <ul class="menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#" id="milistadoMetas">Listado de Metas</a></li>
+                  <li><a class="dropdown-item" href="#" id="nuevaMeta">Agregar Nueva Metas</a></li>
+                </ul>
           </li>
 
-          <li class="nav-item">
+          <li class="">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Cargos
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="milistadoCargos">Listado de Cargos</a>
-                  <a class="dropdown-item" href="#" id="nuevoCargos">Nuevo Cargo</a>
-                  <a class="dropdown-item" href="#" id="AsignarCargos">Asignacion de Cargos</a>
-                  <a class="dropdown-item" href="#" id="ListadoCargos">Listado de Cargos</a>
-                </div>
+                <ul class="menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#" id="milistadoCargos">Listado de Cargos</a></li>
+                  <li><a class="dropdown-item" href="#" id="nuevoCargos">Nuevo Cargo</a></li>
+                  <li><a class="dropdown-item" href="#" id="AsignarCargos">Asignacion de Cargos</a></li>
+                  <li><a class="dropdown-item" href="#" id="ListadoCargos">Listado de Cargos</a></li>
+                </ul>
           </li>
 
-          <li class="nav-item  ">
+          <li class="">s
             <a href="#" class="nav-link" id="estadisticas_oficinas" >
-              <i class="material-icons">table</i>
-              <p>Estadisticas por oficinas</p>
+              
+              <p><i class="material-icons">note</i>Estadisticas oficinas</p>
             </a>
 
           </li>
-          <li class="nav-item  ">
+          <li class="">
             <a href="#" class="nav-link" id="estadisticas_areas" >
-              <i class="material-icons">report</i>
-              <p>Estadisticas por Areas</p>
+              
+              <p><i class="material-icons">report</i>Estadisticas por Areas</p>
             </a>
 
           </li>
@@ -150,10 +164,10 @@ if(isset($_SESSION['admin']))
           </button>
 
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#" id="milistadoCargos">Listado de Cargos</a>
-                  <a class="dropdown-item" href="#" id="nuevoCargos">Nuevo Cargo</a>
-                  <a class="dropdown-item" href="#" id="AsignarCargos">Asignacion de Cargos</a>
-                  <a class="dropdown-item" href="#" id="ListadoCargos">Listado de Cargos</a>
+                  <li><a class="dropdown-item" href="#" id="milistadoCargos">Listado de Cargos</a></li>
+                  <li><a class="dropdown-item" href="#" id="nuevoCargos">Nuevo Cargo</a></li>
+                  <li><a class="dropdown-item" href="#" id="AsignarCargos">Asignacion de Cargos</a></li>
+                  <li><a class="dropdown-item" href="#" id="ListadoCargos">Listado de Cargos</a></li>
                 </div>
 
 
@@ -165,7 +179,7 @@ if(isset($_SESSION['admin']))
                    Bienvenid@, <?php   echo $data['personal']; ?>
                     <a href="../controllers/logout.php"> <button class="btn btn-default" name="salir">Salir</button></a>
                 </a>
-                
+
 
               </li>
               <!-- your navbar here -->
@@ -174,9 +188,12 @@ if(isset($_SESSION['admin']))
         </div>
       </nav>
       <!-- End Navbar -->
-  <?php 
+
+      <script src="js/jquery-3.5.1.js"></script>
+        <script src="js/menu.js"></script>
+  <?php
   }
   else{
-    
+
     header("Location: ../index.html");
   } ?>

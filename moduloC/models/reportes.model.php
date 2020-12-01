@@ -7,7 +7,7 @@ class Reportes
 
 	function __construct()
 	{
-		$link = new Conexionnn();
+		$link = new Conexion();
 		$this->conn = $link->Conectar();
 		return $this->conn;
 	}
@@ -64,17 +64,5 @@ class Reportes
 
 		return $response;
 	}
-	/*public function Consultarcant($cantidad)
-	{
-		$sql = "SELECT cantidad from reportes WHERE cantidad=$cantidad;";
-
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-		
-
-
-		return $data1;
-	}*/
+	
 }

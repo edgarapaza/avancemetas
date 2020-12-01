@@ -1,7 +1,8 @@
 
 $(document).ready(function(){
+	console.log("inicio");
 
-	$("#institucion").click(function(){
+	/*$("#institucion").click(function(){
 		$("#cuerpo").load("./institucion.php");
 	});
 
@@ -12,13 +13,14 @@ $(document).ready(function(){
 	$("#estadisticas_areas").click(function(){
 		$("#cuerpo").load("./estadisticas_areas.php");
 	});
-
+*/
 	
 	/*******************************
 		   REPORTES
 	********************************/
-	$("#reportes").click(function(){
-		$("#cuerpo").load("./reportes.php");
+
+	$("#nuevoreporte").click(function(){
+		$("#cuerpo").load("./report1.php");
 	});
 
 });
