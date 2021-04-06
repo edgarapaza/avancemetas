@@ -6,7 +6,7 @@ $idoficina = $_REQUEST['idoficina'];
 $office = $oficinas->MostrarOficina($idoficina);
 
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.min.css">
+
 	<div class="container">
 		
 		<form action="controllers/cambiarNombreOficina.controller.php" method="POST" role="form">

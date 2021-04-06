@@ -6,7 +6,7 @@ $idmeta = $_REQUEST['idmeta'];
 $office = $metas->MostrarMetaOficina($idmeta);
 
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.min.css">
+
 	<div class="container">
 		
 		<form action="controllers/cambiarNombreMeta.controller.php" method="POST" role="form">

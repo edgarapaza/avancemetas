@@ -15,7 +15,7 @@ $oficinas = new Oficinas();
 $office = $oficinas->Consultar();
 
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.min.css">
+
 	<div class="container">
 		
 		<form action="controllers/cambiarAreas.controller.php" method="POST" role="form">

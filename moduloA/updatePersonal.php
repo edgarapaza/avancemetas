@@ -15,7 +15,7 @@ $data  = $areas->Consultar();
 $oficinas = new Oficinas();
 $data1 = $oficinas->Consultar();
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.css">
+
 	<div class="container">
 		
 		<h1>Actualizar datos de Personal</h1>

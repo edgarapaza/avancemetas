@@ -8,7 +8,7 @@ $codigoPersonal = $data['ultimo']+1;
 
 $idpersonal = $_REQUEST['idpersonal'];
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.css">
+
 <div class="container">
 	<h3>Crear Acceso</h3>
 	<form action="controllers/login.controller.php" method="post">

@@ -6,7 +6,7 @@ $idcargos = $_REQUEST['idcargos'];
 $office = $cargos->MostrarCargos($idcargos);
 
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.min.css">
+
 	<div class="container">
 		
 		<form action="controllers/cambiarNombreCargos.controller.php" method="POST" role="form">

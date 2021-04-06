@@ -11,7 +11,7 @@ $i = 1;
 
 ?>
 
-<link rel="stylesheet" href="assets/css/material-dashboard.css">
+
 <div id="caja">
 	<div class="container section">
 		<table class="table">

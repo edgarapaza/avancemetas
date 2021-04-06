@@ -5,7 +5,7 @@ $personal = new Personal();
 $data = $personal->Consultar();
 
 ?>
-<link rel="stylesheet" type="text/css" href="assets/css/material-dashboard.css">
+
 
 <div class="container">
 	

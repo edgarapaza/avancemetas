@@ -16,8 +16,8 @@ $dataAsignacion = $asignacion->MostrarTodo();
 
 $i=1;
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.css">
-<div class="container">
+
+<div class="">
 	<h1>LISTADO DE ASIGNACION DE PERSONAL</h1>
 	
 	<table class="table">

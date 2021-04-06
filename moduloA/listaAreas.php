@@ -9,9 +9,8 @@ $data = $areas->Consultar();
 
 $i = 1;
 ?>
-<link rel="stylesheet" type="text/css" href="assets/css/material-dashboard.css">
 
-<div class="container section">
+<div class="">
 	
 	<h2>Lista de Areas</h2>
 	<table class="table table-striped">

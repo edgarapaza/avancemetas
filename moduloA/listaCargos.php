@@ -10,9 +10,9 @@ $oficinas = new Oficinas();
 $i = 1;
 
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.css">
-<div id="caja"> Caja
-	<div class="container section">
+
+<div id="">
+	<div class="">
 		<table class="table">
 			<thead>
 				<tr>

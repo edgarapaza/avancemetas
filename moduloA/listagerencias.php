@@ -10,7 +10,7 @@ $i = 1;
 
 ?>
 
-<link rel="stylesheet" type="text/css" href="assets/css/material-dashboard.css">
+
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
