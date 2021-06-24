@@ -77,8 +77,8 @@ if(isset($_SESSION['id_personal']))
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Acciones
                 </a>
-                  <a class="dropdown-item" href="#" id="listadoAcciones">Listado de Acciones</a>
-                  <a class="dropdown-item" href="#" id="nuevaAccion">Agregar Nueva Acciones</a>
+                  <a class="dropdown-item" href="listaAcciones.php" id="listadoAcciones">Listado de Acciones</a>
+                  <a class="dropdown-item" href="acciones.php" id="nuevaAccion">Agregar Nueva Acciones</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 </div>
           </li>
@@ -86,15 +86,15 @@ if(isset($_SESSION['id_personal']))
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Metas
                 </a>
-                  <a class="dropdown-item" href="#" id="milistadoMetas">Listado de Metas</a>
-                  <a class="dropdown-item" href="#" id="nuevaMeta">Agregar Nueva Metas</a>
+                  <a class="dropdown-item" href="listaMetas.php" id="milistadoMetas">Listado de Metas</a>
+                  <a class="dropdown-item" href="metas.php" id="nuevaMeta">Agregar Nueva Metas</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 </div>
           </li>
 
 
           <li class="nav-item  ">
-            <a href="#" class="nav-link" id="estadisticas_oficinas" >
+            <a href="estadisticas_oficinas.php" class="nav-link" id="estadisticas_oficinas" >
               <i class="material-icons">table</i>
               <p>Estadisticas por oficinas</p>
             </a>

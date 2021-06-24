@@ -7,16 +7,14 @@
 
 		function __construct()
 		{
-			require_once "../core/Conexion.php";
-			$conn = new Conexion();
-			$this->mysqli = $conn->Conectar();
-			return $this->mysqli;
+			$this->conn = new Conexion();
+			return $this->conn;
 		}
 
 		function Validar($user, $pass){
 			$sql = "SELECT id_personal, idrol, idpermisos FROM login WHERE username = '$user' AND password = '$pass' LIMIT 1;";
-			$valor = $this->mysqli->query($sql);
-			$data = $valor->fetch_assoc();
+			$res = $this->conn->ConsultaCon($sql);
+			$data = $res->fetch_assoc();
 			return $data;
 		}
 	}

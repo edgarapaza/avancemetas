@@ -7,8 +7,7 @@ class Responsabilidades
 
 	function __construct()
 	{
-		$link = new Conexionn();
-		$this->conn = $link->Conectar();
+		$this->conn = new Conexion();
 		return $this->conn;
 	}
 
@@ -16,44 +15,31 @@ class Responsabilidades
 	{
 		$sql = "INSERT INTO responsabilidades VALUES (null,'$nomb_resp','$f_inicio_respo','$documento','$unidad_medida','$id_personal','$id_jefearea ');";
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-		return true;
+		$res = $this->conn->ConsultaSin($sql);
+		return $res;
 	}
 
 	public function Modificar($id_resp,$nomb_resp,$documento,$unidad_medida)
 	{
 		$sql = "UPDATE responsabilidades SET nomb_resp = '$nomb_resp', documento = '$documento', unidad_medida = '$unidad_medida' WHERE id_responsabilidades = $id_resp;";
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-
-		$this->conn->close();		
+		$res = $this->conn->ConsultaSin($sql);
+		return $res;		
 	}
 
 	public function Consultar()
 	{
 		$sql = "SELECT id_responsabilidades,nomb_resp,f_inicio_respo,documento,unidad_medida,id_personal,id_jefearea FROM responsabilidades;";
 
-		$response = $this->conn->query($sql);
-
-		return $response;
+		$res = $this->conn->ConsultaCon($sql);
+		return $res;
 	}
 	public function MostrarResponsabilidades($id_resp)
 	{
 		$sql = "SELECT id_responsabilidades,nomb_resp,f_inicio_respo,documento,unidad_medida,id_personal,id_jefearea FROM responsabilidades WHERE id_responsabilidades = " . $id_resp;
 		
-		if(!$response = $this->conn->query($sql))
-		{
-			"Error: ". mysqli_error($this->conn);
-            exit();
-		}
-		$fila = $response->fetch_array(MYSQLI_ASSOC);
-		return $fila;
+		$res = $this->conn->ConsultaArray($sql);
+		return $res;
 	}
 
 	public function CrearOficinas()
