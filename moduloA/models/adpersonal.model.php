@@ -29,9 +29,8 @@ class AdPersonal
 	{
 		$sql = "SELECT id_adpersonal, profesion,tiempo_servicio,condicion,seguro_social,grupo_sanguineo,f_ingreso,f_deceso FROM datospersonal;";
 
-		$response = $this->conn->query($sql);
-
-        return $response;
+		$res = $this->conn->ConsultaCon($sql);
+		return $res;
 	}
 
 	public function CrearOficinas()

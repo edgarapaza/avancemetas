@@ -7,8 +7,7 @@ class Personal
 
 	function __construct()
 	{
-		$link = new Conexion();
-		$this->conn = $link->Conectar();
+		$this->conn = new Conexion();
 		return $this->conn;
 	}
 
@@ -20,10 +19,8 @@ class Personal
 		$sql = "INSERT INTO personal(id_personal,nombre,apellidos,sexo,telefono,fecha_nac,email,foto,DNI,f_creacion)VALUES (null ,'$nombre','$apellidos','$sexo','$telefono','$fecha_nac','$email','$foto','$dni','$fechaActual');";
 	
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
+		$res = $this->conn->ConsultaSin($sql);
+        return $res;
 		
 	}
 
@@ -31,26 +28,16 @@ class Personal
 	{
 		$sql = "UPDATE personal SET nombre ='$nombre', apellidos = '$apellidos', telefono ='$telefono', fecha_nac = '$fecha_nac', email = '$email', DNI = '$dni' WHERE id_personal = $id_personal;";
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-		
+		$res = $this->conn->ConsultaSin($sql);
+        return $res;		
 	}
 
 	public function Consultar()
 	{
 		$sql = "SELECT id_personal,nombre,apellidos,sexo,telefono,fecha_nac,email,foto,f_creacion, DNI FROM personal";
-		//$sql ="SELECT * FROM personal";
-
-		if(!$response = $this->conn->query($sql)){
-			echo "Error: ". mysqli_error($this->conn);
-			exit();
-		}
-
-		return $response;
-	
-
+		
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 	}
 
 	public function MostrarPersonalUno($idpersonal)
@@ -59,14 +46,8 @@ class Personal
 		$sql = "SELECT id_personal,nombre,apellidos,sexo,telefono,fecha_nac,email,foto,f_creacion,DNI FROM personal WHERE id_personal = " . $idpersonal;
 
 
-		if(!$response = $this->conn->query($sql)){
-			echo "Error: ". mysqli_error($this->conn);
-			exit();
-		}
-
-		$dato = $response->fetch_array(MYSQLI_ASSOC);
-
-		return $dato;
+		$res = $this->conn->ConsultaArray($sql);
+        return $res;
 
 	}
 	public function MostrarPersonalAccion($idpersonal)
@@ -74,15 +55,8 @@ class Personal
 
 		$sql = "SELECT nombre, apellidos FROM personal WHERE id_personal = $idpersonal;";
 		
-		if(!$response = $this->conn->query($sql))
-		{
-			echo "Error: ". mysqli_error($this->conn);
-			exit();
-		}
-		$data = $response->fetch_array(MYSQLI_ASSOC);
-
-		return $data;
-		$this->conn->close();
+		$res = $this->conn->ConsultaArray($sql);
+        return $res;
 	}
 
 }

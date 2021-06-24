@@ -7,8 +7,7 @@ class AsignacionPersonal
 
     function __construct()
     {
-        $link = new Conexion();
-        $this->conn = $link->Conectar();
+        $this->conn = new Conexion();
         return $this->conn;
     }
 
@@ -18,22 +17,15 @@ class AsignacionPersonal
 
         $sql = "INSERT INTO asignacionpersonal VALUES (null,'$idoficina','$idarea','$idcargo','$idpersonal','$fecInicioCargo',null,'$documento','$fechaActual',null);";
 
-        if(!$this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
-        return true;
+        $res = $this->conn->ConsultaCon($sql);
+        return $res;
     }
 
     public function MostrarTodo()
     {
         $sql = "SELECT idasignacion,idoficina,idarea,idcargo,idpersonal,fecInicioCargo,fecFinCargo,documento,fecCreate,fecUpdtae FROM asignacionpersonal;";
 
-        if(!$res = $this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
-
+        $res = $this->conn->ConsultaCon($sql);
         return $res;
     }
 

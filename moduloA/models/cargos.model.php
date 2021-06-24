@@ -7,8 +7,7 @@ class Cargo
 
 	function __construct()
 	{
-		$link = new Conexion();
-		$this->conn = $link->Conectar();
+		$this->conn = new Conexion();
 		return $this->conn;
 	}
 
@@ -18,10 +17,8 @@ class Cargo
 		
 		$sql = "INSERT INTO cargos VALUES (null,'$idoficina','$nombre_cargo','$fechaActual','$idarea','$idpersonal')";
 
-		if(!$this->conn->query($sql)){
-			echo "Error guardando: " . mysqli_error($this->conn);
-			exit();
-		}
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 
 	}
 
@@ -29,40 +26,24 @@ class Cargo
 	{
 		$sql = "UPDATE cargos SET nombre_cargo = '$nombre_cargo' WHERE id_cargos = '$idcargos';";
 
-		if(!$this->conn->query($sql)){
-			echo "Error modificando: " . mysqli_error($this->conn);
-			exit();
-		}
-
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 	}
 
 	public function Consultar()
 	{
 		$sql = "SELECT id_cargos,id_oficina,nombre_cargo FROM cargos;";
 		
-		if(!$response = $this->conn->query($sql))
-		{
-			echo "Error consulta: " . mysqli_error($this->conn);
-			exit();	
-		}
-
-		return $response;
-
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 	}
 
 	public function MostrarCargos($idcargos)
 	{
 		$sql = "SELECT id_cargos,id_oficina,nombre_cargo,fec_creacion FROM cargos WHERE id_cargos = $idcargos;";
 		
-		if(!$response = $this->conn->query($sql))
-		{
-			echo " No se han asignado ningun cargo";
-		}
-		
-		$data = $response->fetch_array(MYSQLI_ASSOC);
-		return $data;
-
-
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 	}
 
 	public function NombrePersonal($idpersonal)

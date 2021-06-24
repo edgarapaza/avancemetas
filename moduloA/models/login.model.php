@@ -7,8 +7,7 @@ class Login
 
     function __construct()
     {
-        $link = new Conexion();
-        $this->conn = $link->Conectar();
+        $this->conn = new Conexion();
         return $this->conn;
     }
 
@@ -18,25 +17,16 @@ class Login
 
         $sql = "SELECT CONCAT(nombre,' ',apellidos) AS personal, foto FROM personal WHERE id_personal = $idpersonal;";
 
-        if(!$res = $this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
-        $data = $res->fetch_array(MYSQLI_ASSOC);
-        return $data;
+        $res = $this->conn->ConsultaArray($sql);
+        return $res;
     }
 
     public function ultimoRegistro()
     {
         $sql = "SELECT count(*) as ultimo FROM login;";
 
-        if(!$res = $this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
-        $data = $res->fetch_array();
-
-        return $data;
+        $res = $this->conn->ConsultaArray($sql);
+        return $res;
     }
 
     public function RegistraAcceso($codigoPersonal, $idpersonal, $username,$password,$nivel)
@@ -45,9 +35,7 @@ class Login
 
         $sql = "INSERT INTO login VALUES ('$codigoPersonal','$idpersonal','$username','$password','$nivel','1');";
 
-        if(!$this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
+        $res = $this->conn->ConsultaSin($sql);
+        return $res;
     }
 }

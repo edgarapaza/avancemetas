@@ -2,8 +2,9 @@
 include "header.php";
 require "models/consultas.model.php";
 
-$consultas = new Consutas();
-$datos = $consultas->Gerencias();
+$consultas = new Consultas();
+$data = $consultas->Gerencias();
+
 ?>
 
  <div id="wrapper">
@@ -17,10 +18,10 @@ $datos = $consultas->Gerencias();
 				
 				<div class="form-group">
 					<label for="">¿A que Gerencia partenece?:</label>
-					<select name="idgerencia" id="" class="form-control">
+					<select name="idgerencia" id="" class="form-control" required>
 				     	<option value="0" selected="selected">[Seleccione una Gerencia]</option>
 						<?php
-						while ($fila = $datos->fetch_array(MYSQLI_ASSOC)) {					 
+						while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {					 
 						?>
 						 <option value="<?php echo $fila['idgerencia']; ?>"><?php echo $fila['nomgerencia'];?></option>
 						<?php } ?>
@@ -29,11 +30,11 @@ $datos = $consultas->Gerencias();
 
 				<div class="form-group">
 					<label for="">Nombre Sub Gerencia:</label>
-					<input type="text" class="form-control" id="nomsubgerencia" name="nomsubgerencia" placeholder="">
+					<input type="text" class="form-control" id="nomsubgerencia" name="nomsubgerencia" placeholder="" required autocomplete="off">
 				</div>
 				<div class="form-group">
 					<label for="">Sigla:</label>
-					<input type="text" class="form-control" id="" name="sigla" placeholder="">
+					<input type="text" class="form-control" id="" name="sigla" placeholder="" required autocomplete="off">
 				</div>
 						
 				<button type="submit" class="btn btn-primary">Enviar</button>

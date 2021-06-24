@@ -6,8 +6,7 @@ class Oficinas_Areas
 
 	function __construct()
 	{
-		$link = new Conexion();
-		$this->conn = $link->Conectar();
+		$this->conn = new Conexion();
 		return $this->conn;
 	}
 
@@ -15,11 +14,8 @@ class Oficinas_Areas
 	{
 		$sql = "INSERT INTO oficinas_areas VALUES (null,'$id_oficinas','$id_areas')";
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error();
-			exit();
-		}
-		return true;
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 	}
 
 	public function Modificar()
@@ -31,9 +27,8 @@ class Oficinas_Areas
 	{
 		$sql = "SELECT id_ofiarea,id_oficinas,id_areas FROM oficinas_areas; ";
 
-		$response = $this->conn->query($sql);
-
-		return $response;
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 	}
 
 	public function CrearOficinas()

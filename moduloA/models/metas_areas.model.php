@@ -7,8 +7,7 @@ class MetasAreas
 
 	function __construct()
 	{
-		$link = new Conexion();
-		$this->conn = $link->Conectar();
+		$this->conn = new Conexion();
 		return $this->conn;
 	}
 
@@ -16,11 +15,8 @@ class MetasAreas
 	{
 		$sql = "INSERT INTO metas_areas VALUES (null,'$id_meta',id_area','$fecha_reporte','$cantidad_avance')";
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error();
-			exit();
-		}
-		return true;
+		$res = $this->conn->ConsultaSin($sql);
+        return $res;
 	}
 
 	public function Modificar()

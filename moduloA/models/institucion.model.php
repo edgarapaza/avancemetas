@@ -28,18 +28,16 @@ class Institucion
 	{
 		$sql = "SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,fecha_creacion,n_resolucion,id_metas,fecha_create,fecha_update FROM institucion ";
 
-		$response = $this->conn->query($sql);
-
-		return $response;
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 	}
 
 	public function ConsultaGerencias()
 	{
 		$sql = "SELECT idgerencia,nomgerencia,sigla,idinstitucion FROM gerencias";
 
-		$response = $this->conn->query($sql);
-
-		return $response;
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 	}
 
 	public function CrearOficinas()

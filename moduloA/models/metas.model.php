@@ -15,7 +15,8 @@ class Metas
 	{
 		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida');";
 
-		
+		$res = $this->conn->ConsultaSin($sql);
+        return $res;
 	}
 
 	public function Modificar($idmeta, $nombre_meta,$programado,$unidad_medida)
@@ -23,14 +24,14 @@ class Metas
 		
 		$sql = "UPDATE metas SET nombre_meta = '$nombre_meta', programado = '$programado', unidad_medida='$unidad_medida' WHERE id_metas = $idmeta;";
 
-		
+		$res = $this->conn->ConsultaSin($sql);
+        return $res;
 	}
 	public function Consultar()
 	{
 		$sql = "SELECT id_metas, nombre_meta, programado, unidad_medida, frecuencia FROM metas;";
 		
 		$response = $this->conn->ConsultaCon($sql);
-
 		return $response;
 		
 	}
@@ -41,8 +42,8 @@ class Metas
 		$sql = "SELECT nombre_meta, programado, unidad_medida, frecuencia FROM metas WHERE id_metas = $idmeta;";
 		
 
-		return $data;
-		
+		$res = $this->conn->ConsultaCon($sql);
+        return $res;
 	}
 
 }

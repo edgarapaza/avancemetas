@@ -7,8 +7,7 @@ class Areas
 
     function __construct()
     {
-        $link = new Conexion();
-        $this->conn = $link->Conectar();
+        $this->conn = new Conexion();
         return $this->conn;
     }
 
@@ -19,10 +18,8 @@ class Areas
         $sql = "INSERT INTO areas VALUES (null,'$nombre','$descripcion','$idoficina','$id_metas','$fechaActual',null);
 ";
 
-        if(!$this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
+        $res = $this->conn->ConsultaCon($sql);
+        return $res;
         
     }
 
@@ -32,25 +29,16 @@ class Areas
 
         $sql= "UPDATE areas SET nombre='$nombre', descripcion ='$descripcion' WHERE id_areas= $id_areas;";
 
-        if(!$this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
-
-        $this->conn->close();
+        $res = $this->conn->ConsultaCon($sql);
+        return $res;
     }
 
     public function Consultar()   
-    {
-                        
+    {    
         $sql = "SELECT id_areas,nombre,descripcion,idoficina,id_metas FROM areas";
         
-        if(!$response = $this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
-
-        return $response;
+        $res = $this->conn->ConsultaCon($sql);
+        return $res;
 
     }
 
@@ -59,27 +47,16 @@ class Areas
 
         $sql = "SELECT id_areas, nombre, id_metas, descripcion from areas WHERE id_areas = $idarea;";
         
-        if(!$response = $this->conn->query($sql)){
-            echo "Error: " . mysqli_error($this->conn);
-            exit();
-        }
-
-        $data = $response->fetch_array(MYSQLI_ASSOC);
-        return $data;
+        $res = $this->conn->ConsultaCon($sql);
+        return $res;
     }
 
     public function DatosDireccionOficina($idoficina)
     {
         $sql = "SELECT id,nombre_of,sigla,id_metas,id_institucion,idgerencia FROM oficinas WHERE id=".$idoficina;
 
-        if(!$response = $this->conn->query($sql)){
-            echo "Error: ". mysqli_error($this->conn);
-            exit();
-        }
-
-        $dato = $response->fetch_array(MYSQLI_ASSOC);
-
-        return $dato;        
+        $res = $this->conn->ConsultaCon($sql);
+        return $res;
     }
 
 }

@@ -1,5 +1,5 @@
 <?php
-require "../core/Conexion.php";
+require "Conexion.php";
 
 class Consultas
 {
@@ -16,6 +16,13 @@ class Consultas
 		$sql = "SELECT idgerencia,nomgerencia,sigla,idinstitucion,fechaActual FROM gerencias;";
 		$res = $this->conn->ConsultaCon($sql);
 		return $res;
-		mysqli_close($this->conn);
+
 	}
 }
+
+/*$consultas = new Consultas();
+$data = $consultas->Gerencias();
+while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {
+	echo $fila['idgerencia'];
+	echo $fila['nomgerencia'];
+}*/
