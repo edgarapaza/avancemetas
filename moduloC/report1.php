@@ -38,8 +38,8 @@ if(!empty($_SESSION['personal']))
 					<td><?php echo $fila['unidad_medida']; ?> </td>
 					<td>
 						<input type="text" name="cantidad" id="cantidad" class="">
-						<input type="text" value="<?php echo $fila['id_acciones']; ?>">
-						<input type="text" value="<?php echo $fila['id_cargos']; ?>">
+						<input type="hidden" value="<?php echo $fila['id_acciones']; ?>">
+						<input type="hidden" value="<?php echo $fila['id_cargos']; ?>">
 						
 					</td>
 					

@@ -1,5 +1,5 @@
 <?php
-require_once("Conexion.php");
+require "../core/Conexion.php";
 
 class Metas
 {
@@ -7,8 +7,7 @@ class Metas
 
 	function __construct()
 	{
-		$link = new Conexion();
-		$this->conn = $link->Conectar();
+		$this->conn = new Conexion();
 		return $this->conn;
 	}
 
@@ -17,12 +16,6 @@ class Metas
 		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida');";
 
 		
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-		return true;
-		$this->conn->close();
 	}
 
 	public function Modificar($idmeta, $nombre_meta,$programado,$unidad_medida)
@@ -30,21 +23,16 @@ class Metas
 		
 		$sql = "UPDATE metas SET nombre_meta = '$nombre_meta', programado = '$programado', unidad_medida='$unidad_medida' WHERE id_metas = $idmeta;";
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-
-		$this->conn->close();
+		
 	}
 	public function Consultar()
 	{
 		$sql = "SELECT id_metas, nombre_meta, programado, unidad_medida, frecuencia FROM metas;";
 		
-		$response = $this->conn->query($sql);
+		$response = $this->conn->ConsultaCon($sql);
 
 		return $response;
-		$this->conn->close();
+		
 	}
 
 	public function MostrarMetaOficina($idmeta)
@@ -52,21 +40,9 @@ class Metas
 		
 		$sql = "SELECT nombre_meta, programado, unidad_medida, frecuencia FROM metas WHERE id_metas = $idmeta;";
 		
-		if(!$response = $this->conn->query($sql))
-		{
-			echo "Error: ". mysqli_error($this->conn);
-			exit();
-		}
-		$data = $response->fetch_array(MYSQLI_ASSOC);
 
 		return $data;
-		$this->conn->close();
-	}
-
-
-
-	public function CrearOficinas()
-	{
 		
 	}
+
 }

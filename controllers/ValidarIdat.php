@@ -1,42 +1,37 @@
 <?php 
 session_start();
-include("../core/Conexion.php");
+require "../models/ValidarUsuario.php";
 
-$conn=new Conexion();
-$conexion=$conn->Conectar();
+$user = $_POST['txtuser'];
+$pass = $_POST['txtpass'];
 
-$username = $_POST['username'];
-$passwd = $_POST['clave'];
+$validar = new Validar();
+$data = $validar->Comprobar($user, $pass);
 
-printf("Usuario: %s con Contraseña: %s", $username, $passwd);
+if($data['chk_usu'] == 1)
+{
 
-$sql = "SELECT niv_usu, id_personal FROM login WHERE nom_usu='$username' and psw_usu='$passwd' and chk_usu=1;";
-
-$response=$conexion->query($sql);
-$data=$response->fetch_array(MYSQLI_ASSOC);
-
-if ($data['niv_usu'] != null) {
-	
-	 echo $data['niv_usu'];
-	 switch ($data['niv_usu']) {
-		case '1':
-			$_SESSION["admin"]=$data["id_personal"];
-			header("location: ../moduloA/index.php");
-			break;
-		case '2':
-		    $_SESSION["id_personal"]=$data['id_personal'];
-	        header("location: ../moduloB/index.php");
-		    break;
-		case '3':
-		    $_SESSION["personal"]=$data['id_personal'];
-	        header("location: ../moduloC/index.php");
-		    break;
-		default:
-			# code...
-			break;
+	if ($data['niv_usu'] != null) {
+		
+		 //echo $data['niv_usu'];
+		 switch ($data['niv_usu']) {
+			case '1':
+				$_SESSION["administrator"]=$data['id_personal'];
+				header("location: ../moduloA/index.php");
+				break;
+			case '2':
+			    $_SESSION["id_personal"]=$data['id_personal'];
+		        header("location: ../moduloB/index.php");
+			    break;
+			case '3':
+			    $_SESSION["personal"]=$data['id_personal'];
+		        header("location: ../moduloC/index.php");
+			    break;
+		}
+	}else{
+		echo "error";
+		header("Location: ../index.html");
 	}
 }else{
-	echo "error";
-	header("Location: ../index.html");
+	header("Location: ../login.html");
 }
-

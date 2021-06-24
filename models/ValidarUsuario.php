@@ -1,23 +1,21 @@
 <?php
+require_once "../moduloA/core/Conexion.php";
 
-	class ValidarUsuario
+class Validar
+{
+	private $conn;
+
+	function __construct()
 	{
-
-		private $mysqli;
-
-		function __construct()
-		{
-			require_once "../core/Conexion.php";
-			$conn = new Conexion();
-			$this->mysqli = $conn->Conectar();
-			return $this->mysqli;
-		}
-
-		function Validar($user, $pass){
-			$sql = "SELECT id_personal, idrol, idpermisos FROM login WHERE username = '$user' AND password = '$pass' LIMIT 1;";
-			$valor = $this->mysqli->query($sql);
-			$data = $valor->fetch_assoc();
-			return $data;
-		}
+		$this->conn = new Conexion();
+		return $this->conn;
 	}
- ?>
+
+	function Comprobar($user, $pass)
+	{
+		$sql = "SELECT id_personal,niv_usu,chk_usu FROM login WHERE nom_usu = '$user' AND psw_usu ='$pass';";
+		$data = $this->conn->ConsultaArray($sql);
+		return $data;
+		mysqli_close($this->conn);
+	}
+}

@@ -1,5 +1,5 @@
 <?php
-require_once("Conexion.php");
+require "../core/Conexion.php";
 
 class Gerencias
 {
@@ -7,8 +7,7 @@ class Gerencias
 
 	function __construct()
 	{
-		$link = new Conexion();
-		$this->conn = $link->Conectar();
+		$this->conn = new Conexion();
 		return $this->conn;
 	}
 
@@ -16,14 +15,8 @@ class Gerencias
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 		$sql = "INSERT INTO gerencias VALUES (null,'$nomgerencia','$sigla','$idinstitucion','$fechaActual')";
-		echo $sql;
-
-		if(!$this->conn->query($sql)){
-			echo "Error guardando: " . mysqli_error();
-			exit();
-		}
-		return true;
-		mysqli_close($this->conn);
+		$res = $this->conn->ConsultaSin($sql);
+		return $res;
 	}
 
 	public function Modificar($idgerencia, $nomgerencia, $sigla)
@@ -31,25 +24,16 @@ class Gerencias
 		$fechaActual = date('Y-m-d H:i:s');
 		$sql = "UPDATE gerencias SET nomgerencia = '$nomgerencia',sigla = '$sigla' WHERE idgerencia =". $idgerencia;
 
-		if(!$this->conn->query($sql)){
-			echo "Error modificando: " . mysqli_error($this->conn);
-			exit();
-		}
-
-		mysqli_close($this->conn);
+		$res = $this->conn->ConsultaSin($sql);
+		return $res;
 	}
 
 	public function Consultar()
 	{
 		$sql = "SELECT idgerencia,nomgerencia,sigla FROM gerencias";
 		
-		if(!$response = $this->conn->query($sql))
-		{
-			echo "Error consultando: ". mysqli_error($this->conn);
-		}
-
-		return $response;
-		mysqli_close($this->conn);
+		$res = $this->conn->ConsultaCon($sql);
+		return $res;
 	}
 
 }
