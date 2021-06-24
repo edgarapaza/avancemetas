@@ -36,7 +36,7 @@ $(document).ready(function(){
 	********************************/
 	$("#milistadoMetas").click(function(){
 		$("#cuerpo").load("./listaMetas.php");
-	});
+
 
 	$("#nuevaMeta").click(function(){
 		$("#cuerpo").load("./metas.php");

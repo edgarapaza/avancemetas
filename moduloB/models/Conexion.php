@@ -1,22 +1,61 @@
 <?php
 
-class Conexionn {
+class Conexion
+{
+	private $conn;
 
-	public function Conectar() {
-		#require_once ("config.php");
+	function __construct()
+	{
+		$host = "localhost";
+        $user = "root";
+        $pass = "";
+        $db   = "avancemetas";
 
-		$mysqli = new mysqli("localhost","usuario", "Archivo123$", "seguimiento");
+        $this->conn = new mysqli($host, $user, $pass, $db);
+        
+        if ($this->conn->connect_errno) {
+            echo "Error al contenctar a MySQL: (" . $this->conn->connect_errno . ") " . $this->conn->connect_error;
+            exit();
+        }
 
-		$mysqli->set_charset("utf8");
-		if ($mysqli->connect_errno) {
-			echo "Error al contenctar a MySQL: (".$mysqli->connect_errno.") ".$mysqli->connect_error;
-			exit();
-		}
-
-		//echo $mysqli->host_info. "Dentro de la clase";
-		return $mysqli;
+        #echo $this->conn->host_info. " metas";
+        return $this->conn;
 	}
+
+	function ConsultaSin($sql)
+    {
+        # Sirve para: INSERT, UPDATE, DELETE
+        if(!$this->conn->query($sql)){
+            echo "Error. ". mysqli_error($this->conn);
+            exit();
+        }
+
+        return true;
+        mysqli_close($this->conn);
+    }
+
+    function ConsultaCon($sql)
+    {
+        # Sirve para: SELECT
+        if(!$result = $this->conn->query($sql)){
+            echo "Error: " . mysqli_error($this->conn);
+            exit();
+        }
+
+        return $result;
+        mysqli_close($this->conn);
+    }
+
+    function ConsultaArray($sql)
+    {
+        # Sirve para: SELECT convertido en array
+        if(!$result = $this->conn->query($sql)){
+            echo "Error. ". mysqli_error($this->conn);
+            return false;
+        }
+
+        $data = $result->fetch_array(MYSQLI_ASSOC);
+        return $data;
+        mysqli_close($this->conn);
+    }
 }
-
-?>
-

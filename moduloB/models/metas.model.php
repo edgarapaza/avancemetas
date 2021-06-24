@@ -7,17 +7,18 @@ class Metas
 
 	function __construct()
 	{
-		$link = new Conexionn();
-		$this->conn = $link->Conectar();
+		$this->conn = new Conexion();
 		return $this->conn;
 	}
 
 	public function Guardar($nombre_meta,$programado,$unidad_medida,$frecuencia)
 	{
-		$fecCreate = date('Y-m-d');
-		echo $fecCreate;
-		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida','$frecuencia','$fecCreate');";
+		//$fecCreate = date('Y-m-d');
+		//echo $fecCreate;
+		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida','$frecuencia');";
 
+		$res = $this->conn->ConsultaSin($sql);
+		return $res;
 		
 		/*if(!$this->conn->query($sql)){
 			echo "Error: " . mysqli_error($this->conn);
@@ -32,21 +33,14 @@ class Metas
 		
 		$sql = "UPDATE metas SET nombre_meta = '$nombre_meta', programado = '$programado', unidad_medida='$unidad_medida' WHERE id_metas = $idmeta;";
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-
-		$this->conn->close();
+		$res = $this->conn->ConsultaSin($sql);
+		return $res;
 	}
 	public function Consultar()
 	{
 		$sql = "SELECT id_metas,nombre_meta,programado,unidad_medida,frecuencia FROM metas";
-		
-		$response = $this->conn->query($sql);
-
-		return $response;
-		$this->conn->close();
+		$res = $this->conn->ConsultaCon($sql);
+		return $res;
 	}
 
 	public function MostrarMetaOficina($idmeta)
@@ -54,15 +48,8 @@ class Metas
 		
 		$sql = "SELECT nombre_meta, programado, unidad_medida FROM metas WHERE id_metas = $idmeta;";
 		
-		if(!$response = $this->conn->query($sql))
-		{
-			echo "Error: ". mysqli_error($this->conn);
-			exit();
-		}
-		$data = $response->fetch_array(MYSQLI_ASSOC);
-
-		return $data;
-		$this->conn->close();
+		$res = $this->conn->ConsultaArray($sql);
+		return $res;
 	}
 
 
