@@ -1,7 +1,7 @@
 <?php
 include("./models/acciones.model.php");
 
-include("../moduloA/models/cargos.model.php");
+include("./models/cargos.model.php");
 
 
 $acciones = new Acciones();

@@ -1,20 +1,11 @@
 <?php
-require("../moduloA/models/oficinas.model.php");
-require("../moduloA/models/areas.model.php");
-require("../moduloA/models/cargos.model.php");
-require("../moduloA/models/personal.model.php");
+require "./models/consultas.model.php";
 
-$oficinas = new Oficinas();
-$data_of = $oficinas->Consultar();
-
-$areas = new Areas();
-$data_a = $areas->Consultar();
-
-$cargo = new Cargo();
-$data_c = $cargo->Consultar();
-
-$personal = new Personal();
-$data_p = $personal->Consultar();
+$consultas = new Consultas();
+$data_of = $consultas->MostrarOficinas();
+$data_a  = $consultas->MostrarAreas();
+$data_c  = $consultas->MostrarCargos();
+$data_p  = $consultas->MostrarPersonal();
 
 ?>
 <div class="container">
