@@ -1,14 +1,13 @@
 <?php 
 require("../models/cargos.model.php");
 
-$idoficina    = trim(strtoupper($_POST['idoficina']));
-$nombre_cargo = trim(strtoupper($_POST['nombre_cargo']));
-$idarea       = trim(strtoupper($_POST['idarea']));
-$idpersonal   = trim(strtoupper($_POST['idpersonal']));
-
+$nombre      = trim(strtoupper($_POST['nombre_cargo']));
+$id_oficina  = trim(strtoupper($_POST['idoficina']));
+$id_areas    = trim(strtoupper($_POST['idarea']));
+$id_personal = trim(strtoupper($_POST['idpersonal']));
 
 $cargo = new Cargo();
-$cargo->Guardar($idoficina,$nombre_cargo,$idarea,$idpersonal);
+$cargo->Guardar($nombre,$id_oficina,$id_areas,$id_personal);
 
 header("Location: ../index.php");
 ?>

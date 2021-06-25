@@ -1,5 +1,5 @@
 <?php
-require "../core/Conexion.php";
+require_once "Conexion.php";
 
 class Metas
 {
@@ -11,9 +11,9 @@ class Metas
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_meta,$programado,$unidad_medida)
+	public function Guardar($nombre,$programado,$unidad_medida,$frecuencia)
 	{
-		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida');";
+		$sql = "INSERT INTO metas (id_metas,nombre,programado,unidad_medida,frecuencia) VALUES (null,'$nombre','$programado','$unidad_medida','$frecuencia');";
 
 		$res = $this->conn->ConsultaSin($sql);
         return $res;
@@ -29,7 +29,7 @@ class Metas
 	}
 	public function Consultar()
 	{
-		$sql = "SELECT id_metas, nombre_meta, programado, unidad_medida, frecuencia FROM metas;";
+		$sql = "SELECT id_metas, nombre, programado, unidad_medida, frecuencia FROM metas;";
 		
 		$response = $this->conn->ConsultaCon($sql);
 		return $response;
@@ -39,10 +39,9 @@ class Metas
 	public function MostrarMetaOficina($idmeta)
 	{
 		
-		$sql = "SELECT nombre_meta, programado, unidad_medida, frecuencia FROM metas WHERE id_metas = $idmeta;";
+		$sql = "SELECT nombre, programado, unidad_medida, frecuencia FROM metas WHERE id_metas = $idmeta;";
 		
-
-		$res = $this->conn->ConsultaCon($sql);
+		$res = $this->conn->ConsultaArray($sql);
         return $res;
 	}
 

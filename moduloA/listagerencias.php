@@ -1,6 +1,6 @@
 <?php
-
-require_once 'models/gerencia.model.php';
+include "header.php";
+require 'models/gerencia.model.php';
 
 $gerencia = new Gerencias();
 $datos = $gerencia->Consultar();
@@ -11,12 +11,21 @@ $i = 1;
 ?>
 
 
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			<h3>Listado de Gerencias</h3>
 
-			<table class="table table-striped">
+<script>
+	function CambiarDatosOficina(dato) {
+		var ventana1 = window.open('oficinasCambiar.php?idoficina='+dato,"MsgWindow", "width=600,height=500");
+	}
+</script>
+
+  <div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid">
+
+          	<!-- PAGE CUERPO -->
+          	<h1 class="h3 mb-4 text-gray-800">Listado de Gerencias</h1>
+          	<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>Num.</th>
@@ -52,7 +61,7 @@ $i = 1;
 						</td>
 						<td>
 
-							 <a href="#" id="#cambiarOficina" class="btn btn-info btn-sm" onclick="CambiarDatosOficina(<?php echo $fila['id'];?>)"><i class="material-icons">how_to_reg</i></a>
+							 <a href="#" id="#cambiarOficina" class="btn btn-info btn-sm" onclick="CambiarDatosOficina(<?php echo $fila['id'];?>)">cambiar</a>
 
 
 						</td>
@@ -63,14 +72,9 @@ $i = 1;
 				?>
 				</tbody>
 			</table>
-			
-		</div>
-	</div>
-</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-
-<script>
-	function CambiarDatosOficina(dato) {
-		var ventana1 = window.open('oficinasCambiar.php?idoficina='+dato,"MsgWindow", "width=600,height=500");
-	}
-</script>
+<?php include "footer.php"; ?>

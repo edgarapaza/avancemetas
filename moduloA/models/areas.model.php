@@ -1,5 +1,5 @@
 <?php
-require_once("Conexion.php");
+require_once "Conexion.php";
 
 class Areas
 {
@@ -53,9 +53,9 @@ class Areas
 
     public function DatosDireccionOficina($idoficina)
     {
-        $sql = "SELECT id,nombre_of,sigla,id_metas,id_institucion,idgerencia FROM oficinas WHERE id=".$idoficina;
+        $sql = "SELECT id,nombre,sigla,id_metas,id_gerencia FROM oficinas WHERE id=".$idoficina;
 
-        $res = $this->conn->ConsultaCon($sql);
+        $res = $this->conn->ConsultaArray($sql);
         return $res;
     }
 

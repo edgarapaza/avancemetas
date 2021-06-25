@@ -5,7 +5,7 @@ if(isset($_SESSION["administrator"]))
   
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -73,8 +73,9 @@ if(isset($_SESSION["administrator"]))
             <a class="collapse-item" href="oficinas.php">Nueva sub gerencia</a>
             <a class="collapse-item" href="areas.php">Nueva Area</a>
             <a class="collapse-item" href="cargos.php">Nuevo cargo</a>
-            <a class="collapse-item" href="personal.php">Nuevo Personal</a>
-            <a class="collapse-item" href="metas.php">Nueva meta Institucional</a>
+            <a class="collapse-item" href="personal2.php">Nuevo Personal</a>
+            <a class="collapse-item" href="metas.php">Nueva metas</a>
+            <a class="collapse-item" href="asignarTareas.php">Nueva Actividades</a>
           </div>
         </div>
       </li>

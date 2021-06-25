@@ -1,5 +1,5 @@
 <?php
-require "Conexion.php";
+require_once "Conexion.php";
 
 class Consultas
 {
@@ -12,6 +12,30 @@ class Consultas
 	}
 
 	function Gerencias()
+	{
+		$sql = "SELECT idgerencia,nomgerencia,sigla,idinstitucion,fechaActual FROM gerencias;";
+		$res = $this->conn->ConsultaCon($sql);
+		return $res;
+
+	}
+
+	function Oficinas()
+	{
+		$sql = "SELECT idgerencia,nomgerencia,sigla,idinstitucion,fechaActual FROM gerencias;";
+		$res = $this->conn->ConsultaCon($sql);
+		return $res;
+
+	}
+
+	function Areas()
+	{
+		$sql = "SELECT idgerencia,nomgerencia,sigla,idinstitucion,fechaActual FROM gerencias;";
+		$res = $this->conn->ConsultaCon($sql);
+		return $res;
+
+	}
+
+	function Personal()
 	{
 		$sql = "SELECT idgerencia,nomgerencia,sigla,idinstitucion,fechaActual FROM gerencias;";
 		$res = $this->conn->ConsultaCon($sql);

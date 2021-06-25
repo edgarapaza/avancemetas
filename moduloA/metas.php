@@ -1,9 +1,15 @@
 <?php
-
+include "header.php";
 ?>
-	<div class="container">
-			
-			<form action="../moduloA/controllers/metas_controller.php" method="POST" role="form">
+
+  <div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid">
+
+          <!-- PAGE CUERPO -->
+          <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+          <form action="controllers/metas.controller.php" method="POST" role="form">
 				<legend>Registro de Metas</legend>
 
 				<div class="form-group">
@@ -33,5 +39,11 @@
 				</div>
 				<button type="submit" class="btn btn-primary">enviar</button>
 			</form>
-		
-	</div>
+        </div>
+      </div>
+    </div>
+  </div>
+			
+			
+
+<?php include "footer.php"; ?>

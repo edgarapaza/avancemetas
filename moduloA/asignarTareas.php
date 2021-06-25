@@ -1,9 +1,8 @@
 <?php
 session_start();
-if(isset($_SESSION['total']))
-{
-	include_once "header.php";
-	include_once "../models/Listado.class.php";
+
+include_once "header.php";
+	include_once "./models/listado.model.php";
 
 	$listado = new Listado();
 	$inst = $listado->Institucion();
@@ -13,19 +12,17 @@ if(isset($_SESSION['total']))
 
  ?>
 
-	<header>
-		<div class="container">
-			<div class="col-md-12">
-				<h2>Asignar Tareas - Archivo Regional Puno</h2>
-			</div>
-		</div>
-	</header>
-	<br>
-	<section class="container">
-		<div class="row">
-			<section class="col-md-8 formulario">
+				
+  <div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid">
+
+          <!-- PAGE CUERPO -->
+          <h1 class="h3 mb-4 text-gray-800">Asignar Tareas - Archivo Regional Puno</h1>
+
 				<h3>Asignacion de Tareas</h3>
-				<form class="form-group" action="../controllers/actividadesControllers.php">
+				<form class="form-group" action="controllers/actividadesControllers.php">
 					<table class="table">
 						<tr>
 							<th>Datos</th>
@@ -38,7 +35,7 @@ if(isset($_SESSION['total']))
 									while ($fila = $per->fetch_assoc())
 									{
 								?>
-										<option value="<?php echo $fila['id_personal']; ?>"> <?php echo $fila['personal']; ?> </option>
+										<option value="<?php echo $fila['id_personal']; ?>"> <?php echo $fila['nombre']; ?> </option>
 								<?php
 									}
 								 ?>
@@ -51,7 +48,7 @@ if(isset($_SESSION['total']))
 									while ($fila = $inst->fetch_assoc())
 									{
 								?>
-										<option value="<?php echo $fila['id_institucion']; ?>"> <?php echo $fila['nombre']; ?> </option>
+										<option value="<?php echo $fila['id']; ?>"> <?php echo $fila['nombre_inst']; ?> </option>
 								<?php
 									}
 								 ?>
@@ -64,7 +61,7 @@ if(isset($_SESSION['total']))
 									while ($fila = $ofi->fetch_assoc())
 									{
 								?>
-									<option value="<?php echo $fila['id_oficina']; ?>"> <?php echo $fila['oficina']; ?> </option>
+									<option value="<?php echo $fila['id']; ?>"> <?php echo $fila['nombre']; ?> </option>
 
 								<?php
 									}
@@ -79,7 +76,7 @@ if(isset($_SESSION['total']))
 								while ($fila = $car->fetch_assoc())
 								{
 								?>
-									<option value="<?php echo $fila['id_cargo'];  ?>">  <?php echo $fila['cargo']; ?></option>
+									<option value="<?php echo $fila['id_cargos'];  ?>">  <?php echo $fila['nombre']; ?></option>
 
 								<?php
 								}
@@ -98,7 +95,6 @@ if(isset($_SESSION['total']))
 								<option value="Monetario">Monetario</option>
 								<option value="Metros">Metros Lineales</option>
 							</select></td>
-
 						</tr>
 						<tr>
 							<td>Observaciones:</td>
@@ -116,24 +112,9 @@ if(isset($_SESSION['total']))
 					</div>
 
 				</form>
-			</section>
-			<aside class="col-md-4">
-				<h3>Titulo</h3>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-				</p>
-			</aside>
-		</div>
-	</section>
-</body>
-</html>
-<?php
-}else{
-	header("Location: ../index.php");
-}
- ?>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<?php include "footer.php"; ?>

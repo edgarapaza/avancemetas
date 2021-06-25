@@ -2,13 +2,16 @@
 include "header.php";
 ?>
 
+
+  
   <div id="wrapper">
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <div class="container-fluid">
-        	
-        	<h1 class="h3 mb-4 text-gray-800">Personal</h1>
-        	<form action="controllers/personal.controller.php" method="POST">
+
+          <!-- PAGE CUERPO -->
+          <h1 class="h3 mb-4 text-gray-800">Personal</h1>
+          <form action="controllers/personal.controller.php" method="POST">
 
 							<div class="form-group">
 								<label for="">Nombre</label>
@@ -56,27 +59,10 @@ include "header.php";
 
 							<button type="submit" class="btn btn-primary">Guardar</button>
 					</form>
-					
 
         </div>
       </div>
     </div>
   </div>
 
-
-
 <?php include "footer.php"; ?>
-
-
-	<script type="text/javascript">
-		function MostrarImagen(){
-			document.getElementById('fileinput').addEventListener('change', function(){
-		    var file = this.files[0];
-		    // This code is only for demo ...
-		    console.log("name : " + file.name);
-		    console.log("size : " + file.size);
-		    console.log("type : " + file.type);
-		    console.log("date : " + file.lastModified);
-		}, false);
-		}
-	</script>

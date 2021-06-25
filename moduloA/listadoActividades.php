@@ -1,38 +1,25 @@
- <?php
-session_start();
-
-if(isset($_SESSION['total']))
-{
-
-	include_once "header.php";
-	function listadoTodo(){
-		require "../models/Actividades.class.php";
-		$act = new Actividades();
-		$data = $act->ListarTodo();
-		return $data;
-	}
-
-	require '../models/Listado.class.php';
+<?php
+include "header.php";
+	
+		require "./models/Actividades.class.php";
+		$actividades = new Actividades();
+		$data = $actividades->ListarTodo();
+		
+	
+#idActividad,id_personal,id_institucion,id_oficina,id_cargo,actividad,unidadMedida,obs 
+	require "./models/listado.model.php";
 	$listado = new Listado();
 
  ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta mane="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../../css/style.css">
-	<title>Administrator</title>
-</head>
-<body>
-	<header>
-		<h2>Administrator</h2>
-	</header>
-<div class="table-responsive">
-	<section class="container">
-		<div class="row">
-			<table class="table table-striped table-hover">
+
+  <div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid">
+
+          <!-- PAGE CUERPO -->
+          <h1 class="h3 mb-4 text-gray-800">Listado de Actividad / Acciones</h1>
+          <table class="table table-striped table-hover">
 				<thead>
 					<tr class="info">
 						<th>Personal</th>
@@ -45,24 +32,24 @@ if(isset($_SESSION['total']))
 				</thead>
 				<tbody>
 					<?php
-					$data = listadoTodo();
-					while ($fila = $data->fetch_assoc()) {
+					
+					while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {
 
 					?>
 					<tr>
 						<td><?php
 							$per = $listado->PersonalUnico($fila['id_personal']);
-							echo $per['personal'];
+							echo $per['nombre'];
 						?></td>
 						<td><?php
 
 							$ofi = $listado->OficinaUnico($fila['id_oficina']);
-							echo $ofi['oficina'];
+							echo $ofi['nombre'];
 							?></td>
 						<td><?php
 
 							$car = $listado->CargoUnico($fila['id_cargo']);
-							echo $car['cargo'];
+							echo $car['nombre'];
 							?></td>
 						<td><?php echo $fila['actividad']; ?></td>
 						<td><?php echo $fila['unidadMedida']; ?></td>
@@ -74,14 +61,9 @@ if(isset($_SESSION['total']))
 
 				</tbody>
 			</table>
-		</div>
-	</section>
-</div>
-</body>
-</html>
-
-<?php
-}else{
-	header("Location: ../index.php");
-}
- ?>
+        </div>
+      </div>
+    </div>
+  </div>
+			
+<?php include "footer.php"; ?>

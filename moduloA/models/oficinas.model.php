@@ -1,5 +1,5 @@
 <?php
-require_once("Conexion.php");
+require_once "Conexion.php";
 
 class Oficinas
 {
@@ -23,7 +23,7 @@ class Oficinas
 	public function Modificar($idoficina, $nombre_oficina)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "UPDATE oficinas SET nombre_of = '$nombre_oficina', f_update = '$fechaActual' WHERE id = $idoficina;";
+		$sql = "UPDATE oficinas SET nombre = '$nombre_oficina', f_update = '$fechaActual' WHERE id = $idoficina;";
 
 		$res = $this->conn->ConsultaSin($sql);
 		return $res;
@@ -31,7 +31,7 @@ class Oficinas
 
 	public function Consultar()
 	{
-		$sql = "SELECT id, nombre_of, id_metas,id_institucion, f_creacion,f_update FROM oficinas;";
+		$sql = "SELECT id, nombre, id_metas,id_gerencia FROM oficinas;";
 		
 		$res = $this->conn->ConsultaCon($sql);
 		return $res;
@@ -40,9 +40,9 @@ class Oficinas
 
 	public function MostrarOficina($idoficina)
 	{
-		$sql = "SELECT id, nombre_of, id_metas,id_institucion FROM oficinas WHERE id = $idoficina;";
+		$sql = "SELECT id, nombre, id_metas,id_gerencia FROM oficinas WHERE id = $idoficina;";
 		
-		$res = $this->conn->ConsultaCon($sql);
+		$res = $this->conn->ConsultaArray($sql);
 		return $res;
 	}
 

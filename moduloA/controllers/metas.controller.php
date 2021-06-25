@@ -1,15 +1,12 @@
 <?php 
-require("../models/metas.models.php");
-$nombre_meta = $_POST['nom_metas'];
-$programado = $_POST['programado'];
-$unidad_medida = $_POST['unidad_medida'];
+require "../models/metas.model.php";
+
+$nombre        = trim(strtoupper($_POST['nombre_meta']));
+$programado    = trim(strtoupper($_POST['programado']));
+$unidad_medida = trim(strtoupper($_POST['unidad_medida']));
+$frecuencia    = trim(strtoupper($_POST['frecuencia']));
 
 $meta = new Metas();
-$meta->Guardar($nombre_meta,$programado,$unidad_medida);
+$meta->Guardar($nombre,$programado,$unidad_medida,$frecuencia);
 
 header("Location: ../index.php");
-?>
-
-<script type="text/javascript">
-  window.close();
-</script>

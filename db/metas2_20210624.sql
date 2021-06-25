@@ -48,6 +48,36 @@ LOCK TABLES `acciones` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `actividades`
+--
+
+DROP TABLE IF EXISTS `actividades`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `actividades` (
+  `idActividad` int(11) NOT NULL AUTO_INCREMENT,
+  `id_personal` int(11) NOT NULL,
+  `id_institucion` int(11) NOT NULL,
+  `id_oficina` int(11) NOT NULL,
+  `id_cargo` int(11) NOT NULL,
+  `actividad` varchar(150) NOT NULL,
+  `unidadMedida` varchar(50) DEFAULT NULL,
+  `obs` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`idActividad`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `actividades`
+--
+
+LOCK TABLES `actividades` WRITE;
+/*!40000 ALTER TABLE `actividades` DISABLE KEYS */;
+INSERT INTO `actividades` VALUES (1,2,1,2,1,'aka','Numerico','aaaaaa'),(2,2,1,2,1,'aka','Numerico','aaaaaa'),(3,2,1,2,1,'aka','Numerico','aaaaaa');
+/*!40000 ALTER TABLE `actividades` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `areas`
 --
 
@@ -65,7 +95,7 @@ CREATE TABLE `areas` (
   PRIMARY KEY (`id_areas`),
   KEY `id_metas` (`id_metas`),
   CONSTRAINT `areas_ibfk_1` FOREIGN KEY (`id_metas`) REFERENCES `metas` (`id_metas`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,6 +104,7 @@ CREATE TABLE `areas` (
 
 LOCK TABLES `areas` WRITE;
 /*!40000 ALTER TABLE `areas` DISABLE KEYS */;
+INSERT INTO `areas` VALUES (1,'DESARROLLO DE SOFTWAREA','DESARROLLO DE SOFTWARE',2,1,'2021-06-24 16:24:47',NULL);
 /*!40000 ALTER TABLE `areas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,13 +148,15 @@ DROP TABLE IF EXISTS `cargos`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `cargos` (
   `id_cargos` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(150) NOT NULL,
   `id_oficina` int(11) NOT NULL,
-  `nombre_cargo` varchar(150) NOT NULL,
-  `fec_creacion` datetime DEFAULT NULL,
+  `id_areas` int(11) NOT NULL,
+  `id_personal` int(11) NOT NULL,
+  `fec_creacion` datetime NOT NULL,
   PRIMARY KEY (`id_cargos`),
   KEY `fk_oficina_cargos_idx` (`id_oficina`),
   CONSTRAINT `fk_oficina_cargos` FOREIGN KEY (`id_oficina`) REFERENCES `oficinas` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,6 +165,7 @@ CREATE TABLE `cargos` (
 
 LOCK TABLES `cargos` WRITE;
 /*!40000 ALTER TABLE `cargos` DISABLE KEYS */;
+INSERT INTO `cargos` VALUES (1,'DIGITADOR',2,1,1,'2021-06-24 21:54:59');
 /*!40000 ALTER TABLE `cargos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -290,12 +324,12 @@ DROP TABLE IF EXISTS `metas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `metas` (
   `id_metas` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_meta` varchar(150) NOT NULL,
+  `nombre` varchar(150) NOT NULL,
   `programado` double NOT NULL,
   `unidad_medida` varchar(50) NOT NULL,
   `frecuencia` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`id_metas`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -304,7 +338,7 @@ CREATE TABLE `metas` (
 
 LOCK TABLES `metas` WRITE;
 /*!40000 ALTER TABLE `metas` DISABLE KEYS */;
-INSERT INTO `metas` VALUES (1,'Ingreso a Base de Datos',15000,'Unidad','uno');
+INSERT INTO `metas` VALUES (1,'Ingreso a Base de Datos',15000,'Unidad','uno'),(2,'MI META',12213,'UNIDAD','SEMANAL'),(3,'INGRESOS',8888,'UNIDAD','MENSUAL');
 /*!40000 ALTER TABLE `metas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -347,19 +381,19 @@ DROP TABLE IF EXISTS `oficinas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `oficinas` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nombre_of` varchar(60) NOT NULL,
+  `nombre` varchar(60) NOT NULL,
   `sigla` varchar(10) DEFAULT NULL,
   `f_creacion` datetime DEFAULT NULL,
   `f_update` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `id_metas` int(11) DEFAULT NULL,
-  `id_institucion` int(11) DEFAULT NULL,
+  `id_gerencia` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `nombre_of_UNIQUE` (`nombre_of`),
+  UNIQUE KEY `nombre_of_UNIQUE` (`nombre`),
   KEY `id_metas` (`id_metas`),
-  KEY `id_institucion` (`id_institucion`),
+  KEY `id_institucion` (`id_gerencia`),
   CONSTRAINT `oficinas_ibfk_1` FOREIGN KEY (`id_metas`) REFERENCES `metas` (`id_metas`),
-  CONSTRAINT `oficinas_ibfk_2` FOREIGN KEY (`id_institucion`) REFERENCES `institucion` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `oficinas_ibfk_2` FOREIGN KEY (`id_gerencia`) REFERENCES `institucion` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -368,6 +402,7 @@ CREATE TABLE `oficinas` (
 
 LOCK TABLES `oficinas` WRITE;
 /*!40000 ALTER TABLE `oficinas` DISABLE KEYS */;
+INSERT INTO `oficinas` VALUES (2,'INFORMATICA','AI','2021-06-24 13:05:13','2021-06-24 18:05:13',1,1),(4,'SUB GERENCIA DE PLANEANIEMTO Y DESARROLLO','SGPD','2021-06-24 16:08:53','2021-06-24 21:08:53',1,1);
 /*!40000 ALTER TABLE `oficinas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -391,7 +426,7 @@ CREATE TABLE `personal` (
   `f_creacion` datetime DEFAULT NULL,
   `f_update` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id_personal`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -400,7 +435,7 @@ CREATE TABLE `personal` (
 
 LOCK TABLES `personal` WRITE;
 /*!40000 ALTER TABLE `personal` DISABLE KEYS */;
-INSERT INTO `personal` VALUES (1,'Edgar','Apaza','Masculino','9','1999-05-01','','','','2021-06-01 00:00:00','2021-06-01 05:00:00');
+INSERT INTO `personal` VALUES (1,'Edgar','Apaza','Masculino','9','1999-05-01','','','','2021-06-01 00:00:00','2021-06-01 05:00:00'),(2,'EDGAR','APAZA','MASCULINO','98','1999-01-01','edga@mc.com','92929','./imagenes/usuario.png','2021-06-24 20:56:46','2021-06-25 01:56:46');
 /*!40000 ALTER TABLE `personal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -443,4 +478,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-06-24  8:30:45
+-- Dump completed on 2021-06-24 22:55:13

@@ -1,5 +1,5 @@
 <?php
-require "../core/Conexion.php";
+require_once "Conexion.php";
 
 class Gerencias
 {

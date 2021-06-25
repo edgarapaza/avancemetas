@@ -27,7 +27,6 @@ class Conexion
         # Sirve para: INSERT, UPDATE, DELETE
         if(!$this->conn->query($sql)){
             echo "Error. ". mysqli_error($this->conn);
-            return false;
             exit();
         }
 
@@ -40,7 +39,6 @@ class Conexion
         # Sirve para: SELECT
         if(!$result = $this->conn->query($sql)){
             echo "Error: " . mysqli_error($this->conn);
-            return false;
             exit();
         }
 
@@ -54,7 +52,6 @@ class Conexion
         if(!$result = $this->conn->query($sql)){
             echo "Error. ". mysqli_error($this->conn);
             return false;
-            exit();
         }
 
         $data = $result->fetch_array(MYSQLI_ASSOC);

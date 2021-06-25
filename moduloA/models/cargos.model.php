@@ -1,5 +1,5 @@
 <?php
-require_once("Conexion.php");
+require_once "Conexion.php";
 
 class Cargo
 {
@@ -11,20 +11,20 @@ class Cargo
 		return $this->conn;
 	}
 
-	public function Guardar($idoficina,$nombre_cargo,$idarea,$idpersonal)
+	public function Guardar($nombre,$id_oficina,$id_areas,$id_personal)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 		
-		$sql = "INSERT INTO cargos VALUES (null,'$idoficina','$nombre_cargo','$fechaActual','$idarea','$idpersonal')";
+		$sql = "INSERT INTO cargos (id_cargos,nombre,id_oficina,id_areas,id_personal,fec_creacion) VALUES (null,'$nombre','$id_oficina','$id_areas','$id_personal','$fechaActual');";
 
-		$res = $this->conn->ConsultaCon($sql);
+		$res = $this->conn->ConsultaSin($sql);
         return $res;
 
 	}
 
-	public function Modificar($idcargos,$nombre_cargo)
+	public function Modificar($idcargos,$nombre)
 	{
-		$sql = "UPDATE cargos SET nombre_cargo = '$nombre_cargo' WHERE id_cargos = '$idcargos';";
+		$sql = "UPDATE cargos SET nombre = '$nombre' WHERE id_cargos = '$idcargos';";
 
 		$res = $this->conn->ConsultaCon($sql);
         return $res;
@@ -32,7 +32,7 @@ class Cargo
 
 	public function Consultar()
 	{
-		$sql = "SELECT id_cargos,id_oficina,nombre_cargo FROM cargos;";
+		$sql = "SELECT id_cargos,nombre,id_oficina,id_areas,id_personal,fec_creacion FROM cargos;";
 		
 		$res = $this->conn->ConsultaCon($sql);
         return $res;
@@ -40,9 +40,9 @@ class Cargo
 
 	public function MostrarCargos($idcargos)
 	{
-		$sql = "SELECT id_cargos,id_oficina,nombre_cargo,fec_creacion FROM cargos WHERE id_cargos = $idcargos;";
+		$sql = "SELECT id_cargos,nombre,id_oficina,id_areas,id_personal FROM cargos WHERE id_cargos = $idcargos;";
 		
-		$res = $this->conn->ConsultaCon($sql);
+		$res = $this->conn->ConsultaArray($sql);
         return $res;
 	}
 
@@ -63,7 +63,7 @@ class Cargo
     	public function MostrarCargosAccion($idcargos)
 	{
 
-		$sql = "SELECT nombre_cargo FROM cargos WHERE id_cargos = $idcargos;";
+		$sql = "SELECT nombre FROM cargos WHERE id_cargos = $idcargos;";
 		
 		if(!$response = $this->conn->query($sql))
 		{

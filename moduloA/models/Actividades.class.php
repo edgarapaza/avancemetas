@@ -1,8 +1,8 @@
 <?php
-require_once("Conexion.php");
+require_once "Conexion.php";
 
-	class Actividades
-	{
+class Actividades
+{
 
 		private $conn;
 
@@ -19,7 +19,8 @@ require_once("Conexion.php");
 			return $res;
 		}
 
-		function CrearTarea($id_personal,$id_institucion,$id_oficina,$id_cargo,$actividad,$unidadMedida,$obs){
+		function CrearTarea($id_personal,$id_institucion,$id_oficina,$id_cargo,$actividad,$unidadMedida,$obs)
+		{
 			$sql= "INSERT INTO actividades (idActividad, id_personal, id_institucion,id_oficina,id_cargo,actividad,unidadMedida,obs) VALUES (NULL,'$id_personal','$id_institucion','$id_oficina','$id_cargo','$actividad','$unidadMedida','$obs');";
 			$res = $this->conn->ConsultaSin($sql);
 			return $res;
@@ -38,11 +39,9 @@ require_once("Conexion.php");
 		}
 
 		function ListarTodo(){
-			$sql = "SELECT id_personal, id_oficina, id_cargo, actividad, unidadMedida, obs FROM actividades ORDER BY id_personal";
+			$sql = "SELECT idActividad,id_personal,id_institucion,id_oficina,id_cargo,actividad,unidadMedida,obs FROM actividades;";
 			$res = $this->conn->ConsultaCon($sql);
 			return $res;
 		}
-	}
+}
 
-
-?>
