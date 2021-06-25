@@ -69,6 +69,7 @@ if(isset($_SESSION["administrator"]))
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="institucion.php">Datos Institucionales</a>
+            <a class="collapse-item" href="uniorganica.php">Unidad Organica</a>
             <a class="collapse-item" href="gerencia.php">Nueva Gerencia</a>
             <a class="collapse-item" href="oficinas.php">Nueva sub gerencia</a>
             <a class="collapse-item" href="areas.php">Nueva Area</a>

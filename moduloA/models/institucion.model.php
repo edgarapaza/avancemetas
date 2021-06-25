@@ -11,13 +11,13 @@ class Institucion
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_inst,$direccion,$telefono,$RUC,$email,$p_web,$fecha_creacion_archivo,$n_resolucion)
+	public function Guardar($nombre_inst,$direccion,$telefono,$RUC,$email,$p_web,$fecha_creacion,$resolucion)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 
 		//$SQL2 = "CALL CalculoPorMes($mes, $anio);"
 
-		$sql = "INSERT INTO institucion VALUES (null,'$nombre_inst','$direccion','$telefono','$RUC','$email','$p_web','$fecha_creacion_archivo','$n_resolucion','$fechaActual','$fechaActual');";
+		$sql = "INSERT INTO institucion (id,nombre_inst,direccion,telefono,RUC,email,p_web,creacion,resolucion,fecCreate,fecChange) VALUES (null,'$nombre_inst','$direccion','$telefono','$RUC','$email','$p_web','$fecha_creacion','$resolucion','$fechaActual','$fechaActual'>);";
 
 		$res = $this->conn->ConsultaSin($sql);
 		return $res;
@@ -26,7 +26,7 @@ class Institucion
 
 	public function Consultar()
 	{
-		$sql = "SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,fecha_creacion,n_resolucion,id_metas,fecha_create,fecha_update FROM institucion ";
+		$sql = "SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,creacion,resolucion,fecCreate,fecChange FROM institucion;";
 
 		$res = $this->conn->ConsultaCon($sql);
         return $res;
@@ -40,10 +40,6 @@ class Institucion
         return $res;
 	}
 
-	public function CrearOficinas()
-	{
-		
-	}
 }
 
 

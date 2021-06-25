@@ -17,7 +17,7 @@ $office = $oficinas->Consultar();
 				<legend>Registro de Areas</legend>
 
 				<div class="form-group">
-					<label for="">Direccion/Oficina:</label>
+					<label for="">Sub gerencia:</label>
 					<select name="iddireccion" id="iddireccion" class="form-control">
 						<option value="0">[Seleccionar]</option>
 						<?php while ($row = $office->fetch_array(MYSQLI_ASSOC)) { ?>
