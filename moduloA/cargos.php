@@ -24,7 +24,7 @@ $persona = $personal->Consultar();
 			<form action="controllers/cargos.controller.php" method="POST" role="form">
 				<legend>Registro de Cargos</legend>
 	            <div class="form-group">
-					<label for="">Listade oficinas:</label>
+					<label for="">Lista de Sub Gerencia:</label>
 
 					<select name="idoficina" id="idoficina" class="form-control">
 						<option value="0" selected="selected">Select</option>
