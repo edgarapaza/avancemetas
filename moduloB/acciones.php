@@ -23,7 +23,7 @@ $data_p  = $consultas->MostrarPersonal();
 							while ($fila1 = $data_of->fetch_array(MYSQLI_ASSOC)):
 					    ?>
 					<option value="<?php echo $fila1['id']; ?>">
-						<?php echo $fila1['nombre_of']; ?>		
+						<?php echo $fila1['nombre']; ?>		
 					</option>
 						<?php endwhile; ?>
 				</select>
@@ -51,7 +51,7 @@ $data_p  = $consultas->MostrarPersonal();
 							while ($fila4 = $data_c->fetch_array(MYSQLI_ASSOC)):				
 					    ?>
 					<option value="<?php echo $fila4['id_cargos']; ?>">
-						<?php echo $fila4['nombre_cargo']; ?>		
+						<?php echo $fila4['nombre']; ?>		
 					</option>
 								<?php endwhile; ?>
 				</select>

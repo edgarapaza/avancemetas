@@ -11,7 +11,8 @@ require "Conexion.php";
 
  	function MostrarOficinas()
  	{
- 		$sql="SELECT id,nombre_of,sigla,id_metas,id_institucion FROM oficinas;";
+ 		$sql="SELECT id, nombre, sigla, id_metas, id_gerencia FROM oficinas;";
+
  		$res=$this->conn->ConsultaCon($sql);
  		return $res;
  	}
@@ -24,7 +25,7 @@ require "Conexion.php";
  	}
  	function MostrarCargos()
  	{
- 		$sql="SELECT id_cargos, id_oficina, nombre_cargo, fec_creacion FROM cargos;";
+ 		$sql="SELECT id_cargos, id_oficina, nombre, fec_creacion FROM cargos;";
  		$res=$this->conn->ConsultaCon($sql);
  		return $res;
  	}

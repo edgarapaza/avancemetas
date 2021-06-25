@@ -30,7 +30,7 @@ $i = 1;
 				<tr>
 					<td><?php echo $i; ?></td>
 					<td><?php //echo $fila['id'];
-					          echo $fila['nombre_meta']; ?></td>
+					          echo $fila['nombre']; ?></td>
 					<td>
 						<?php 
 							echo $fila['programado'];

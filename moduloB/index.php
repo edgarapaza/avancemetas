@@ -1,11 +1,19 @@
+
 <?php
-include_once("header.php");
+include "header.php";
 ?>
-  <div class="content">
-    <div class="container-fluid">
-         <div id="cuerpo"></div>
-         
+  
+  <div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid">
+
+          <!-- PAGE CUERPO -->
+          <h1 class="h3 mb-4 text-gray-800">Blank</h1>
+
+        </div>
+      </div>
     </div>
   </div>
 
-<?php include_once("footer.php"); ?>
+<?php include "footer.php"; ?>

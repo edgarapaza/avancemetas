@@ -11,11 +11,11 @@ class Metas
 		return $this->conn;
 	}
 
-	public function Guardar($nombre_meta,$programado,$unidad_medida,$frecuencia)
+	public function Guardar($nombre,$programado,$unidad_medida,$frecuencia)
 	{
 		//$fecCreate = date('Y-m-d');
 		//echo $fecCreate;
-		$sql = "INSERT INTO metas VALUES (null,'$nombre_meta','$programado','$unidad_medida','$frecuencia');";
+		$sql = "INSERT INTO metas VALUES (null,'$nombre','$programado','$unidad_medida','$frecuencia');";
 
 		$res = $this->conn->ConsultaSin($sql);
 		return $res;
@@ -28,17 +28,17 @@ class Metas
 		$this->conn->close();*/
 	}
 
-	public function Modificar($idmeta, $nombre_meta,$programado,$unidad_medida)
+	public function Modificar($idmeta, $nombre,$programado,$unidad_medida)
 	{
 		
-		$sql = "UPDATE metas SET nombre_meta = '$nombre_meta', programado = '$programado', unidad_medida='$unidad_medida' WHERE id_metas = $idmeta;";
+		$sql = "UPDATE metas SET nombre = '$nombre', programado = '$programado', unidad_medida='$unidad_medida' WHERE id_metas = $idmeta;";
 
 		$res = $this->conn->ConsultaSin($sql);
 		return $res;
 	}
 	public function Consultar()
 	{
-		$sql = "SELECT id_metas,nombre_meta,programado,unidad_medida,frecuencia FROM metas";
+		$sql = "SELECT id_metas,nombre,programado,unidad_medida,frecuencia FROM metas";
 		$res = $this->conn->ConsultaCon($sql);
 		return $res;
 	}
@@ -46,7 +46,7 @@ class Metas
 	public function MostrarMetaOficina($idmeta)
 	{
 		
-		$sql = "SELECT nombre_meta, programado, unidad_medida FROM metas WHERE id_metas = $idmeta;";
+		$sql = "SELECT nombre, programado, unidad_medida FROM metas WHERE id_metas = $idmeta;";
 		
 		$res = $this->conn->ConsultaArray($sql);
 		return $res;
