@@ -11,11 +11,11 @@ class Cargo
 		return $this->conn;
 	}
 
-	public function Guardar($nombre,$id_oficina,$id_areas,$id_personal)
+	public function Guardar($nombre,$id_areas,$idpersonal)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 		
-		$sql = "INSERT INTO cargos (id_cargos,nombre,id_oficina,id_areas,id_personal,fec_creacion) VALUES (null,'$nombre','$id_oficina','$id_areas','$id_personal','$fechaActual');";
+		$sql = "INSERT INTO cargos (id_cargos,nombre,id_areas,idpersonal,fec_creacion) VALUES (null,'$nombre','$id_areas','$idpersonal','$fechaActual');";
 
 		$res = $this->conn->ConsultaSin($sql);
         return $res;
@@ -32,16 +32,14 @@ class Cargo
 
 	public function Consultar()
 	{
-		$sql = "SELECT id_cargos,nombre,id_oficina,id_areas,id_personal,fec_creacion FROM cargos;";
-		
+		$sql = "SELECT id_cargos, nombre, id_areas, fec_creacion, idpersonal FROM cargos;";		
 		$res = $this->conn->ConsultaCon($sql);
         return $res;
 	}
 
 	public function MostrarCargos($idcargos)
 	{
-		$sql = "SELECT id_cargos,nombre,id_oficina,id_areas,id_personal FROM cargos WHERE id_cargos = $idcargos;";
-		
+		$sql = "SELECT id_cargos, nombre, id_areas, idpersonal FROM cargos WHERE id_cargos = $idcargos;";
 		$res = $this->conn->ConsultaArray($sql);
         return $res;
 	}

@@ -3,7 +3,7 @@ include("./models/metas.model.php");
 
 $metas = new Metas();
 $idmeta = $_REQUEST['idmeta'];
-$office = $metas->MostrarMetaOficina($idmeta);
+$office = $metas->MostrarMetaPersonal($idmeta);
 
 ?>
 <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
@@ -15,13 +15,18 @@ $office = $metas->MostrarMetaOficina($idmeta);
 			<div class="form-group">
 				<input type="hidden" value="<?php echo $idmeta;?>" name="idmeta">
 				<label for="">Nombre Metas:</label>
-				<input type="text" class="form-control" id="" value="<?php echo $office['nombre_meta'];?>" name="nombre_meta" placeholder="Nombre Meta">
+				<input type="text" class="form-control" id="" value="<?php echo $office['nombre'];?>" name="nombre" placeholder="Nombre Meta">
 				
-				<label>Programado</label>
-				<input type="text" class="form-control" id="" value="<?php echo $office['programado'];?>" name="programado" placeholder="Programado Meta">
+				<label>Cantidad: </label>
+				<input type="text" class="form-control" id="" value="<?php echo $office['cantidad'];?>" name="cantidad" placeholder="Programado Meta">
 
-				<label>Unidad de medida</label>
-				<input type="text" class="form-control" id="" value="<?php echo $office['unidad_medida'];?>" name="unidad_medida" placeholder="Unidad de Medida">
+				<label>Unidad de medida: </label>
+				<input type="text" class="form-control" id="" value="<?php echo $office['unidadmedida'];?>" name="unidadmedida" placeholder="Unidad de Medida">
+
+				<label>Frecuencia: </label>
+				<input type="text" class="form-control" id="" value="<?php echo $office['frecuencia'];?>" name="frecuencia" placeholder="Frecuencia">
+
+				
 			</div>
 		
 			<button type="submit" class="btn btn-primary">enviar</button>

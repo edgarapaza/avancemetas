@@ -2,12 +2,13 @@
 include("../models/metas.model.php");
 
 $idmeta = $_REQUEST['idmeta'];
-$nombre_meta = trim(strtoupper($_REQUEST['nombre_meta']));
-$programado = trim(strtoupper($_REQUEST['programado']));
-$unidad_medida = trim(strtoupper($_REQUEST['unidad_medida']));
+$nombre = trim(strtoupper($_REQUEST['nombre']));
+$cantidad = trim(strtoupper($_REQUEST['cantidad']));
+$unidadmedida = trim(strtoupper($_REQUEST['unidadmedida']));
+$frecuencia = trim(strtoupper($_REQUEST['frecuencia']));
 
 $meta = new Metas();
-$meta->Modificar($idmeta, $nombre_meta,$programado,$unidad_medida);
+$meta->Modificar($idmeta, $nombre,$cantidad,$unidadmedida,$frecuencia);
 
 //header('Location: ../oficinasCambiar.php');
 ?>

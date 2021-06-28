@@ -11,11 +11,11 @@ class Acciones
 		return $this->conn;
 	}
 
-	public function Guardar($id_oficinas,$id_areas,$id_cargos,$id_personal,$nomb_actividad,$unidad_medida)
+	public function Guardar($id_personal,$nomb_actividad,$unidad_medida)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 
-		$sql = "INSERT INTO acciones VALUES (null,'$id_personal','$id_cargos','$nomb_actividad','$unidad_medida','$fechaActual','$fechaActual')";
+		$sql = "INSERT INTO acciones VALUES (null,'$id_personal','$nomb_actividad','$unidad_medida','$fechaActual','$fechaActual')";
 
 		$res = $this->conn->ConsultaSin($sql);
 		return $res;
@@ -31,14 +31,15 @@ class Acciones
 
 	public function Consultar()
 	{
-		$sql = "SELECT id_acciones,id_personal,id_cargos,nomb_actividad,unidad_medida FROM acciones;";
+		$sql = "SELECT id_acciones, id_personal, id_cargos, nomb_actividad, unidad_medida FROM acciones;";
+
 		$res = $this->conn->ConsultaCon($sql);
 		return $res;
 	}
 
 	public function MostrarAcciones($id_acciones)
 	{
-		$sql = "SELECT id_acciones, id_oficinas, id_areas, id_cargos, id_personal, nomb_actividad, unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
+		$sql = "SELECT id_acciones, id_personal,id_cargos, nomb_actividad, unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
 		
 		$res = $this->conn->ConsultaCon($sql);
 		return $res;
@@ -46,7 +47,7 @@ class Acciones
 	
 	public function MostrarAccionesUno($id_acciones)
 	{
-		$sql = "SELECT id_acciones, id_oficinas, id_areas, id_cargos, id_personal, nomb_actividad, unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
+		$sql = "SELECT id_acciones, id_personal, id_areas, id_cargos, id_personal, nomb_actividad, unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
 		
 		$res = $this->conn->ConsultaCon($sql);
 		return $res;

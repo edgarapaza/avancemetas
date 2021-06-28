@@ -9,23 +9,24 @@ require "Conexion.php";
  		return $this->conn;
  	}
 
- 	function MostrarOficinas()
+ 	/*function MostrarOficinas()
  	{
  		$sql="SELECT id, nombre, sigla, id_metas, id_gerencia FROM oficinas;";
 
  		$res=$this->conn->ConsultaCon($sql);
  		return $res;
- 	}
+ 	}*/
 
  	function MostrarAreas()
  	{
- 		$sql="SELECT id_areas,nombre,descripcion,idoficina,id_metas,f_creacion FROM areas;";
+ 		$sql="SELECT id_areas, nombre, descripcion, idsubgerencia, id_metas FROM areas;";
+
  		$res=$this->conn->ConsultaCon($sql);
  		return $res;
  	}
  	function MostrarCargos()
  	{
- 		$sql="SELECT id_cargos, id_oficina, nombre, fec_creacion FROM cargos;";
+ 		$sql="SELECT id_cargos, nombre, id_areas, fec_creacion, idpersonal FROM cargos;";
  		$res=$this->conn->ConsultaCon($sql);
  		return $res;
  	}

@@ -1,13 +1,14 @@
 <?php 
 require '../models/metas.model.php';
 
-$nombre_meta   = $_POST['nombre_meta'];
-$programado    = $_POST['programado'];
-$unidad_medida = $_POST['unidad_medida'];
+$nombre_meta   = $_POST['nombre'];
+$cantidad    = $_POST['cantidad'];
+$unidadmedida = $_POST['unidadmedida'];
 $frecuencia    = $_POST['frecuencia'];
+$id_personal    = $_POST['id_personal'];
 
 $meta = new Metas();
-$meta->Guardar($nombre_meta,$programado,$unidad_medida, $frecuencia);
+$meta->Guardar($nombre_meta,$cantidad,$unidadmedida, $frecuencia,$id_personal);
 
 header("Location: ../index.php");
 ?>

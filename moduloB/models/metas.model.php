@@ -1,5 +1,5 @@
 <?php
-require_once("Conexion.php");
+require_once "Conexion.php";
 
 class Metas
 {
@@ -11,51 +11,42 @@ class Metas
 		return $this->conn;
 	}
 
-	public function Guardar($nombre,$programado,$unidad_medida,$frecuencia)
+	public function Guardar($nombre,$cantidad,$unidadmedida,$frecuencia,$idpersonal)
 	{
-		//$fecCreate = date('Y-m-d');
-		//echo $fecCreate;
-		$sql = "INSERT INTO metas VALUES (null,'$nombre','$programado','$unidad_medida','$frecuencia');";
+		$fechaActual = date('Y-m-d H:i:s');
+
+		$sql = "INSERT INTO metas_personal (idmetas, nombre, cantidad, unidadmedida, frecuencia, idpersonal, fecCreate) VALUES (null, '$nombre', '$cantidad', '$unidadmedida', '$frecuencia', '$idpersonal', '$fechaActual');";
 
 		$res = $this->conn->ConsultaSin($sql);
-		return $res;
-		
-		/*if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-		return true;
-		$this->conn->close();*/
+        return $res;
 	}
 
-	public function Modificar($idmeta, $nombre,$programado,$unidad_medida)
+	public function Modificar($idmeta, $nombre,$cantidad,$unidadmedida,$frecuencia)
 	{
-		
-		$sql = "UPDATE metas SET nombre = '$nombre', programado = '$programado', unidad_medida='$unidad_medida' WHERE id_metas = $idmeta;";
+		$fechaActual = date('Y-m-d H:i:s');
+
+		$sql = "UPDATE metas_personal SET nombre = '$nombre', cantidad = '$cantidad', unidadmedida = '$unidadmedida', frecuencia = '$frecuencia', fecCreate = '$fechaActual'WHERE idmetas = $idmeta;";
 
 		$res = $this->conn->ConsultaSin($sql);
-		return $res;
+        return $res;
 	}
 	public function Consultar()
 	{
-		$sql = "SELECT id_metas,nombre,programado,unidad_medida,frecuencia FROM metas";
-		$res = $this->conn->ConsultaCon($sql);
-		return $res;
+		$sql = "SELECT idmetas, nombre, cantidad, unidadmedida, frecuencia, idpersonal, fecCreate FROM  metas_personal;";	
+
+	
+		$response = $this->conn->ConsultaCon($sql);
+		return $response;
+		
 	}
 
-	public function MostrarMetaOficina($idmeta)
+	public function MostrarMetaPersonal($idmeta)
 	{
 		
-		$sql = "SELECT nombre, programado, unidad_medida FROM metas WHERE id_metas = $idmeta;";
+		$sql = "SELECT idmetas, nombre, cantidad, unidadmedida, frecuencia, idpersonal FROM metas_personal WHERE idmetas = $idmeta;";
 		
 		$res = $this->conn->ConsultaArray($sql);
-		return $res;
+        return $res;
 	}
 
-
-
-	public function CrearOficinas()
-	{
-		
-	}
 }

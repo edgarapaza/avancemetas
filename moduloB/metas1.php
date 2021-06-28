@@ -1,5 +1,5 @@
 <?php
-//include "header.php";
+include "header.php";
 require "./models/consultas.model.php";
 
 $consultas = new Consultas();
@@ -58,4 +58,4 @@ $data_p  = $consultas->MostrarPersonal();
     </div>
   </div>
 
-<?php include "footer.php"; ?>
+<?php// include "footer.php"; ?>
