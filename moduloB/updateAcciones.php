@@ -20,7 +20,7 @@ $row = $acciones->MostrarAcciones($id_acciones);
 				<input type="text" class="form-control" id="" value="<?php echo $row['nomb_actividad'];?>" name="nomb_actividad" placeholder="Nombre de Accion">
 			
 				<label>Unidad de Medida: </label>
-				<input type="text" class="form-control" id="" value="<?php echo $row['unidad_medida'];?>" name="unidadmedida" placeholder="Unidad de Medida">
+				<input type="text" class="form-control" id="" value="<?php echo $row['unidad_medida'];?>" name="unidad_medida" placeholder="Unidad de Medida">
 	
 			</div>
 						
