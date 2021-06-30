@@ -1,4 +1,5 @@
 <?php
+include "header.php";
 
 session_start();
 
@@ -17,24 +18,26 @@ if(!empty($_SESSION['id_personal']))
 
 ?>
 
-<link rel="stylesheet" href="assets/css/material-dashboard.css">
+  <div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid">
 
-<form action="" id="reportes-form" method="post">
-	<div id="caja"  > Caja
+          	<!-- PAGE CUERPO -->
 
-	<div id="mensaje"></div>
-
-	<div class="container section" >
-		<table class="table">
-			<thead>
-				<tr>
+          	<h1 class="h3 mb-4 text-gray-800">Listado de Acciones</h1>
+          	<form action="" id="reportes-form" method="post">
+	<div id="caja"  > 
+          	<table class="table table-striped">
+				<thead>
+					<tr>
 					<th>Num.</th>
 					<th>Id Acciones</th>
 					<th>Cantidad</th>
 					<th>Opciones</th>
 				</tr>
-			</thead>
-			<tbody>
+				</thead>
+				<tbody>
 			<?php while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {  
 				
 				?>
@@ -44,6 +47,7 @@ if(!empty($_SESSION['id_personal']))
 						<?php echo $i;
 						 ?>
 						<input type="hidden" name="idpersonal" id="idpersonal" value="<?php echo $idpersonal;?>">
+
 						<input type="hidden" name="idacciones" id="idacciones" value="<?php echo $fila['id_acciones'];?>">
 					</td>
 					<td>
@@ -52,7 +56,7 @@ if(!empty($_SESSION['id_personal']))
 						?>
 					</td>
 					<td>
-                        <input type="number" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" class="form-control">
+            <input type="number" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" class="form-control">
 						
 					</td>
 					<td>
@@ -66,10 +70,16 @@ if(!empty($_SESSION['id_personal']))
 			}
 			?>
 			</tbody>
-		</table>
-	</div>
-</div>
-</form>
+			</table>
+		</div>
+	</form>
+
+
+	
+        </div>
+      </div>
+    </div>
+  </div>
 
 <script type="text/javascript" src="assets/js/core/jquery.min.js"></script>
 <script>
@@ -121,3 +131,5 @@ if(!empty($_SESSION['id_personal']))
 }else{
 	header("Location: ../index.html");
 } ?>
+
+<?php include "footer.php"; ?>

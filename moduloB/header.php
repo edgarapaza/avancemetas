@@ -83,12 +83,26 @@ if(isset($_SESSION['id_personal']))
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
           <i class="fas fa-fw fa-wrench"></i>
-          <span>Metas</span>
+          <span>Metas Personal</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="listaMetas.php">Listado de Metas</a>
-            <a class="collapse-item" href="metas.php">Agregar Metas</a>
+            <a class="collapse-item" href="listaMetas.php">Listado de Metas Personal</a>
+            <a class="collapse-item" href="metas.php">Agregar Metas Personal</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Reportes</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <a class="collapse-item" href="listaReportes.php">Listado de Reportes</a>
+            <a class="collapse-item" href="reportes.php">Agregar Reportes</a>
           </div>
         </div>
       </li>

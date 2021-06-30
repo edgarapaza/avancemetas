@@ -1,45 +1,59 @@
 <?php
+include "header.php";
+
 session_start();
 
-if(!empty($_SESSION['personal']))
+if(!empty($_SESSION['id_personal']))
 {
 	$i = 1;
 	require 'models/acciones.model.php';
 	$acciones = new Acciones();
-	$data = $acciones->MostrarAcciones($_SESSION['personal']);
-	
-
+	$data = $acciones->MostrarAccionesUno($_SESSION['id_personal']);
 ?>
 
-<div class="container">
+  <div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid">
 
-	<form action="" id="reportes-form" method="post">
-	
-		<div id="mensaje"></div>
+          	<!-- PAGE CUERPO -->
 
-		<table class="table">
-			<thead>
-				<tr>
+          	<h1 class="h3 mb-4 text-gray-800">Reportes</h1>
+          	<form action="" id="reportes-form" method="post">
+	<div id="caja"  > 
+          	<table class="table table-striped">
+				<thead>
+					<tr>
 					<th>Num.</th>
 					<th>Acciones/Actividades</th>
+					<th>Unidad de Medida</th>
 					<th>Cantidad</th>
 					<th>Opciones</th>
 				</tr>
-			</thead>
-			<tbody>
+
+				</thead>
+				<tbody>
 				<?php
 					while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {
 						
 				?>
 				<tr>
-					<td><?php echo $i;?></td>
-
-					<td><?php echo $fila['nomb_actividad']; ?> </td>
-					<td><?php echo $fila['unidad_medida']; ?> </td>
 					<td>
-						<input type="text" name="cantidad" id="cantidad" class="">
-						<input type="hidden" value="<?php echo $fila['id_acciones']; ?>">
-						<input type="hidden" value="<?php echo $fila['id_cargos']; ?>">
+						<?php echo $i;?>
+
+						<input type="hidden" name="id_accion" value="<?php echo $fila['id_acciones']; ?>">
+						<input type="hidden" name="id_personal" value="<?php echo $_SESSION['id_personal']; ?>">						
+					</td>
+
+					<td>
+						<?php echo $fila['nomb_actividad']; ?> 
+				   </td>
+
+					<td>
+						<?php echo $fila['unidad_medida']; ?>
+					</td>
+					<td>
+						<input type="number" name="cantidad" id="cantidad" class="" placeholder="cantidad">
 						
 					</td>
 					
@@ -49,17 +63,20 @@ if(!empty($_SESSION['personal']))
 				<?php } ?>
 			
 			</tbody>
-		</table>
-	
+			</table>
+		</div>
 	</form>
-</div>
 
 
+	
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript" src="assets/js/core/jquery.min.js"></script>
 <script>
-	/*var idaccion;
-	function CambiarDatosReportes(dato) {
-		var ventana1 = window.open('updateReportes.php?idreportes='+dato,"MsgWindow", "width=600,height=500");
-	}*/
+
 
 		var idaccion = 0;
 	
@@ -109,3 +126,4 @@ if(!empty($_SESSION['personal']))
 }else{
 	header("Location: ../index.html");
 } ?>
+<?php include "footer.php"; ?>

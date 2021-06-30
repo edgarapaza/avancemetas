@@ -1,7 +1,8 @@
 <?php
+include "header.php";
 include("./models/reportes.model.php");
 include("./models/acciones.model.php");
-include("../moduloA/models/personal.model.php");
+include("./models/personal.model.php");
 
 $reportes = new Reportes();
 $data = $reportes->Consultar();
@@ -12,21 +13,24 @@ $personal = new Personal();
 $i = 1;
 
 ?>
-<link rel="stylesheet" href="assets/css/material-dashboard.css">
-<div id="caja"> Caja
-	<div class="container section">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Num.</th>
+  <div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid">
+
+          	<!-- PAGE CUERPO -->
+          	<h1 class="h3 mb-4 text-gray-800">Listado de Acciones</h1>
+          	<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Num.</th>
 		
 					<th>Id Acciones</th>
+					<th>Id Personal</th>
 					<th>Fecha Reporte</th>
 					<th>Cantidad</th>
 					<th>Opciones</th>
-				</tr>
-			</thead>
-			<tbody>
+				<tbody>
 			<?php while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {  
 				
 				?>
@@ -36,8 +40,16 @@ $i = 1;
 					<td>
 						<?php 
 						 
-						$dataacciones = $acciones->MostrarAccionesUno($fila['id_acciones']);
+						$dataacciones = $acciones->MostrarAcciones($fila['id_acciones']);
 						printf(" %s ",$dataacciones['nomb_actividad']); 
+						?>
+						
+					</td>
+					<td>
+						<?php 
+						 
+						$datapersonal = $personal->MostrarPersonalUno($fila['id_personal']);
+						printf(" %s ",$datapersonal['nombre']." ".$datapersonal['apellidos']); 
 						?>
 						
 					</td>
@@ -45,15 +57,17 @@ $i = 1;
 					<td><?php echo $fila['f_reportes']; ?></td>
 
 					<td>
-						<div class="form-group">
-							<input type="text" class="form-control" id="" name="cantidad" placeholder="avance">
-						</div>
+						<?php 
+						 
+						$fila['id_reportes'];
+						printf(" %s ",$fila['cantidad']); 
+						?>
+						
 					</td>
 					
 					<td>
-						 <a href="controllers/reportes.controller.php" id="#" class="btn btn-info btn-sm" ><i class="material-icons">GUARDAR</i></a>
-
-						 <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>
+						
+						 <!--<a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php echo $fila['id_reportes'];?>)"><i class="material-icons">Cambiar</i></a>-->
 
 					</td>
 				</tr>
@@ -62,14 +76,15 @@ $i = 1;
 			}
 			?>
 			</tbody>
-		</table>
-
-		
-	</div>
-</div>
+			</table>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <script>
 	function CambiarDatosReportes(dato) {
 		var ventana1 = window.open('updateReportes.php?idreportes='+dato,"MsgWindow", "width=600,height=500");
 	}
 </script>
+<?php include "footer.php"; ?>

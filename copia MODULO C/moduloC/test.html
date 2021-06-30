@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+		function Parrafo(){
+			var p = document.createElement("p");
+			var texto = document.createTextNode("Mi nuevo texto de parrafo");
+			p.appendChild(texto)
+			document.body.appendChild(p);
+
+
+		}
+
+		function Imagen(){
+			var i = document.createElement("img");
+			i.setAttribute("src","images/check.jpg");
+			i.setAttribute("width","30");
+			
+			var padre = document.getElementById("cambiar");
+			padre.appendChild(i);
+		}
+
+		function Guardar(){
+			
+			var btn3 = document.getElementById("boton1");
+			btn3.setAttribute("disabled","true");
+			
+			console.log("Mensaje");
+		}
+
+	</script>
+</head>
+<body>
+
+
+	<div id="cambiar"></div>
+	
+	
+	<button onclick="Guardar();" id="boton1">Crear Parrafo Final</button>
+	<button onclick="Imagen();">Insertar Imagen</button>
+	<button onclick="Titulo();">Crear Titulo</button>
+	<button onclick="Capa();">Crear una capa Nueva</button>
+</body>
+</html>
