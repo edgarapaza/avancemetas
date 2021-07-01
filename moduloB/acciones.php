@@ -1,6 +1,6 @@
 <?php
-//include "header.php";
-require "./models/consultas.model.php";
+include "header.php";
+require "models/consultas.model.php";
 
 $consultas = new Consultas();
 //$data_of = $consultas->MostrarOficinas();
