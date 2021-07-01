@@ -2,11 +2,11 @@
 session_start();
 
 include("models/login.model.php");
-if(isset($_SESSION['id_personal']))
+if(isset($_SESSION['personal']))
 {
   //echo $_SESSION['admin'];
   $login = new Login();
-  $data = $login->NombrePersonal($_SESSION['id_personal']);
+  $data = $login->NombrePersonal($_SESSION['personal']);
 
 ?>
 <!DOCTYPE html>
@@ -73,8 +73,8 @@ if(isset($_SESSION['id_personal']))
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" id="listadoAcciones" href="report1.php">Mis reportes Diartios </a>
-            <a class="collapse-item" href="#">revisar</a>
+            <a class="collapse-item" id="listadoAcciones" href="report.php">Mis reportes Diartios </a>
+            <a class="collapse-item" href="revisar.php">revisar</a>
           </div>
         </div>
       </li>
@@ -158,7 +158,7 @@ if(isset($_SESSION['id_personal']))
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Edgar Apaza</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bienvenid@, <?php echo $data['personal']; ?></span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->

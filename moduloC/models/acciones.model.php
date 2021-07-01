@@ -45,7 +45,7 @@ class Acciones
 		$res = $this->conn->ConsultaArray($sql);
 		return $res;
 	}
-	
+	/*
 	public	function MostrarAccionesUno($id_acciones)
 	{
 		$sql = "SELECT id_acciones, id_personal, id_cargos, nomb_actividad, unidad_medida FROM acciones WHERE id_acciones = " . $id_acciones;
@@ -53,4 +53,5 @@ class Acciones
 		$res = $this->conn->ConsultaCon($sql);
 		return $res;
 	}
+	*/
 }

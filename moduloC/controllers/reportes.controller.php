@@ -1,19 +1,14 @@
-<?php //Modulo C
+ <?php 
 require("../models/reportes.model.php");
 
 
 $id_personal = $_POST['id_personal'];
-$id_accion = $_POST['id_accion'];
+$id_acciones = $_POST['id_acciones'];
 $cantidad = $_POST['cantidad'];
 
+$reportes = new Reportes();
+$reportes->Guardar($id_personal,$id_acciones,$cantidad);
 
-echo $id_personal."<br>";
-echo $id_acciones."<br>";
-echo $cantidad."<br>";
 
-//$reportes = new Reportes();
-//$reportes->Guardar($id_personal,$id_acciones,$cantidad);
-
-//header("Location: ../index.php");
 
 ?>

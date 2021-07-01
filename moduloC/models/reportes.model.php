@@ -30,12 +30,13 @@ class Reportes
 		return $res;
 	}
 
-	public function Consultar($idpersonal)
+	public function Consultar()
 	{
-		$sql = "";
+		$sql = "SELECT id_reportes,id_personal,id_acciones,f_reportes,cantidad FROM reportes WHERE id_personal = 3;";
 
-		$res = $this->conn->ConsultaArray($sql);
+		$res = $this->conn->ConsultaCon($sql);
 		return $res;
+	
 	}
 	public function MostrarReportes($idpersonal)
 	{
@@ -44,5 +45,15 @@ class Reportes
 		$res = $this->conn->ConsultaCon($sql);
 		return $res;
 	}
-	
+
+	public function MostrarPersonalUno($idpersonal)
+	{
+				
+		$sql = "SELECT id_personal,nombre,apellidos,sexo,telefono,fecha_nac,email,foto,f_creacion,DNI FROM personal WHERE id_personal = 3";
+
+
+		$res = $this->conn->ConsultaArray($sql);
+		return $res;
+
+	}
 }

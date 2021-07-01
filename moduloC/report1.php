@@ -1,82 +1,69 @@
 <?php
-include "header.php";
-
 session_start();
 
-if(!empty($_SESSION['id_personal']))
+if(!empty($_SESSION['personal']))
 {
 	$i = 1;
 	require 'models/acciones.model.php';
 	$acciones = new Acciones();
-	$data = $acciones->MostrarAccionesUno($_SESSION['id_personal']);
+	$id_personal = $_SESSION['personal'];
+	$data = $acciones->MostrarAcciones( $id_personal);
+	
+
 ?>
 
-  <div id="wrapper">
-    <div id="content-wrapper" class="d-flex flex-column">
-      <div id="content">
-        <div class="container-fluid">
+<div class="container">
 
-          	<!-- PAGE CUERPO -->
+	<form action="" id="reportes-form" method="post">
+	
+		<div id="mensaje"></div>
 
-          	<h1 class="h3 mb-4 text-gray-800">Reportes</h1>
-          	<form action="" id="reportes-form" method="post">
-	<div id="caja"  > 
-          	<table class="table table-striped">
-				<thead>
-					<tr>
+		<table class="table">
+			<thead>
+				<tr>
 					<th>Num.</th>
 					<th>Acciones/Actividades</th>
-					<th>Unidad de Medida</th>
 					<th>Cantidad</th>
 					<th>Opciones</th>
 				</tr>
-
-				</thead>
-				<tbody>
+			</thead>
+			<tbody>
 				<?php
 					while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {
 						
 				?>
 				<tr>
-					<td>
-						<?php echo $i;?>
+					<td><?php echo $i;?></td>
 
-						<input type="hidden" name="id_accion" value="<?php echo $fila['id_acciones']; ?>">
-						<input type="hidden" name="id_personal" value="<?php echo $_SESSION['id_personal']; ?>">						
-					</td>
+					<td><?php echo $fila['nomb_actividad']; ?> </td>
+					<td><?php echo $fila['unidad_medida']; ?> </td>
+					<td>
+						<input type="text" name="cantidad" id="cantidad" class="" placeholder="cantidad">
 
-					<td>
-						<?php echo $fila['nomb_actividad']; ?> 
-				   </td>
-
-					<td>
-						<?php echo $fila['unidad_medida']; ?>
-					</td>
-					<td>
-						<input type="number" name="cantidad" id="cantidad" class="" placeholder="cantidad">
+						<input type="text" name="id_acciones" value="<?php echo $fila['id_acciones']; ?>">
+						<input type="text" name="id_personal" value="<?php echo $_SESSION['personal']; ?>">
 						
 					</td>
 					
-					<td><button type="button" class="btn btn-primary">Enviar</button></td>
+					<td>
+						<button id="btn<?php echo $fila['id_acciones'];?>" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $id_personal;?> );"  class="btn btn-primary"  type="button">Guardar</button>
+					</td>
 				</tr>
 
 				<?php } ?>
 			
 			</tbody>
-			</table>
-		</div>
-	</form>
-
-
+		</table>
 	
-        </div>
-      </div>
-    </div>
-  </div>
+	</form>
+</div>
 
-<script type="text/javascript" src="assets/js/core/jquery.min.js"></script>
+
 <script>
-
+	/*var idaccion;
+	function CambiarDatosReportes(dato) {
+		var ventana1 = window.open('updateReportes.php?idreportes='+dato,"MsgWindow", "width=600,height=500");
+	}*/
 
 		var idaccion = 0;
 	
@@ -126,4 +113,3 @@ if(!empty($_SESSION['id_personal']))
 }else{
 	header("Location: ../index.html");
 } ?>
-<?php include "footer.php"; ?>

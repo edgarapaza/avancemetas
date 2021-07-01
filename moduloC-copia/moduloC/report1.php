@@ -6,7 +6,8 @@ if(!empty($_SESSION['personal']))
 	$i = 1;
 	require 'models/acciones.model.php';
 	$acciones = new Acciones();
-	$data = $acciones->MostrarAcciones($_SESSION['personal']);
+	$id_personal = $_SESSION['personal'];
+	$data = $acciones->MostrarAcciones( $id_personal);
 	
 
 ?>
@@ -39,12 +40,14 @@ if(!empty($_SESSION['personal']))
 					<td>
 						<input type="text" name="cantidad" id="cantidad" class="" placeholder="cantidad">
 
-						<input type="text" name="id_accion" value="<?php echo $fila['id_acciones']; ?>">
+						<input type="text" name="id_acciones" value="<?php echo $fila['id_acciones']; ?>">
 						<input type="text" name="id_personal" value="<?php echo $_SESSION['personal']; ?>">
 						
 					</td>
 					
-					<td><button type="button" class="btn btn-primary">Enviar</button></td>
+					<td>
+						<button id="btn<?php echo $fila['id_acciones'];?>" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $id_personal;?> );"  class="btn btn-primary"  type="button">Guardar</button>
+					</td>
 				</tr>
 
 				<?php } ?>
