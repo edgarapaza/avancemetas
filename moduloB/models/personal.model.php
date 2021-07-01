@@ -1,5 +1,5 @@
 <?php
-require_once("Conexion.php");
+require_once "Conexion.php";
 
 class Personal
 {
@@ -7,9 +7,8 @@ class Personal
 
 	function __construct()
 	{
-		$link = new Conexion();
-		$this->conn = $link->Conectar();
-		return $this->conn;
+		$this->conn = new Conexion();
+			return $this->conn;
 	}
 
 	public function Guardar($nombre,$apellidos,$sexo,$telefono,$fecha_nac,$email,$foto, $dni )
@@ -59,14 +58,8 @@ class Personal
 		$sql = "SELECT id_personal,nombre,apellidos,sexo,telefono,fecha_nac,email,foto,f_creacion,DNI FROM personal WHERE id_personal = " . $idpersonal;
 
 
-		if(!$response = $this->conn->query($sql)){
-			echo "Error: ". mysqli_error($this->conn);
-			exit();
-		}
-
-		$dato = $response->fetch_array(MYSQLI_ASSOC);
-
-		return $dato;
+		$res = $this->conn->ConsultaArray($sql);
+		return $res;
 
 	}
 	public function MostrarPersonalAccion($idpersonal)

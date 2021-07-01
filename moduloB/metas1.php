@@ -1,9 +1,11 @@
 <?php
 include "header.php";
+
 require "./models/consultas.model.php";
 
 $consultas = new Consultas();
 $data_p  = $consultas->MostrarPersonal();
+
 ?>
 
   <div id="wrapper">
@@ -11,9 +13,10 @@ $data_p  = $consultas->MostrarPersonal();
       <div id="content">
         <div class="container-fluid">
 
-          <!-- PAGE CUERPO -->
-          <h1 class="h3 mb-4 text-gray-800">Registro de Metas</h1>
-          <form action="controllers/personal.controller.php" method="POST">
+          	<!-- PAGE CUERPO -->
+
+          	<legend>Registro de Metas</legend>
+          	<form action="controllers/metas.controller.php" method="POST">
 
 				<div class="form-group">
 					<label for="">Nombre Metas: </label>
@@ -53,9 +56,9 @@ $data_p  = $consultas->MostrarPersonal();
 				<button type="submit" class="btn btn-primary">Guardar</button>
 					</form>
 
+	
         </div>
       </div>
     </div>
   </div>
-
-<?php// include "footer.php"; ?>
+<?php include "footer.php"; ?>

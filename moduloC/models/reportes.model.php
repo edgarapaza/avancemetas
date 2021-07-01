@@ -7,9 +7,8 @@ class Reportes
 
 	function __construct()
 	{
-		$link = new Conexion();
-		$this->conn = $link->Conectar();
-		return $this->conn;
+		$this->conn = new Conexion();
+        return $this->conn;
 	}
 
 
@@ -18,12 +17,8 @@ class Reportes
 		$fecha = date('Y-m-d H:i:s');
 		$sql = "INSERT INTO reportes (id_reportes, id_personal, id_acciones, f_reportes, cantidad) VALUES (null, '$id_personal', '$id_acciones', '$fecha', '$cantidad');";
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-
-		echo "Guardado correctamente";
+		$res = $this->conn->ConsultaSin($sql);
+		return $res;
 	
 	}
 
@@ -31,38 +26,34 @@ class Reportes
 	{
 		$sql = "UPDATE reportes SET cantidad = '$cantidad' WHERE id_reportes = $idreportes;";
 
-		if(!$this->conn->query($sql)){
-			echo "Error: " . mysqli_error($this->conn);
-			exit();
-		}
-
-		$this->conn->close();
+		$res = $this->conn->ConsultaSin($sql);
+		return $res;
 	}
 
-	public function Consultar($idpersonal)
+	public function Consultar()
 	{
-		$sql = "";
+		$sql = "SELECT id_reportes,id_personal,id_acciones,f_reportes,cantidad FROM reportes WHERE id_personal = 3;";
 
-		if(!$response = $this->conn->query($sql))
-		{
-			echo "Error: ". mysqli_error($this->conn);
-		}
-
-		$data = $response->fetch_array(MYSQLI_ASSOC);
-
-		return $data;
+		$res = $this->conn->ConsultaCon($sql);
+		return $res;
+	
 	}
 	public function MostrarReportes($idpersonal)
 	{
 		$sql = "SELECT id_acciones, nomb_actividad, unidad_medida FROM acciones WHERE id_personal = $idpersonal;";
 		
-		if(!$response = $this->conn->query($sql))
-		{
-			"Error: ". mysqli_error($this->conn);
-            exit();
-		}
-
-		return $response;
+		$res = $this->conn->ConsultaCon($sql);
+		return $res;
 	}
-	
+
+	public function MostrarPersonalUno($idpersonal)
+	{
+				
+		$sql = "SELECT id_personal,nombre,apellidos,sexo,telefono,fecha_nac,email,foto,f_creacion,DNI FROM personal WHERE id_personal = 3";
+
+
+		$res = $this->conn->ConsultaArray($sql);
+		return $res;
+
+	}
 }

@@ -1,34 +1,70 @@
+<?php
+include "header.php";
+include("./models/reportes.model.php");
+include("./models/acciones.model.php");
+//include("./models/personal.model.php");
 
+$reportes = new Reportes();
+$data = $reportes->Consultar();
+$acciones = new Acciones();
+//$personal = new Personal();
 
+$i = 1;
 
-<?php while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {  
+?>
+  <div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <div class="container-fluid">
+
+          	<!-- PAGE CUERPO -->
+          	<h1 class="h3 mb-4 text-gray-800">Listado de Acciones</h1>
+          	<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Num.</th>
+		
+					<th>Id Acciones</th>
+					<th>Fecha Reporte</th>
+					<th>Cantidad</th>
+				<tbody>
+			<?php while ($fila = $data->fetch_array(MYSQLI_ASSOC)) {  
 				
 				?>
 				<tr>
+					<td><?php echo $i; ?></td>
 					
 					<td>
-						<?php echo $i;
-						 ?>
-						<input type="hidden" name="idpersonal" id="idpersonal" value="<?php echo $idpersonal;?>">
-						<input type="hidden" name="idacciones" id="idacciones" value="<?php echo $fila['id_acciones'];?>">
-					</td>
-					<td>
 						<?php 
-						 echo $fila['nomb_actividad'];
+						 
+						$dataacciones = $acciones->MostrarAcciones($fila['id_acciones']);
+						printf(" %s ",$dataacciones['nomb_actividad']); 
 						?>
-					</td>
-					<td>
-                        <input type="number" name="cantidad" id="cantidad<?php echo $fila['id_acciones'];?>" required="required" class="form-control">
 						
 					</td>
-					<td>
+					
+					<td><?php echo $fila['f_reportes']; ?></td>
 
-						<button id="btn<?php echo $fila['id_acciones'];?>" onclick="GuardarDatos(<?php echo $fila['id_acciones'];?>, <?php echo $idpersonal;?> );"  class="btn btn-primary"  type="button">Guardar</button>
-							
-						<!-- <a href="#" id="#" class="btn btn-info btn-sm" onclick="CambiarDatosReportes(<?php// echo $fila['id_reportes'];?>)"><i class="material-icons">how_to_reg</i></a>-->
+					<td>
+						<?php 
+						 
+						$fila['id_reportes'];
+						printf(" %s ",$fila['cantidad']); 
+						?>
+						
 					</td>
+					
+					
 				</tr>
 			<?php
 				$i++;
 			}
 			?>
+			</tbody>
+			</table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<?php include "footer.php"; ?>

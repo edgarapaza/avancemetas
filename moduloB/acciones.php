@@ -9,13 +9,16 @@ $data_c  = $consultas->MostrarCargos();
 $data_p  = $consultas->MostrarPersonal();
 
 ?>
+
   <div id="wrapper">
     <div id="content-wrapper" class="d-flex flex-column">
       <div id="content">
         <div class="container-fluid">
 
+          	<!-- PAGE CUERPO -->
+
+          	<legend>Registro de Acciones</legend>
           	<form action="controllers/acciones.controller.php" method="POST" role="form">
-				<legend>Registro de Acciones</legend>
 
 				<div class="form-group">
 					<label for="">Cargo:</label>
@@ -37,7 +40,7 @@ $data_p  = $consultas->MostrarPersonal();
 					</select>
 				</div>
 
-	      		<div class="form-group">
+	      <div class="form-group">
 					<label for="">Nombre de la Accion:</label>
 					<input type="text" class="form-control" id="" name="nom_actividad" placeholder="Nombre de la Accion">
 				</div>
@@ -51,22 +54,21 @@ $data_p  = $consultas->MostrarPersonal();
 					<option value="Metros Lineales">Metros Lineales</option>
 					<option value="Moneda">Moneda</option>
 					<option value="Porcentaje">Porcentaje</option>
-          			<option value="Servicio">Servicio</option>         <option value="Documentos">Documentos</option>
-          			<option value="Escritura">Escritura</option>
-          			<option value="Usuario">Usuario</option>
-          			<option value="Accion">Accion</option>
-          			<option value="Inst. Superv">Inst. Superv</option>
-
+          <option value="Servicio">Servicio</option>
+          <option value="Documentos">Documentos</option>
+          <option value="Escritura">Escritura</option>
+          <option value="Usuario">Usuario</option>
+          <option value="Accion">Accion</option>
+          <option value="Inst. Superv">Inst. Superv</option>
 				</select>
 				</div>
 				
-			
 				<button type="submit" class="btn btn-primary">Guardar</button>
-			</form>
+				</form>
 
+	
         </div>
       </div>
     </div>
   </div>
-		
 <?php include "footer.php"; ?>
