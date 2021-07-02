@@ -71,7 +71,7 @@ if(isset($_SESSION["administrator"]))
             <a class="collapse-item" href="institucion.php">Datos Institucionales</a>
             <a class="collapse-item" href="uniorganica.php">Unidad Organica</a>
             <a class="collapse-item" href="gerencia.php">Nueva Gerencia</a>
-            <a class="collapse-item" href="oficinas.php">Nueva sub gerencia</a>
+            <a class="collapse-item" href="subgerncia.php">Nueva sub gerencia</a>
             <a class="collapse-item" href="areas.php">Nueva Area</a>
             <a class="collapse-item" href="cargos.php">Nuevo cargo</a>
             <a class="collapse-item" href="personal2.php">Nuevo Personal</a>

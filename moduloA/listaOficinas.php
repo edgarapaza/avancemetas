@@ -6,7 +6,6 @@ include("./models/metas.model.php");
 $oficinas = new Oficinas();
 $metas = new Metas();
 $data = $oficinas->Consultar();
-$office = $oficinas->Consultar();
 
 $i = 1;
 
@@ -24,7 +23,7 @@ $i = 1;
 				<thead>
 					<tr>
 						<th>Num.</th>
-						<th>Nombre Oficina</th>
+						<th>Nombre Sub Gerencias</th>
 						<th>Id meta</th>
 						<th>Opciones</th>
 					</tr>
@@ -38,22 +37,12 @@ $i = 1;
 					<tr>
 						<td><?php echo $i; ?></td>
 						<td><?php //echo $fila['id'];
-						          echo $fila['nombre']; ?>
+						          echo $fila['nomsubger']; ?>
 						          	
 						</td>
+						<td></td>
 						<td>
-							<?php 
-							 
-							$datameta = $metas->MostrarMetaOficina($fila['id_metas']);
-							printf("Meta: %s - Programado (%s)",$datameta['nombre'], $datameta['programado']); 
-							?>
-							
-						</td>
-						<td>
-							
 							 <a href="#" id="#cambiarOficina" class="btn btn-info btn-sm" onclick="CambiarDatosOficina(<?php echo $fila['id'];?>)">Cambiar</a>
-							 
-
 						</td>
 					</tr>
 				<?php

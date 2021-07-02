@@ -1,11 +1,12 @@
 <?php 
 include "header.php";
 include("../moduloA/models/areas.model.php");
-include("./models/metas.model.php");
+include("./models/metas_areas.model.php");
 
+
+$metas = new MetasAreas();
 
 $areas = new Areas();
-$metas = new Metas();
 $data = $areas->Consultar();
 
 $i = 1;
@@ -26,7 +27,7 @@ $i = 1;
 						<th>Nombre</th>
 						<th>Metas</th>
 						<th>Descripcion</th>
-						<th>Direccion/Oficina</th>
+						<th>Sub Gerencia</th>
 						<th>Opciones</th>
 					</tr>
 				</thead>
@@ -39,13 +40,14 @@ $i = 1;
 						<td><?php echo $fila['nombre']; ?></td>
 						<td>
 							<?php 
-								$datameta = $metas->MostrarMetaOficina($fila['id_metas']);
-								printf(" %s ",$datameta['nombre_meta']); 
+								
+								$datameta = $metas->MostrarMetaAreas($fila['id_metas']);
+								printf(" %s ",$datameta['nombre']); 
 							?>
 						</td>
 						<td><?php echo $fila['descripcion']; ?></td>
 						<td><?php 
-							$office = $areas->DatosDireccionOficina($fila['idoficina']);
+							$office = $areas->DatosDireccionOficina($fila['idsubgerencia']);
 							echo $office['sigla'];
 						?></td>
 						

@@ -1,6 +1,6 @@
 <?php
 include("./models/cargos.model.php");
-
+include "header.php";
 $cargos = new Cargo();
 $idcargos = $_REQUEST['idcargos'];
 $office = $cargos->MostrarCargos($idcargos);
@@ -16,13 +16,12 @@ $office = $cargos->MostrarCargos($idcargos);
 				<input type="hidden" value="<?php echo $idcargos;?>" name="idcargos">
 				
 				<label for="">Nombre Cargos:</label>
-				<input type="text" class="form-control" id="" value="<?php echo $office['nombre_cargo'];?>" name="nombre_cargo" placeholder="Nombre Cargos">
+				<input type="text" class="form-control" id="" value="<?php echo $office['nombre'];?>" name="nombre_cargo" placeholder="Nombre Cargos">
 
-				
-				
+			
 			</div>
 			
-			<button type="submit" class="btn btn-primary">enviar</button>
+			<button type="submit" class="btn btn-primary">Guardar Cambios</button>
 		</form>
 
 	</div>

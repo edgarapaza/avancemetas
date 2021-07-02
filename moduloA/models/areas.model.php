@@ -11,11 +11,11 @@ class Areas
         return $this->conn;
     }
 
-    public function Guardar($nombre, $descripcion, $idoficina, $id_metas)
+    public function Guardar($nombre, $descripcion, $idsubgerencia, $id_metas)
     {
         $fechaActual = date('Y-m-d H:i:s');
 
-        $sql = "INSERT INTO areas VALUES (null,'$nombre','$descripcion','$idoficina','$id_metas','$fechaActual',null);
+        $sql = "INSERT INTO areas VALUES (null,'$nombre','$descripcion','$idsubgerencia','$id_metas','$fechaActual',null);
 ";
 
         $res = $this->conn->ConsultaCon($sql);
@@ -35,7 +35,7 @@ class Areas
 
     public function Consultar()   
     {    
-        $sql = "SELECT id_areas,nombre,descripcion,idoficina,id_metas FROM areas";
+        $sql = "SELECT id_areas,nombre,descripcion,idsubgerencia,id_metas FROM areas";
         
         $res = $this->conn->ConsultaCon($sql);
         return $res;
@@ -51,10 +51,11 @@ class Areas
         return $res;
     }
 
-    public function DatosDireccionOficina($idoficina)
+    public function DatosDireccionOficina($idsubgerencia)
     {
-        $sql = "SELECT id,nombre,sigla,id_metas,id_gerencia FROM oficinas WHERE id=".$idoficina;
-
+        $sql = "SELECT idsubgerencia, nomsubger, sigla, idgerencia FROM subgerencia WHERE idsubgerencia=".$idsubgerencia;
+        //SELECT idgerencia, nomgerencia, sigla, iduorg FROM gerencias;
+        
         $res = $this->conn->ConsultaArray($sql);
         return $res;
     }
