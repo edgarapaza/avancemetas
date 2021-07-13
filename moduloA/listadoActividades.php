@@ -43,8 +43,8 @@ include "header.php";
 						?></td>
 						<td><?php
 
-							$ofi = $listado->OficinaUnico($fila['id_oficina']);
-							echo $ofi['nombre'];
+							$ofi = $listado->OficinaUnico($fila['id_subgerencia']);
+							echo $ofi['nomsubger'];
 							?></td>
 						<td><?php
 

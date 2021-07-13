@@ -47,7 +47,7 @@ class Listado
 		}
 
 		function OficinaUnico($codigo){
-			$sql="SELECT nombre FROM oficinas WHERE id= $codigo";
+			$sql="SELECT nomsubger FROM subgerencia WHERE idsubgerencia= $codigo";
 			
 			$res = $this->conn->ConsultaArray($sql);
         	return $res;

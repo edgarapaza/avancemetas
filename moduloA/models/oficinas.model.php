@@ -31,7 +31,10 @@ class Oficinas
 
 	public function Consultar()
 	{
-		$sql = "SELECT id, nombre, id_metas,id_gerencia FROM oficinas;";
+		$sql = "SELECT idsubgerencia, nomsubger, sigla, idgerencia FROM subgerencia;";
+
+		//sSELECT idsubgerencia, nomsubger, sigla, idgerencia FROM subgerencia;
+
 		
 		$res = $this->conn->ConsultaCon($sql);
 		return $res;

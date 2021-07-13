@@ -1,11 +1,11 @@
 <?php
 include "header.php";
 include("./models/cargos.model.php");
-include("./models/oficinas.model.php");
+//include("./models/oficinas.model.php");
 
 $cargos = new Cargo();
 $data = $cargos->Consultar();
-$oficinas = new Oficinas();
+//$oficinas = new Oficinas();
 
 $i = 1;
 
@@ -23,7 +23,7 @@ $i = 1;
 					<tr>
 						<th>Num.</th>
 						<th>Nombre Cargo</th>
-						<th>Oficina / Direccion</th>
+						
 						<th>Area</th>
 						<th>Personal</th>
 						<th>Opciones</th>
@@ -39,13 +39,7 @@ $i = 1;
 						          echo $fila['nombre']; ?>
 						          	
 						</td>
-						<td>
-							<?php 
-							 $office = $oficinas->MostrarOficina($fila['id_oficina']);
-							 echo $office['nombre'];
-
-							?>
-						</td>
+						
 						<td>
 							<?php 
 							 echo $fila['id_areas'];
@@ -55,7 +49,7 @@ $i = 1;
 
 						<td>
 							<?php 
-							 echo $fila['id_personal'];
+							 echo $fila['idpersonal'];
 							?>
 						</td>
 

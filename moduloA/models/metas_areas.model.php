@@ -33,4 +33,12 @@ class MetasAreas
 	{
 		
 	}
+	public function MostrarMetaAreas($idmetasareas)
+	{
+		
+		$sql="SELECT id_areas,nombre,descripcion,idsubgerencia,id_metas FROM areas where id_metas = ".$idmetasareas; 
+				
+		$res = $this->conn->ConsultaArray($sql);
+        return $res;
+	}
 }
