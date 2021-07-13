@@ -12,13 +12,13 @@ session_start();
     </div>
     <div class="panel-body">
       <div class="content-row">
-        <h2 class="content-row-title">Listado de Unidades organicas</h2>
-        
+        <h2 class="content-row-title">Titulo</h2>
+        <form action="">
+          Agregar sub gerencia
+        </form>
       </div>
     </div>
   </div>
 </div>
-
-
 
 <?php include "footer.php"; ?>

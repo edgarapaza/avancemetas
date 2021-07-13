@@ -16,6 +16,11 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
     <script type="text/javascript" src="dist/js/site.min.js"></script>
+    <style type="text/css">
+      .content{
+        min-height: 450px;
+      }
+    </style>
   </head>
   <body>
     <!--nav-->
@@ -29,7 +34,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a href="#" class="navbar-brand">Avance metas</a>
+          <a href="#" class="navbar-brand">Logro de Metas</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div id="bs-content-row-navbar-collapse-5" class="collapse navbar-collapse">
@@ -65,7 +70,7 @@
                     <a class="list-group-item" href="institucion.php">Datos Institucionales</a>
                     <a class="list-group-item" href="uniorganica.php">Unidad Organica</a>
                     <a class="list-group-item" href="gerencia.php">Nueva Gerencia</a>
-                    <a class="list-group-item" href="oficinas.php">Nueva sub gerencia</a>
+                    <a class="list-group-item" href="subgerencia.php">Nueva sub gerencia</a>
                     <a class="list-group-item" href="areas.php">Nueva Area</a>
                     <a class="list-group-item" href="cargos.php">Nuevo cargo</a>
                     <a class="list-group-item" href="personal2.php">Nuevo Personal</a>

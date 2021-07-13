@@ -10,7 +10,7 @@ $res = $uniorg->Guardar($nombreuo,$sigla,$idinstitucion);
 
 if($res == true)
 {
-	header("Location: ../listaUniorganica.php");
+	header("Location: ../uniorganica.php?msg=Agregado correctamente");
 }else{
-	header("Location: ../index.php");
+	header("Location: ../index.php?msg=Error guardando");
 }

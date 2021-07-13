@@ -14,6 +14,13 @@ $data = $consultas->InstitucionArray();
     <div class="panel-body">
       <div class="content-row">
         <h2 class="content-row-title">Nueva Unidad Organica</h2>
+          <?php 
+            @$msg = $_GET['msg'];
+            if(!empty($msg))
+            {
+              echo $msg;
+            }
+          ?>
         
           <form action="controllers/uniorganica.controller.php" method="POST" role="form">
         

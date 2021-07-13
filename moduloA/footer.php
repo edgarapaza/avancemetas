@@ -1,15 +1,16 @@
+
           </div>
           </div><!-- panel body -->
         </div>
         </div><!-- content -->
       </div>
     </div>
-    
+
     <!--footer-->
     <div class="site-footer">
       <div class="container">
         <div class="download">
-          <span class="download__infos">Archivo Regional Puno <b>Sistema Inventario</b>.</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <span class="download__infos">Archivo Regional Puno - <b>Sistema Logros de Metas</b>.</span>&nbsp;&nbsp;&nbsp;&nbsp;
           
           
         </div>

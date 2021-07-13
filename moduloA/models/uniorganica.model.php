@@ -13,6 +13,9 @@ class UnidadOrganica
 
 	function Guardar($nombreuo,$sigla,$idinstitucion)
 	{
+		
+
+		
 		$sql = "INSERT INTO unidadorganica (iduorg,nombreuo,sigla,idinstitucion) VALUES (null,'$nombreuo','$sigla','$idinstitucion')";
 	
 		$res = $this->conn->ConsultaSin($sql);

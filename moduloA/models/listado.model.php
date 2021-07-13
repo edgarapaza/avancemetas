@@ -19,22 +19,40 @@ class Listado
         	return $res;
 		}
 
-		function Institucion(){
-			$sql="SELECT id,nombre_inst, direccion, telefono, RUC, email,p_web,fecha_creacion_archivo,n_resolucion FROM institucion;";
+		function Institucion()
+		{
+			$sql="SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,creacion,resolucion,fecCreate,fecChange FROM institucion;";
 			
 			$res = $this->conn->ConsultaCon($sql);
         	return $res;
 		}
 
-		function Oficina(){
-			$sql="SELECT id,nombre,sigla,id_metas,id_gerencia FROM oficinas;";
+		function Gerencias()
+		{
+			$sql="SELECT idgerencia,nomgerencia,sigla,iduorg,fechaActual FROM gerencias;";	
+			$res = $this->conn->ConsultaCon($sql);
+        	return $res;
+		}
+
+		function SubGerencias()
+		{
+			$sql="SELECT idsubgerencia,nomsubger,sigla,idgerencia FROM subgerencia;";
 			
 			$res = $this->conn->ConsultaCon($sql);
         	return $res;
 		}
 
-		function Cargo(){
-			$sql="SELECT id_cargos,nombre,id_oficina,id_areas,id_personal FROM cargos;";
+		function Areas()
+		{
+			$sql="SELECT id_areas,nombre,descripcion,idsubgerencia,id_metas FROM areas;";
+			
+			$res = $this->conn->ConsultaCon($sql);
+        	return $res;
+		}
+
+		function Cargo()
+		{
+			$sql="SELECT id_cargos,nombre,id_areas,fec_creacion,idpersonal FROM cargos;";
 			
 			$res = $this->conn->ConsultaCon($sql);
         	return $res;
@@ -42,13 +60,6 @@ class Listado
 
 		function PersonalUnico($codigo){
 			$sql = "SELECT CONCAT(nombre,' ', apellidos) AS nombre FROM personal WHERE id_personal= $codigo";
-			$res = $this->conn->ConsultaArray($sql);
-        	return $res;
-		}
-
-		function OficinaUnico($codigo){
-			$sql="SELECT nomsubger FROM subgerencia WHERE idsubgerencia= $codigo";
-			
 			$res = $this->conn->ConsultaArray($sql);
         	return $res;
 		}

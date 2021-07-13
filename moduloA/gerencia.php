@@ -12,12 +12,12 @@ $data = $uniorg->Listado();
 		<div class="panel-body">
 			<div class="content-row">
 				<h2 class="content-row-title">Crear una nueva Gerencia</h2>
-				<h1 class="h3 mb-4 text-gray-800"></h1>
-				<form action="controllers/gerencia.controller.php" method="POST" role="form">
+				<div id="mensaje"></div>
+				<form action="" method="POST" role="form">
 					
 					<div class="form-group">
 						<label for="">Selecciona la Unidad Organica que depende</label>
-						<select name="uniorganica" class="form-control">
+						<select name="uniorganica" id="uniorganica" class="form-control" required>
 							<option>[Seleccione]</option>
 							<?php
 							
@@ -32,17 +32,38 @@ $data = $uniorg->Listado();
 					</div>
 					<div class="form-group">
 						<label for="">Nombre de la Nueva Gerencia/Oficina:</label>
-						<input type="text" class="form-control" id="nombre_gerencia" name="nombre_gerencia" placeholder="">
+						<input type="text" class="form-control" id="nombre_gerencia" name="nombre_gerencia" placeholder="Nombre Gerencia" required>
 					</div>
 					<div class="form-group">
 						<label for="">Sigla:</label>
-						<input type="text" class="form-control" id="sigla" name="sigla" placeholder="">
+						<input type="text" class="form-control" id="sigla" name="sigla" placeholder="Sigla" required>
 					</div>
 					
-					<button type="submit" class="btn btn-primary">Guardar</button>
+					<button type="submit" id="btnGuardar" class="btn btn-primary">Guardar</button>
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
 <?php include "footer.php"; ?>
+
+<script>
+	$(document).ready(function() {
+		$("#btnGuardar").click(function(event) {
+			event.preventDefault();
+			var uniorg = document.getElementById('uniorganica').value;
+			var gerencia = document.getElementById('nombre_gerencia').value;
+			var sigla1 = document.getElementById('sigla').value;
+			
+			$.ajax({
+				url: 'controllers/gerencia.controller.php',
+				type: 'post',
+				data: {'uniorganica': uniorg, 'nombre_gerencia': gerencia, 'sigla':sigla1},
+				success: function(res) {
+					$("#mensaje").html(res);
+				}
+			});
+			
+		});
+	});
+</script>

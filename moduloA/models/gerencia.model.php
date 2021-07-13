@@ -11,15 +11,25 @@ class Gerencias
 		return $this->conn;
 	}
 
-	public function Guardar($nomgerencia,$sigla, $idinstitucion)
+	function Guardar($nomgerencia,$sigla, $unidadorganica)
 	{
-		$fechaActual = date('Y-m-d H:i:s');
-		$sql = "INSERT INTO gerencias VALUES (null,'$nomgerencia','$sigla','$idinstitucion','$fechaActual')";
-		$res = $this->conn->ConsultaSin($sql);
-		return $res;
+		$sqld = "SELECT idgerencia FROM gerencias WHERE nomgerencia = '$nomgerencia' AND sigla = '$sigla' AND iduorg = '$unidadorganica';";
+		$res = $this->conn->ConsultaCon($sqld);
+		$num = $res->num_rows;
+
+		if($num >0)
+		{
+			return "Duplicado";
+		}else{
+			
+			$fechaActual = date('Y-m-d H:i:s');
+			$sql = "INSERT INTO gerencias VALUES (null,'$nomgerencia','$sigla','$unidadorganica','$fechaActual')";
+			$res = $this->conn->ConsultaSin($sql);
+			return $res;
+		}
 	}
 
-	public function Modificar($idgerencia, $nomgerencia, $sigla)
+	function Modificar($idgerencia, $nomgerencia, $sigla)
 	{
 		$fechaActual = date('Y-m-d H:i:s');
 		$sql = "UPDATE gerencias SET nomgerencia = '$nomgerencia',sigla = '$sigla' WHERE idgerencia =". $idgerencia;
@@ -28,7 +38,7 @@ class Gerencias
 		return $res;
 	}
 
-	public function Consultar()
+	function Consultar()
 	{
 		$sql = "SELECT idgerencia,nomgerencia,sigla FROM gerencias";
 		
@@ -37,3 +47,6 @@ class Gerencias
 	}
 
 }
+
+$gerencia = new Gerencias();
+$gerencia->Guardar('direccion de archivo','direccion','1');

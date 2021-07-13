@@ -11,6 +11,13 @@ class Consultas
 		return $this->conn;
 	}
 
+	function DatosInstitucion()
+	{
+		$sql = "SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,creacion,resolucion,estado FROM institucion;";
+		$res = $this->conn->ConsultaArray($sql);
+		return $res;	
+	}
+
 	function InstitucionArray()
 	{
 		$sql = "SELECT id,nombre_inst,direccion,telefono,RUC,email,p_web,creacion,resolucion,fecCreate,fecChange FROM institucion;";
